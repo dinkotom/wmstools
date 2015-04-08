@@ -1,0 +1,8 @@
+<a href="/test_runner"><< Back to the list of test results</A><br><br>
+<% if @jira_issue_created == 1 then %>
+  <div style=\"success\">SUCCESS:</div>New issue has been created in JIRA: <%= Utils.new.to_link(JIRA_BASE_PATH, @jira_issue) %>
+<% elsif @jira_issue_created == 0 then %>
+  <div style=\"error\">ERROR:</div>Issue has not been created!!!."
+<% else %>
+  <div style=\"error\">ERROR:</div>Issue #{@jira_issue} already exist for test result #{params[:id]}."
+<% end  %>

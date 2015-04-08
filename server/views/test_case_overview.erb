@@ -1,0 +1,54 @@
+<form class="tiui-form" id="main_form">
+  <fieldset>
+    <legend>Test Case Overview</legend>
+    <table width="300">
+      <tr>
+        <td>Environment:
+          <select id="tco_environment_selection" class="styled_select" onchange="redirect_to_environment();">
+            <option value="default">-- choose environment --</option>
+            <% @environments.each do |env|  %>
+                <option value="<%= env %>" <%= 'selected' if @environment && @environment == env %>><%= env %></option>
+            <% end  %>
+          </select>
+        </td>
+        <td>Test Cases: <%= @tc_count %></td>
+        <td rowspan="3">
+          <div class="tco">PASSED:
+            <span class="<%= @tc_passed_percent_style %>"><%= @tc_passed_percent %>%</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>Revision: #<%= @revision %></td>
+        <td>Passed: <%= @tc_passed %></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Failed: <%= @tc_failed %></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>No Result: <%= @tc_no_result %></td>
+        <td></td>
+      </tr>
+    </table>
+  </fieldset>
+</form>
+
+<div class="isotope">
+  <% @test_cases.each do |tc| %>
+      <div class="<%= tc.class %>">
+        <h3 class="name" title="<%= tc.name %>"><%= tc.id %></h3>
+      </div>
+  <% end %>
+</div>
+<script>
+    $(document).ready(
+            function() {
+                setInterval(function() {
+                    location.reload(true);
+                }, 60000);
+            });
+</script>

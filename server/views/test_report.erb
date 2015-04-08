@@ -1,0 +1,197 @@
+<div class="test_content_container">
+
+  <div style="width:100%;">
+    <div class="test_container_1">
+      <div class="test_report_container">
+        <form class="tiui-form" style="padding-bottom: 0px;">
+          <fieldset>
+            <legend>Test report</legend>
+            <div id="test_report"></div>
+            <br>
+
+          </fieldset>
+        </form>
+      </div>
+    </div>
+    <div class="test_container_2">
+      <div class="test_comment_container">
+        <form class="tiui-form">
+          <fieldset>
+            <legend>Comment</legend>
+
+            <textarea id="test_comment_area" placeholder="Place your comment here&hellip;"><%= @comment %></textarea><br>
+
+            <div id="buttons">
+              <button type="button" class="tiui-btn tiui-blue" id="save_comment">Save</button>
+              <button type="button" class="tiui-btn tiui-blue" id="save_jira">Save & Create Jira Issue</button>
+            </div>
+            <div id="report_circle">
+              <img src="/img/ajax-loader.gif"/>
+            </div>
+
+          </fieldset>
+        </form>
+      </div>
+
+      <div class="test_jira_container">
+        <form class="tiui-form">
+          <fieldset>
+            <legend>Jira</legend>
+            <div id="table">
+              <table class="tiui-table tiui-blue" style="width: 300px;">
+                <th>Issue Id</th>
+                <th>Status</th>
+                <tr>
+                  <td>
+                    <% if @jira_issue then %>
+                        <%= Utils.new.to_link(JIRA_BASE_PATH, @jira_issue) %>
+                    <% else %>
+                        No JIRA issue created.
+                    <% end %>
+                  </td>
+                  <td><%= @jira_issue_status %></td>
+                </tr>
+              </table>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="test_container_3">
+
+
+    <div class="test_svn_container">
+      <form class="tiui-form">
+        <fieldset>
+          <legend>Subversion log</legend>
+          <div id="svn">
+            <%= @svn_log %>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="https://www.google.com/jsapi" type="text/javascript"></script>
+<script>
+
+
+    $(document).ready(function () {
+        Messenger.options = {
+            extraClasses: 'messenger-fixed messenger-on-top messenger-on-right',
+            theme: 'block'
+        };
+
+        function GetQueryStringParams(sParam) {
+            var sPageURL = window.location.search.substring(1);
+            var sURLVariables = sPageURL.split('&');
+            for (var i = 0; i < sURLVariables.length; i++) {
+                var sParameterName = sURLVariables[i].split('=');
+                if (sParameterName[0] == sParam) {
+                    return sParameterName[1];
+                }
+            }
+        }
+
+        var back_path = "window.location.href='/" + GetQueryStringParams('back');
+
+        var page = GetQueryStringParams('page');
+        var suite = GetQueryStringParams('suite');
+
+        if (page != undefined && suite != undefined) {
+            back_path += "?" + "suite=" + suite + "&" + "page=" + page;
+        }
+
+        back_path += "';"
+
+        $("#back_button").attr("onclick", back_path)
+
+//        refresh test report part of the test report page regularly if execution is running
+        var refresh_interval = 5000
+        var te_id = <%= params[:id] %>
+        $('#test_report').load('/test_report/' + te_id);
+        var status
+        setInterval(
+                function () {
+                    if (status == 'Running' || status == 'Preparing' || typeof status == 'undefined') {
+                        $('#test_report').load('/test_report/' + te_id);
+                    }
+                    $.get('/test_report/' + te_id + '/status', function (data) {
+                        status = data
+                    });
+                }, refresh_interval);
+    });
+
+
+    $("#save_comment").click(function () {
+        $("#report_circle").show();
+        $.post($("#id_test").val() + "/save_comment", {'comment': $("#test_comment_area").val()}, function (data) {
+            if (data == "1") {
+                Messenger().post({
+                    message: 'Action performed',
+                    type: 'success',
+                    hideAfter: 5
+                });
+            }
+            else {
+                Messenger().post({
+                    message: 'Error performing action',
+                    type: 'error',
+                    hideAfter: 5
+                });
+            }
+            $("#report_circle").hide();
+        });
+    });
+
+    $("#save_jira").click(function () {
+        $("#report_circle").show();
+        $.post($("#id_test").val() + "/create_issue_ajax", {
+            'id': $("#id_test").val(),
+            'comment': $("#test_comment_area").val()
+        }, function (data) {
+            r = JSON.parse(data);
+            if (r.result == "1") {
+
+                table = '<table class="tiui-table tiui-blue" style="width: 300px;">';
+                table += "<th>Issue Id</th>";
+                table += "<th>Status</th>";
+                table += "<tr>";
+                table += "<td>";
+                table += r.msg;
+                table += "</td>";
+                table += "<td>";
+                table += r.status;
+                table += "</td>";
+                table += "</tr>";
+                table += "</table>";
+
+                $("#table").html(table);
+
+                Messenger().post({
+                    message: 'Action performed',
+                    type: 'success',
+                    hideAfter: 5
+                });
+            }
+            else {
+                Messenger().post({
+                    message: r.msg,
+                    type: 'error',
+                    hideAfter: 5
+                });
+            }
+
+            $("#report_circle").hide();
+        });
+    });
+
+
+</script>

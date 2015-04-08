@@ -1,0 +1,91 @@
+<form class="tiui-form" id="get_ds_form">
+  <fieldset>
+    <legend>Get Delivery Site</legend>
+    <table width="300">
+      <tr>
+        <td style="text-align: right;" width="70">
+          Type:
+        </td>
+        <td>
+          <select id="ds_type_selection" class="styled_select">
+            <option value="default">-- choose delivery site type --</option>
+            <% @ds_types.each do |type| %>
+                <option value="<%= type.id %>"><%= type.name %></option>
+            <% end %>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: right">
+          Environment:
+        </td>
+        <td>
+          <select id="environment_selection" class="styled_select">
+            <option value="default">-- choose environment --</option>
+            <% @environments.each do |environment| %>
+                <option value="<%= environment %>"><%= environment %></option>
+            <% end %>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button id="get_ds_button" type="button" class="test_back_button tiui-btn tiui-disabled">
+            Get DS
+          </button>
+        </td>
+      </tr>
+    </table>
+  </fieldset>
+  <fieldset>
+    <legend>
+      Stock
+    </legend>
+    <table class="results_table tiui-table tiui-blue">
+      <tr>
+        <td><b>Delivery Site Type</b></td>
+        <% @environments.each do |environment| %>
+            <td><b><%= environment %></b></td>
+        <% end %>
+      </tr>
+        <% index = 0 %>
+      <% @stock.each do |ds_type, environment_count| %>
+          <% index += 1  %>
+          <tr <%= 'class="odd_row"' if index % 2 == 0 %>>
+          <td><%= ds_type %></td>
+            <% @environments.each do |environment| %>
+                <td><%= environment_count[environment] %></td>
+            <% end %>
+            </tr>
+        <% end %>
+        </table>
+  </fieldset>
+  <fieldset>
+    <legend>
+      Generated Delivery Site
+    </legend>
+    <h3>
+      <%= @delivery_site ? @delivery_site.id : @reason %>
+    </h3>
+  </fieldset>
+</form>
+<script>
+    $("select.styled_select").change(
+            function () {
+                if ($("#ds_type_selection").val() == 'default' || $("#environment_selection").val() == 'default') {
+                    $("#get_ds_button").removeClass('test_back_button tiui-btn tiui-blue');
+                    $("#get_ds_button").addClass('test_back_button tiui-btn tiui-disabled');
+                    $("#get_ds_button").click(function () {
+                    });
+                }
+                else {
+                    $("#get_ds_button").removeClass('test_back_button tiui-btn tiui-disabled');
+                    $("#get_ds_button").addClass('test_back_button tiui-btn tiui-blue');
+                    $("#get_ds_button").click(function () {
+                        location.assign('/get_ds/' + $("#ds_type_selection").val() + '/' + $("#environment_selection").val());
+                    });
+                }
+            });
+</script>
+
+

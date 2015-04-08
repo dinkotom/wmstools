@@ -1,0 +1,19 @@
+<div class="progress_container">
+  <form class="tiui-form">
+    <fieldset>
+      <legend>Progress</legend>
+      <div id="piazza">
+        <div class="piazza_circle"><img src="/img/loading.gif"/></div>
+      </div>
+    </fieldset>
+  </form>
+</div>
+<script src="/js/progress.js"></script>
+<script>
+    $(document).ready(function () {
+        refresh_piazza();
+        setInterval(function () {
+            refresh_piazza();
+        }, 1000);
+    });
+</script>

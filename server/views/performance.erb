@@ -1,0 +1,31 @@
+<div class="under_wrapper">
+
+  <div class="main_container">
+
+    <form class="tiui-form">
+      <fieldset>
+        <legend>Suites</legend>
+        <table>
+          <tr>
+            <td><select id="performance_test_suits" class="styled_select"></select></td>
+            <td style="float:right;"><button id="export" class="test_back_button tiui-btn tiui-blue" type="button" onclick="location.href = '/performance/xls/' + $('#performance_test_suits').find(':selected').text();">Export to XLS</button></td>
+          </tr>
+
+        </table>
+      </fieldset>
+
+      <fieldset>
+        <legend>Results</legend>
+        <table id="test_executions" class="results_table tiui-table tiui-blue">
+          <thead></thead>
+          <tbody></tbody>
+        </table>
+        <div id="table_pagination"></div>
+      </fieldset>
+    </form>
+
+  </div>
+
+</div>
+
+<script src="/js/performance.js"></script>

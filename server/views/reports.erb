@@ -1,0 +1,8 @@
+<form method="get">
+  <select name="report">
+    <% available_reports.each do | label, name | %>
+	    <option value="<%= label %>" <%= 'selected' if label.to_s == @params[:report].to_s %>><%= name %></option>
+	  <% end %>
+  </select>
+  <button type="submit" value="submit_report" formaction="/reports">Show Report</button>
+</form>

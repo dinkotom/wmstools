@@ -1,0 +1,29 @@
+<% if @status == 'Finished'
+     button_class = 'tiui-btn tiui-blue'
+     onclick = "window.location.href='/test_runner/#{@id}/download_log';"
+   else
+     button_class = 'tiui-btn tiui-disabled'
+     onclick = ''
+   end
+%>
+
+<button class="<%= button_class %>" type="button" onclick="<%= onclick %>">Download
+  full log
+</button>
+<br>
+<br>
+
+Status: <b><%= @status %></b><br><br>
+Duration: <%= @duration %> s<br><br>
+
+Failed test cases:<br>
+<% @failed_test_cases.each do |ftc| %>
+    <div class="failed"><%= ftc %></div>
+<% end %>
+<br>
+
+Passed test cases:<br>
+<% @passed_test_cases.each do |ptc| %>
+    <div class="passed"><%= ptc %></div>
+<% end %>
+<br>

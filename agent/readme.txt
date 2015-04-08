@@ -1,0 +1,1 @@
+- svn needs to be checked out and property SVN_HOME must be set to that directory

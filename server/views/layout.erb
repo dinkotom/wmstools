@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf8">
+  <title>WMS Tools</title>
+
+  <link href="/styles/min/tiui-1.1.css" rel="stylesheet">
+  <link href="/styles/min/messenger.css" rel="stylesheet">
+  <link href="/styles/min/messenger-theme-block.css" rel="stylesheet">
+  <link href="/styles/style.css" rel="stylesheet">
+
+
+  <script src="/js/jquery-1.10.2.min.js"></script>
+  <script src="/js/jquery.cookie.js"></script>
+  <script src="/js/messenger.min.js"></script>
+  <script src="/js/tiui-1.1.js"></script>
+  <script src="/js/isotope.pkgd.js"></script>
+  <script src="/js/test_case_overview.js"></script>
+
+</head>
+<body>
+<script src="/js/jquery.simplemodal.1.4.4.min.js"></script>
+
+<div class="black_wrapper">
+</div>
+
+<div class="under_wrapper">
+  <div class="available_nodes_bar">
+    <!--<button id="back_button" class="test_back_button tiui-btn tiui-blue" type="button" onclick="location.href = '/back';">< Back</button>-->
+    <button id="test_runner" class="test_back_button tiui-btn tiui-blue" type="button" onclick="location.href = '/test_runner';">Runner</button>
+    <!--<button id="progress" class="test_back_button tiui-btn tiui-blue" type="button" onclick="location.href = '/progress';">Progress</button>-->
+    <button id="performance" class="test_back_button tiui-btn tiui-blue" type="button" onclick="location.href = '/performance';">Performance</button>
+    <!--<button id="test_case_overview" class="test_back_button tiui-btn tiui-blue" type="button" onclick="location.href = '/test_case_overview';">Test Case Overview</button>-->
+    <button id="get_ds" class="test_back_button tiui-btn tiui-blue" type="button" onclick="location.href = '/get_ds';">Get DS</button>
+    <div class="version_cell">
+      WMS Tools - version <a href="/change_log"><%= VERSION %></a>
+    </div>
+    <!--<div id="node_status" class="version_cell"></div>-->
+
+  </div>
+
+</div>
+
+
+<%= yield %>
+</div>
+
+</body>
+</html>  

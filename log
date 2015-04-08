@@ -1,0 +1,16 @@
+# Logfile created on 2015-04-08 06:54:45 +0200 by logger.rb/1.2.8
+I, [2015-04-08T06:54:50.620019 #3673]  INFO -- : Starting running test execution id '73' on branch 'branch/4.8.2', suite '[F] PERFORMANCE TESTS', project file 'WMS.xml' 
+
+I, [2015-04-08T06:54:50.727245 #3673]  INFO -- : Finished running test execution id '73' on branch 'branch/4.8.2', suite '[F] PERFORMANCE TESTS', project file 'WMS.xml' 
+
+I, [2015-04-08T06:54:51.539110 #3673]  INFO -- : Email has been successfully sent to tomas.dinkov@tieto.com.
+I, [2015-04-08T06:55:30.906751 #3722]  INFO -- : Starting running test execution id '73' on branch 'branch/4.8.2', suite '[F] PERFORMANCE TESTS', project file 'WMS.xml' 
+
+I, [2015-04-08T06:55:30.945347 #3722]  INFO -- : Finished running test execution id '73' on branch 'branch/4.8.2', suite '[F] PERFORMANCE TESTS', project file 'WMS.xml' 
+
+I, [2015-04-08T06:55:31.622814 #3722]  INFO -- : Email has been successfully sent to tomas.dinkov@tieto.com.
+I, [2015-04-08T08:35:42.828037 #6324]  INFO -- : Starting running test execution id '74' on branch 'branch/4.8.2', suite '[F] PERFORMANCE TESTS', project file 'WMS.xml' 
+
+I, [2015-04-08T08:35:42.909309 #6324]  INFO -- : Finished running test execution id '74' on branch 'branch/4.8.2', suite '[F] PERFORMANCE TESTS', project file 'WMS.xml' 
+
+I, [2015-04-08T08:35:43.589655 #6324]  INFO -- : Email has been successfully sent to tomas.dinkov@tieto.com.

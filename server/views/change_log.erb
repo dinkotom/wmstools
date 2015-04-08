@@ -1,0 +1,171 @@
+<h3>2.0.7</h3>
+    <li>Enhancement - deployments automated
+<h3>2.0.6</h3>
+    <li>Error - restarting server caused running and preparing test executions to be deleted
+<h3>2.0.5</h3>
+    <li>Enhancement - Delivery site attributes extended by created_at and getting delivery site is sorted from oldest
+<h3>2.0.4</h3>
+    <li>Feature - Possible to specify delivery site buffering quota per delivery site type
+<h3>2.0.3</h3>
+    <li>Enhancement - Ensured oldest delivery site is fetched on Get DS
+<h3>2.0.2</h3>
+    <li>Bugfix - Startup synchronization issue fixed
+<h3>2.0.1</h3>
+    <li>Bugfix - Buffering was not running against correct environments
+<h3>2.0.0</h3>
+    <li>Enhancement - Stop buffering delivery sites when buffer tests keep failing
+<h3>2.0.0-Beta-1</h3>
+    <li>Bugfix - Test Runner didn't refresh
+    <li>Bugfix - It was possible to press Download Full Log button before the test finished
+    <li>Enhancement - Duration is seconds is now visible from Test Report
+<h3>2.0.0-Alpha-3</h3>
+    <li>Feature - Piazza working again
+<h3>2.0.0-Alpha-2</h3>
+    <li>Feature - Get DS and Performance work again.
+<h3>2.0.0-Alpha-1</h3>
+    <li>Feature - changed way of executing tests. Server-agnostic agents introduced. One agent is able to run many executions simultaneously. Only runner works correctly for now. Get DS, Performance, Test Case Overview, Progress and Piazza don't work yet.
+<h3>1.0.22</h3>
+    <li>Enhancement - Test Execution will now kill process if it finds one running on idle node. 
+<h3>1.0.21</h3>
+    <li>Bugfix - precheck for already running test didn't work
+<h3>1.0.20</h3>
+    <li>Enhancement - test suite filter, environment filter and pagination are now persistent during navigation from Runner to other page
+<h3>1.0.19</h3>
+    <li>Enhancement - progress moved to a separate page
+<h3>1.0.18</h3>
+    <li>Feature - getting delivery sites is extended by environment
+<h3>1.0.17</h3>
+    <li>Feature - delivery sites are created automatically and can be fetched for further use
+    <li>Bugfix - Load test results were missing linebreaks
+    <li>Bugfix - Exporting to xls didn't work when there was no measurement for a measurement point
+<h3>1.0.16</h3>
+    <li>Feature - Performance tests results can be exported to XLS
+<h3>1.0.15</h3>
+    <li>Enhancement - Test Case Overview is being refreshed periodically
+<h3>1.0.14</h3>
+    <li>Bugfix - migration of results were processed in reversed order
+    <li>Enhancement - node status stretched to summary + tooltip with details</li>
+<h3>1.0.13</h3>
+    <li>Bugfix - test case overview showed no result when the test case name was longer than 50 characters
+<h3>1.0.12</h3>
+    <li>Feature - Load tests are now handled differently - no results are stored in the database, test case overview is not influenced by load tests and multiple lines for one test case are allowed
+<h3>1.0.11</h3>
+    <li>Feature - Test Case Overview
+    <li>Enhancement - new menu
+<h3>1.0.10</h3>
+    <li>Bugfix - it wasn't possible to process report when it contained two lines with same test case id
+    <li>Feature - if a test report contains more results for one test case id and one of them failed then the whole test case failed
+<h3>1.0.9</h3>
+    <li>Enhancement - changed way of handling test results - now all test cases have their record about their result for each execution
+<h3>1.0.8</h3>
+    <li>Bugfix - it wasn't possible to place a comment on the bottom line of test runner
+    <li>Enhancement - for non-performance tests suites it is again possible to run simultaneously against the same environment
+<h3>1.0.7</h3>
+    <li>Feature - result ERROR removed. The only valid results are PASSED and FAILED now.
+<h3>1.0.6</h3>
+    <li>Bugfix - performance measurements were not stored correctly
+<h3>1.0.5</h3>
+    <li>Bugfix - it wasn't possible to handle reports longer than 65000 characters - now all report longer that 65000 are cut
+<h3>1.0.4</h3>
+    <li>Bugfix - Wrong progress was shown in Test Runner
+<h3>1.0.3</h3>
+    <li>Enhancement - Added possibility to run test suite from different SOAP UI project files
+<h3>1.0.2</h3>
+    <li>Bugfix - failed tests were counted twice
+<h3>1.0.1</h3>
+    <li>Feature - Results trend per suite per environment is now shown in results table
+<h3>0.9.6</h3>
+    <li>WMS Tools are now running against MySQL
+<h3>0.9.5</h3>
+    <li>Piazza is now showing on more screens
+<h3>0.9.4</h3>
+    <li>Bugfix - Tests were marked as finished before all logs and reports are processed
+    <li>Feature - Performance tests results are processes and shown in a separate page 
+<h3>0.9.3</h3>
+    <li>Feature - User is able to filter test results by environment and test suite
+    <li>Feature - Test Suites are now grouped in test packages. It is possible to enqueue whole package at once. 
+<h3>0.9.2</h3>
+    <li>Performance tests results are now part of the test report
+<h3>0.9.1</h3>
+    <li>ART-140 Fixed problem with corrupted txt file in zipped logs. Rubyzip library downgraded to 1.0.0.
+<h3>0.9.0</h3>
+    <li>GUI completely rewritten 
+<h3>0.2.15</h3>
+    <li>Feature - Added Possibility to kill running test execution
+<h3>0.2.14</h3>
+    <li>Bugfix - JAR files were always taken from trunk
+<h3>0.2.13</h3>
+    <li>Enhancement - Progress bar turns red on first failing test
+<h3>0.2.12</h3>
+    <li>Feature - Test executions can be scheduled per test and per environment
+<h3>0.2.11</h3>
+    <li>Enhancement - All running test executions are deleted on startup
+    <li>Enhancement - Piazza shows progress of running tests as progress bar and shows number of passed and failed tests
+<h3>0.2.10</h3>
+    <li>Feature - Piazza displays intermediate results of running tests
+<h3>0.2.9</h3>
+    <li>Feature - Piazza now displays revision number for all tests and if the test is currently running.
+<h3>0.2.8</h3>
+    <li>Bugfix - Trying fixing the extensive CPU and memory usage by reading the soapui.*log files after the test execution finished instead of taking STDOUT line by line
+<h3>0.2.7</h3>
+    <li>Bugfix - Exception wasn't raised when attaching file to JIRA issue failed
+<h3>0.2.6</h3>
+    <li>Bugfix - Piazza didn't ignore hidden text executions
+    <li>Bugfix - Piazza crashed when there was no test execution result for all combinations of test x environment
+    <li>Bugfix - Email validation in GUI stopped working because of refactoring
+    <li>Enhancement - Version and environment are part of notification email and test report details in GUI
+    <li>Feature - Smart assert log is part of the test execution report
+<h3>0.2.5</h3>
+    <li>Tests extended by attribute if their results are supposed to be reflected at Piazza
+<h3>0.2.4</h3>
+    <li>Piazza completely rewritten to TeamCity style
+    <li>Bugfix - attemp to fix memory leaks + added memory profiling
+<h3>0.2.3</h3>
+    <li>Bugfix - JIRA issue is now created in correct version for tests against a branch
+    <li>Feature - JIRA issue is created with full log attached
+<h3>0.2.2</h3>
+    <li>Enhancement - full log now contains also text files describing the failure.
+<h3>0.2.1</h3>
+    <li>Bugfix - svn log shows correct branch for different tested versions
+    <li>Feature - it is possible to run tests against both FAT and FAT4
+    <li>Enhancement - test execution queue merged to test results table - now there is only one table called Test Executions
+    <li>Enhancement - application does not rely any more on runTests script on a node. It runs the soapui test runner directly and processes it's output
+    <li>Feature - Piazza displays stdout from test runner when a test is running
+    <li>Feature - download whole SOAPUI test log
+<h3>0.2.0</h3>
+    <li>Enhancement - test report is taken directly from runTests script output instead of importing file
+    <li>Enhancement - emails are sent directly from web application instead of using external script
+    <li>Enhancement - emails are sent to the user who initiated test execution or to version watchers if it was initiated from outside the web form
+<h3>0.1.9</h3>
+	<li>Bugfix - svn log is now displayed even if previous test or this test is 'Revision not found'
+	<li>Change Request - condition for PASSED test extended by "&& !test_report.match('PASSED TESTS:0')"
+    <li>Enhancement - one click/command deploy
+    <li>Feature - test reports are fetched from all configured nodes
+<h3>0.1.8</h3>
+	<li>Change Request - svn logs show the newest record on the top
+<h3>0.1.7</h3>
+	<li>Bugfix - it wasn't possible to place a comment - new route was not created after refactoring
+	<li>Enhancement - refactoring - helper methods put to separate module and file
+	<li>Enhancement - refactoring - created method for converting urls into html links
+	<li>Change Request - changed way of processing test result files
+	<li>Feature - test type is displayed in Test Results
+<h3>0.1.6</h3>
+	<li>Enhancement - Possibility to create JIRA issue is disabled when testpu result is PASSED
+	<li>Enhancement - text and formatting of JIRA issue description and summary improved
+	<li>Enhancement - minor refactoring
+	<li>Bugfix - days from last failure didn't show in red when is was less than 3 days from last failure
+<h3>0.1.5</h3>
+	<li>Feature - It is possible to create JIRA issue directly from test report
+<h3>0.1.4</h3>
+	<li>Enhancement - application shows error message when Subversion or TeamCity is not accessible, takes too long time to respond or returns error
+	<li>Bugfix - format_svn_log method returned something only when there was a successful substitution
+	<li>Bugfix - test results wouldn't show if there was not failed test in a history
+	<li>Bugfix - test report of the first test in history woudn't show
+<h3>0.1.3</h3>
+	<li>Bugfix - svn logs showed wrong revisions when files were imported in different than time order
+	<li>Feature - Revision shows in bold when a test were ran against a new version
+<h3>0.1.2</h3>
+	<li>Feature - Added Version Report
+	<li>Feature - Subversion logs have file paths substituted with links to FishEye
+	<li>Enhancement - Layout simplified
+	<li>Bugfix - storing comments didn't work

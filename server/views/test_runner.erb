@@ -1,0 +1,164 @@
+<div class="main_container">
+  <div>
+    <div class="run_test_container">
+      <form class="tiui-form" id="main_form">
+        <fieldset>
+          <legend>Run test</legend>
+
+          <dl class="tiui-form-fields">
+            <dt>
+              <label for="for">Email</label>
+            </dt>
+            <dd>
+              <input id="for" type="text" name="for">
+            </dd>
+
+            <dt>
+              <label for="environment">Environment</label>
+            </dt>
+            <dd>
+              <select class="styled_select select_env" id="environment" name="environment">
+                <% @environments.each do |environment| %>
+                    <option value="<%= environment.name %>"><%= environment.name %></option>
+                <% end %>
+              </select>
+
+            </dd>
+
+            <dt>
+              <label for="test_scope">Scope</label>
+            </dt>
+            <dd>
+              <select class="styled_select select_suite" id="test_scope" name="test_scope">
+                <option class="firefox_padding" value="package" selected="selected">Package</option>
+                <option class="firefox_padding" value="single">Single</option>
+              </select>
+
+            </dd>
+
+
+            <dt>
+              <label for="test_suite_name">Suite</label>
+            </dt>
+            <dd>
+              <select class="styled_select select_suite" id="test_suite_name" name="test_suite_name">
+                <% @test_suites.each do |test_suite| %>
+                    <option class="firefox_padding" value="<%= test_suite.name %>"><%= test_suite.name %></option>
+                <% end %>
+              </select>
+
+            </dd>
+
+          </dl>
+
+          <br/>
+          <button id="enqueue" class="enqueue_button tiui-btn tiui-blue" type="button">Enqueue</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+
+  <div class="results_table_container">
+    <div class="loading_circle"><img src="/img/loading.gif"/></div>
+
+    <form class="tiui-form">
+      <fieldset>
+        <legend>Results</legend>
+        <div>
+          <table class="results_table tiui-table tiui-blue" id="data_table">
+            <thead>
+            <tr>
+              <th style="width: 140px">
+                Started at
+              </th>
+              <th style="width: 140px">
+                For
+              </th>
+              <th style="width: 140px">
+
+                <span>Test Suite</span>
+
+                <select class="styled_select" id="test_suits">
+                  <option value="false" selected="selected">---</option>
+                  <% @test_suites_filter.each do |test_suite| %>
+                      <option value="<%= test_suite.test_suite_name %>"><%= test_suite.test_suite_name %></option>
+                  <% end %>
+                </select>
+
+              </th>
+              <th style="width: 120px">
+
+                <span>Environment</span>
+
+                <select class="styled_select" id="environments">
+                  <option value="false" selected="selected">---</option>
+                  <% @environments_filter.each do |environment| %>
+                      <option value="<%= environment.environment_name %>"><%= environment.environment_name %></option>
+                  <% end %>
+                </select>
+
+              </th>
+              <th style="width: 80px">
+                Failed tests
+              </th>
+              <th style="width: 80px">
+                Passed tests
+              </th>
+              <th style="width: 60px">
+                Status
+              </th>
+              <th style="width: 140px">
+                Agent
+              </th>
+              <th style="width: 80px">
+                Duration(min)
+              </th>
+              <th style="width: 140px">
+                Result
+              </th>
+              <th style="width: 70px">
+                Revision
+              </th>
+              <th style="width: 70px">
+                JIRA Issue
+              </th>
+              <th>
+                Comment
+              </th>
+              <th style="width: 30px">
+                Action
+              </th>
+            </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+          </table>
+        </div>
+
+
+        <div id="table_pagination"></div>
+      </fieldset>
+    </form>
+  </div>
+</div>
+
+<div id="modal_container" style="display:none">
+  <textarea onkeypress="if(event.keyCode==13){return false;}" id="comment_area" rows="4" cols="40"></textarea>
+
+  <div class="modal_button_container">
+    <button type="button" class="tiui-btn tiui-blue modal-close" id="button_close_modal">Close</button>
+
+    <button type="button" class="tiui-btn tiui-blue" id="save_comment">Save</button>
+    <button type="button" class="tiui-btn tiui-blue" id="save_jira">Save & Create Jira Issue</button>
+  </div>
+</div>
+
+
+
+<input type="hidden" id="table_page" value="1">
+<input type="hidden" id="table_items_num" value="50">
+
+<script src="/js/test_runner.js"></script>
+

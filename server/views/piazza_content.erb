@@ -1,0 +1,30 @@
+<% @piazza_data[:environments].each do |environment| %>
+    <h1><%= environment[:branch] + " (#{environment[:name]})" %></h1>
+
+    <h2><%= environment[:result] %></h2>
+
+    <div class="Content" <%= 'style="background-color: #FFFFFF"' unless environment[:running?]%>>
+      <div class="Builds">
+        <% environment[:suites].each do |suite| %>
+            <div class="<%= suite[:result] == 'Success' ? 'Build Success' : 'Build Failure' %><%= ' Building' if suite[:running?] %>">
+              <h3 class="NONE">
+                <%= "#{suite[:name]} #{suite[:revision]}" %>
+              </h3>
+
+              <% if suite[:running?] then %>
+                  <div class="ProgressBar">
+                    <div class="Activity <%= suite[:failed] == 0 ? 'Success' : 'Failure' %>" style="width: <%= suite[:progress] %>%">
+                      (Tests passed: <%= suite[:passed] %>,
+                      failed: <%= suite[:failed] %>)
+                    </div>
+                  </div>
+              <% end %>
+
+
+              <span class="Investigate"></span>
+            </div>
+        <% end %>
+      </div>
+    </div>
+    <br><br><br>
+<% end %>

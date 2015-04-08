@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="refresh" content="30">
+  <meta charset="utf8">
+  <title>WMS Tools</title>
+  <script src="/js/jquery-1.10.2.min.js"></script>
+  <link href="/styles/piazza.css" rel="stylesheet">
+</head>
+
+<body class='<%= @overall_result %><%= ' Building' if @any_test_running %>'>
+<div id="piazza_content"></div>
+<script>
+    $(document).ready(
+            function() {
+                $('#piazza_content').load('/piazza_content/<%= params[:screen_number] %>');
+                setInterval(function() {
+                    $('#piazza_content').load('/piazza_content/<%= params[:screen_number] %>');
+                }, <%= @refresh_interval %>);
+            });
+</script>
+
+
+</body>
+</html>
