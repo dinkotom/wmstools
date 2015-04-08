@@ -3,7 +3,7 @@ require 'net/http'
 require 'timeout'
 
 class Stage
-  SVN_BASE_PATH = 'https://github.com/dinkotom/wmstools'
+  SVN_BASE_PATH = 'https://github.com/dinkotom/wmstools/trunk'
 
   attr_writer :name,
               :username,
@@ -13,8 +13,7 @@ class Stage
               :change_log_file,
               :rack_file
 
-  attr_accessor :deploy_items,
-                :path,
+  attr_accessor :path,
                 :hostname
 
   def start
@@ -37,8 +36,8 @@ class Stage
   def deploy
     p 'Deploying...'
     if @path =~ /^\/\w+\/\w+/
-      ssh_exec("mkdir -p #{@path}; rm -rf #{@path}/*")
-      @deploy_items.each { |item| ssh_exec("svn export #{SVN_BASE_PATH}/#{item} #{@path}/#{item}") }
+      ssh_exec("rm -rf #{@path}")
+      ssh_exec("svn export #{SVN_BASE_PATH} #{@path}")
       write_deployment_timestamp
     else
       raise "Wrong path: #{@path}"

@@ -10,7 +10,6 @@ require_relative './rake/stage.rb'
 @staging_server.path = '/home/wmsTools/work/wms-tools_staging'
 @staging_server.port = 8088
 @staging_server.control_port = 8080
-@staging_server.deploy_items = %w(model server Gemfile Gemfile.lock initialize_server.rb server.ru)
 @staging_server.change_log_file = '/home/wmsTools/work/wms-tools_staging/server/views/change_log.erb'
 @staging_server.rack_file = 'server.ru'
 
@@ -22,7 +21,6 @@ require_relative './rake/stage.rb'
 @staging_agent.path = '/home/testAgent/work/agent/staging'
 @staging_agent.port = 8081
 @staging_agent.control_port = 8082
-@staging_agent.deploy_items = %w(agent model Gemfile Gemfile.lock initialize_agent.rb agent.ru)
 @staging_agent.change_log_file = '/home/testAgent/work/agent/staging/deployment'
 @staging_agent.rack_file = 'agent.ru'
 
@@ -34,7 +32,6 @@ require_relative './rake/stage.rb'
 @production_server.path = '/home/wmsTools/work/wms-tools_production'
 @production_server.port = 80
 @production_server.control_port = 8083
-@production_server.deploy_items = %w(model server Gemfile Gemfile.lock initialize_server.rb server.ru)
 @production_server.change_log_file = '/home/wmsTools/work/wms-tools_production/server/views/change_log.erb'
 @production_server.rack_file = 'server.ru'
 
@@ -46,7 +43,6 @@ require_relative './rake/stage.rb'
 @production_agent_1.path = '/home/testAgent/work/agent/production'
 @production_agent_1.port = 8081
 @production_agent_1.control_port = 8082
-@production_agent_1.deploy_items = %w(agent model Gemfile Gemfile.lock initialize_agent.rb agent.ru)
 @production_agent_1.change_log_file = '/home/testAgent/work/agent/production/agent/deployment'
 @production_agent_1.rack_file = 'agent.ru'
 
@@ -58,7 +54,6 @@ require_relative './rake/stage.rb'
 @production_agent_2.path = '/home/testAgent/work/agent/production'
 @production_agent_2.port = 8081
 @production_agent_2.control_port = 8082
-@production_agent_2.deploy_items = %w(agent model Gemfile Gemfile.lock initialize_agent.rb agent.ru)
 @production_agent_2.change_log_file = '/home/testAgent/work/agent/production/agent/deployment'
 @production_agent_2.rack_file = 'agent.ru'
 
