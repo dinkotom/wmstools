@@ -1,60 +1,53 @@
-WMSTools - Universal Test Runner FrontEnd
-=========================================
+# WMSTools - Universal Test Runner FrontEnd
 
+WMSTools has been developed as a home-brewed test runner for complex SOAP-UI flow tests but generally it is capable of running many kind of automated tests.
 
+The system consists of a server and a number of agents. The server exposes a GUI to users who are able to run their tests, watch the results and do more interesting things.
+It also schedules tests that are supposed to run on regular basis. Users are notified about their test results by email.
 
-Running
--------
-ruby ./start.rb
+The agents do the actual work. Agents can be installed on multiple Linux machines and therefore increase the capacity of the system, i.e. number of test executions running simultaneously.
+Each agent watches the test execution queue and when there is a test execution pending in the queue and there is a free capacity on the agent, it executes the test execution and writes the results of the test.
+The results are written throughout the test execution and running results can be watched even before the execution finishes.
 
-Installation
-------------
+The server and agents are integrated through a database.
 
-Under Debian Linux write:
-sudo apt-get install sqlite3 libsqlite3-dev ruby ruby-dev g++ subversion sudo curl make pkill mysql-server mysql-client libmysqlclient-dev libmysqlclient-dev libssl-dev screen
-sudo bundle install
+Currently MySQL is used but it is possible to use any kind of relational database.
 
+## Installation
+While Server, Agent(s) and the DB can all run on one machine, we recommend to run Server and Agent on different machines. The database can be placed on the same machine as the Server.
+Only Linux is currently supported as operating system for both Server and Agents.
+While any Linux distribution can be used, the following is applicable for Debian Linux.
+
+### Server and Agents
+`sudo apt-get install ruby ruby-dev g++ subversion curl make libssl-dev screen`
+
+### Database
+`sudo apt-get install mysql-server mysql-client libmysqlclient-dev libmysqlclient-dev`
+
+```
 mysql -u root -p
 mysql> create database wmstools;
 mysql> create database wmstools_staging;
 mysql> grant usage on *.* to wmsuser@localhost identified by 'SalvatorDali01';
 mysql> grant all privileges on wmstools.* to wmsuser@localhost;
 mysql> grant all privileges on wmstools_staging.* to wmsuser@localhost;
+```
 
-Svn password must be stored under user which runs start.rb
+### For Development
+`sudo apt-get install sqlite3 libsqlite3-dev ruby ruby-dev g++ subversion curl make mysql-server mysql-client libmysqlclient-dev libmysqlclient-dev libssl-dev screen`
 
-JRuby
-==============
-# Download JRuby tar.gz from http://www.jruby.org/download
-# Move downloaded file to your home
-tar -xzf jruby-bin-1.7.13.tar.gz
-rm jruby-bin-1.7.13.tar.gz
-nano -w ~/.profile
--- add this line
----
-export PATH="$PATH:$HOME/jruby-1.7.13/bin" # Add jruby to path //dinkotom
----
-# make sure java is version 7
-java -version
-# if not run
-sudo update-alternatives --config java
-# and choose java 7
-# restart the console and try
-jruby -v
-jruby -S gem install bundler
-jruby -S bundle install
-jruby start.rb
+## Deployment
 
-==================
-# copy production database to local database
-ssh -l vladan 10.14.140.164 'mysqldump -h localhost -u wmsuser -pSalvatorDali01 wmstools' | mysql -u wmsuser -pSalvatorDali01 wmstools_staging
+### Server
+After necessary modifications of the `rakefile.rb` run
 
-======================
-# starting command
-puma --port 8088 --control tcp://0.0.0.0:9293 --control-token SalvatorDali01 config.ru
+`rake deploy_production_server`
 
-# restart by
-http://localhost:9293/restart?token=SalvatorDali01
+Server is automatically started after deployment
 
+### Agents
+After necessary modifications of the `rakefile.rb` run
 
-Deployed on Thu Mar 26 07:12:57 CET 2015
+`rake deploy_production_agents`
+
+All agents are automatically started after deployment. All running tests are rolled back and set to pending so that they are executed again after restart of agent.
