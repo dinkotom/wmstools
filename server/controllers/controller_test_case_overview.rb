@@ -20,8 +20,7 @@ get '/test_case_overview/:environment' do
 
   environment = Environment.get(params[:environment])
 
-  $test_cases_for_all_environments = get_test_cases_for_all_environments unless $test_cases_for_all_environments
-  @test_cases = $test_cases_for_all_environments[environment.name]
+  @test_cases = get_test_cases(environment, get_newest_revision(environment))
 
   @environments = Environment.all.collect { |a| a.name }
   @environment = environment.name

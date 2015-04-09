@@ -1,1 +1,11 @@
 # Logfile created on 2015-04-08 08:29:08 +0200 by logger.rb/1.2.8
+I, [2015-04-09T14:48:30.136048 #11318]  INFO -- : Starting running test execution id '74' on branch 'branch/4.8.2', suite '[F] PERFORMANCE TESTS', project file 'WMS.xml' 
+
+I, [2015-04-09T14:48:30.190930 #11318]  INFO -- : Finished running test execution id '74' on branch 'branch/4.8.2', suite '[F] PERFORMANCE TESTS', project file 'WMS.xml' 
+
+I, [2015-04-09T14:48:31.088231 #11318]  INFO -- : Email has been successfully sent to tomas.dinkov@tieto.com.
+I, [2015-04-09T14:49:25.251373 #11358]  INFO -- : Starting running test execution id '74' on branch 'branch/4.8.2', suite '[F] PERFORMANCE TESTS', project file 'WMS.xml' 
+
+I, [2015-04-09T14:49:25.284933 #11358]  INFO -- : Finished running test execution id '74' on branch 'branch/4.8.2', suite '[F] PERFORMANCE TESTS', project file 'WMS.xml' 
+
+I, [2015-04-09T14:49:26.072694 #11358]  INFO -- : Email has been successfully sent to tomas.dinkov@tieto.com.

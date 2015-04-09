@@ -24,7 +24,8 @@ module HelpersTestCaseOverview
             :revision => revision,
             :test_case_id => a.id,
             :environment_name => b.environment.name,
-            :test_suite_name => b.test_suite.name
+            :test_suite_name => b.test_suite.name,
+            :order => [:id.asc]
         ).first
         test_case_result.result if test_case_result
       end.compact
@@ -48,11 +49,4 @@ module HelpersTestCaseOverview
     end
   end
 
-  def get_test_cases_for_all_environments
-    output = Hash.new
-    Environment.all.each do |env|
-      output[env.name] = get_test_cases(env, get_newest_revision(env))
-    end
-    output
-  end
 end

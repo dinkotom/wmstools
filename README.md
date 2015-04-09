@@ -1,6 +1,6 @@
 # WMSTools - Universal Test Runner FrontEnd
 
-WMSTools has been developed as a home-brewed test runner for complex SOAP-UI flow tests but generally it is capable of running many kind of automated tests.
+WMSTools has been developed as a home-brewed test runner for complex SOAP-UI flow tests but generally it is capable of running many kinds of automated tests.
 
 The system consists of a server and a number of agents. The server exposes a GUI to users who are able to run their tests, watch the results and do more interesting things.
 It also schedules tests that are supposed to run on regular basis. Users are notified about their test results by email.
