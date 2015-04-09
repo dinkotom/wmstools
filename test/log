@@ -9,3 +9,8 @@ I, [2015-04-09T14:49:25.251373 #11358]  INFO -- : Starting running test executio
 I, [2015-04-09T14:49:25.284933 #11358]  INFO -- : Finished running test execution id '74' on branch 'branch/4.8.2', suite '[F] PERFORMANCE TESTS', project file 'WMS.xml' 
 
 I, [2015-04-09T14:49:26.072694 #11358]  INFO -- : Email has been successfully sent to tomas.dinkov@tieto.com.
+I, [2015-04-09T15:54:24.065030 #12581]  INFO -- : Starting running test execution id '74' on branch 'branch/4.8.2', suite '[F] PERFORMANCE TESTS', project file 'WMS.xml' 
+
+I, [2015-04-09T15:54:24.109125 #12581]  INFO -- : Finished running test execution id '74' on branch 'branch/4.8.2', suite '[F] PERFORMANCE TESTS', project file 'WMS.xml' 
+
+I, [2015-04-09T15:54:24.948093 #12581]  INFO -- : Email has been successfully sent to tomas.dinkov@tieto.com.

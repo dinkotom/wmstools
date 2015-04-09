@@ -23,8 +23,8 @@ module HelpersTestCaseOverview
         test_case_result = TestCaseResult.all(
             :revision => revision,
             :test_case_id => a.id,
-            :environment_name => b.environment.name,
-            :test_suite_name => b.test_suite.name,
+            :environment_name => b.environment_name,
+            :test_suite_name => b.test_suite_name,
             :order => [:id.asc]
         ).first
         test_case_result.result if test_case_result
