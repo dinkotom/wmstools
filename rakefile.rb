@@ -77,6 +77,7 @@ task :deploy_staging_server do
 end
 
 task :deploy_staging_agent do
+  @staging_server.prepare_agents_for_shutdown
   @staging_agent.deploy
   @staging_agent.modify_config(
       @staging_agent.path + '/agent/config/conf_development.rb',
@@ -104,7 +105,7 @@ task :deploy_production_server do
 end
 
 task :deploy_production_agents do
-  @staging_server.prepare_agents_for_shutdown
+  @production_server.prepare_agents_for_shutdown
   agents = [@production_agent_1, @production_agent_2]
   agents.each do |agent|
     agent.deploy
