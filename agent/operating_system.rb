@@ -12,7 +12,7 @@ class OperatingSystem
   PERFORMANCE_TEST_MATCHING_REGEXP = /\[(PERF\d*.?)\]\[(\d*)\]/
   START_STRING = '[SoapUITestCaseRunner] Running SoapUI tests in project'
   STOP_STRING = '[SoapUITestCaseRunner] Finished running SoapUI tests'
-  REVISION_STRING = '#\d{5} '
+  REVISION_STRING = '#\d{5}$'
 
   def compose_command
     command = "#{SOAPUI_HOME}/jre/bin/java"
