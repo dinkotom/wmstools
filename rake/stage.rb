@@ -57,8 +57,7 @@ class Stage
 
   def prepare_agent_for_shutdown
     p 'Attempting to prepare agents for shutdown...'
-      uri = URI("#{@hostname}:#{@port}/prepare_for_agent_shutdown")
-      response = Net::HTTP.get(uri)
+      response = Net::HTTP.get(@hostname, '/prepare_for_agent_shutdown', @port)
     if response == 'OK'
       p 'Agents successfully prepared for shutdown'
     else
