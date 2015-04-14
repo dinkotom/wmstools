@@ -460,9 +460,9 @@ DELIVERY_SITE_TYPES = [
     {:id => '[S] SKA REG DISC + TRA', :name => '[S] Regular - Disconnected + Trafo', :environments => ['DEV2SKA'],:quota => 0},
     {:id => '[S] SKA HOUR', :name => '[S] Hourly', :environments => ['DEV2SKA'], :quota => 0},
     {:id => '[S] SKA HOUR + TRAFO', :name => '[S] Hourly + Trafo', :environments => ['DEV2SKA'], :quota => 0},
-    {:id => '[H] AMS Z31 1c', :name => '[H] AMS Z31 1c', :environments => ['DEVHF02'], :test_suite_name => '[H] BUFFER TESTS', :quota => 999},
-    {:id => '[H] AMS Z31 2c', :name => '[H] AMS Z31 2c', :environments => ['DEVHF02'], :test_suite_name => '[H] BUFFER TESTS', :quota => 500},
-	{:id => '[H] AMS Z32 1c', :name => '[H] AMS Z32 1c', :environments => ['DEVHF02'], :test_suite_name => '[H] BUFFER TESTS', :quota => 500},
+    {:id => '[H] AMS Z31 1c', :name => '[H] AMS Z31 1c', :environments => ['DEVHF02'], :test_suite_name => '[H] BUFFER TESTS', :quota => 0},
+    {:id => '[H] AMS Z31 2c', :name => '[H] AMS Z31 2c', :environments => ['DEVHF02'], :test_suite_name => '[H] BUFFER TESTS', :quota => 0},
+	{:id => '[H] AMS Z32 1c', :name => '[H] AMS Z32 1c', :environments => ['DEVHF02'], :test_suite_name => '[H] BUFFER TESTS', :quota => 0},
 ]
 
 ENVIRONMENTS = [
