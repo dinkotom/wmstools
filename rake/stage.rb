@@ -57,7 +57,7 @@ class Stage
 
   def prepare_agents_for_shutdown
     p 'Attempting to prepare agents for shutdown...'
-    response = Net::HTTP.get(@hostname, '/prepare_for_agents_shutdown')
+      response = Net::HTTP.get(@hostname, '/prepare_for_agents_shutdown')
     if response == 'OK'
       p 'Agents successfully prepared for shutdown'
     else

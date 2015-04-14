@@ -113,10 +113,17 @@ class TestOs < Test::Unit::TestCase
   end
 
   def test_storing_svn_revision
-    line = '2014-11-18 06:38:45,226 INFO  [log] executing against WMS build #53683'
+    log = %q{
+09:54:51,954 INFO  [SoapUITestCaseRunner] running step [extract version number]
+09:54:52,007 INFO  [log] executing against WMS build #62754
+09:54:52,007 INFO  [SoapUITestCaseRunner] Finished running SoapUI testcase [get WMS version], time taken: 642ms, status: FINISHED
+}
+    # line = '2014-11-18 06:38:45,226 INFO  [log] executing against WMS build #53683'
 
-    @os.send(:scan_for_svn_revision, line, @te)
-    assert_equal('53683', TestExecution.get(@te.id).revision)
+    log.each_line do |line|
+      @os.send(:scan_for_svn_revision, line, @te)
+    end
+    assert_equal('62754', TestExecution.get(@te.id).revision)
   end
 
   def test_saving_pid
