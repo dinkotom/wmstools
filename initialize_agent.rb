@@ -6,7 +6,7 @@ $logger.level = Logger::DEBUG
 
 require_relative('agent/config/conf_common')
 
-ENVIRONMENT == 'production' ? require_relative('agent/config/conf_production') : require_relative('agent/config/conf_development')
+require_relative("agent/config/conf_#{ENVIRONMENT}.rb")
 
 Dir[".*/model/*.rb"].each {|file| require(file)}
 

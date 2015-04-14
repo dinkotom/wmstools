@@ -94,16 +94,17 @@ class OperatingSystem
   def self.kill_executions
     TestExecution.all(:status => 'Pending kill').each do |te|
       print "Attempting to kill test execution id '#{te.id}' using pid '#{te.pid}'.\n"
-      te.result = 'KILLED'
-      te.save
       system "kill -9 #{te.pid}"
-      unless $?.exitstatus == 0
+      te.status = 'Killed'
+      if $?.exitstatus == 0
+        te.result = 'KILLED'
+      else
         message = "Failed to kill test execution id '#{te.id}'.\n"
         $logger.error message
         print message
         te.result = 'KILL FAILED'
-        te.save
       end
+      te.save
     end
   end
 
