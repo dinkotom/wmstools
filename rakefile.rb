@@ -90,7 +90,7 @@ task :deploy_staging_agent do
   )
   @staging_agent.bundle_install
   @staging_agent.restart
-  @staging_agent.prepare_agent_for_shutdown
+  @staging_agent.rollback_running_execs
 end
 
 task :deploy_production_server do
@@ -120,7 +120,7 @@ task :deploy_production_agents do
     )
     agent.bundle_install
     agent.restart
-    agent.prepare_agent_for_shutdown
+    agent.rollback_running_execs
   end
 end
 
