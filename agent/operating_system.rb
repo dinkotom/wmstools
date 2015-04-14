@@ -102,6 +102,7 @@ class OperatingSystem
         message = "Failed to kill test execution id '#{te.id}'.\n"
         $logger.error message
         print message
+        te.status = 'Kill failed'
         te.result = 'KILL FAILED'
       end
       te.save
