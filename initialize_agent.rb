@@ -6,9 +6,10 @@ $logger.level = Logger::DEBUG
 
 require_relative('agent/config/conf_common')
 
-require_relative("agent/config/conf_#{ENVIRONMENT}.rb")
+$0 =~ /test/ ? require_relative('agent/config/conf_test') : require_relative("agent/config/conf_#{ENVIRONMENT}.rb")
 
 Dir[".*/model/*.rb"].each {|file| require(file)}
+Dir[".*/agent/controllers/*.rb"].each { |file| require(file) }
 
 DataMapper::Model.raise_on_save_failure = true
 

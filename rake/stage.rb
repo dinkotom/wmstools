@@ -55,9 +55,10 @@ class Stage
     p "Modified. New line in #{file}: #{key} = #{new_value} ..."
   end
 
-  def prepare_agents_for_shutdown
+  def prepare_agent_for_shutdown
     p 'Attempting to prepare agents for shutdown...'
-      response = Net::HTTP.get(@hostname, '/prepare_for_agents_shutdown')
+      uri = URI("#{@hostname}:#{@port}/prepare_for_agent_shutdown")
+      response = Net::HTTP.get(uri)
     if response == 'OK'
       p 'Agents successfully prepared for shutdown'
     else

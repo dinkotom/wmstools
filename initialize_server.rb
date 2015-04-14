@@ -36,7 +36,6 @@ require_relative('server/configuration')
 
 Configuration.validate
 
-
 utils = Utils.new
 WmsVersion.new.save_configuration
 utils.save_environments_definition
@@ -47,7 +46,6 @@ utils.save_test_executions
 utils.save_performance_measurements
 utils.save_piazza_screens
 utils.save_delivery_site_types
-utils.create_dummy_delivery_sites if ARGV[0] == 'create_ds'
 utils.upgrade_delivery_sites_environments
 # utils.import_delivery_sites
 data_integrity_message = utils.check_data_integrity

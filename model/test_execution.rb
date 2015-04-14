@@ -74,7 +74,9 @@ class TestExecution
   property :output_zip_base64, Text, :length => 2000000
 
   def self.rollback_running_executions
-    (TestExecution.all(:status => 'Running') | TestExecution.all(:status => 'Preparing')).each do |te|
+    (TestExecution.all(:status => 'Running') | TestExecution.all(:status => 'Preparing')).select do |te|
+      te.agent == THIS_AGENT_ID
+    end.each do |te|
       te.status = 'Pending'
       te.revision = nil
       te.report = nil
