@@ -1,4 +1,4 @@
-get '/prepare_for_agent_shutdown' do
+get '/rollback_running_executions' do
   begin
     TestExecution.rollback_running_executions
     p 'OK'

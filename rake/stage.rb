@@ -55,12 +55,15 @@ class Stage
   end
 
   def rollback_running_execs
-    p 'Attempting to prepare agents for shutdown...'
-      response = Net::HTTP.get(@hostname, '/prepare_for_agent_shutdown', @port)
+    delay = 5
+    p "Sleeping #{delay} seconds before attempting to rollback running and preparing executions..."
+    sleep delay
+    p 'Attempting to rollback running and preparing executions...'
+      response = Net::HTTP.get(@hostname, '/rollback_running_executions', @port)
     if response == 'OK'
-      p 'Agents successfully prepared for shutdown'
+      p 'Running and preparing executions rolled back successfully'
     else
-      p 'Failed to prepare agents for shutdown'
+      p 'Failed to rollback running and preparing executions'
       raise
     end
   end
