@@ -18,10 +18,9 @@ class Stage
 
   def start
     p 'Starting...'
-    command = "cd #{@path}; screen -d -m -S wmsTools_#{@name} puma --port #{@port} --control tcp://0.0.0.0:#{@control_port} --control-token SalvatorDali01 #{@rack_file}"
+    command = "cd #{@path}; puma --port #{@port} --control tcp://0.0.0.0:#{@control_port} --control-token SalvatorDali01 #{@rack_file} -d"
     p "Running command: '#{command}'"
     ssh_exec(command)
-    check_screen_created("wmsTools_#{@name}")
   end
 
   def restart
@@ -67,10 +66,6 @@ class Stage
   end
 
   private
-
-  def check_screen_created(name)
-    ssh_exec("screen -S #{name} -Q select")
-  end
 
   def write_deployment_timestamp
     if @change_log_file
