@@ -120,13 +120,13 @@ class TestCaseOverviewTest < Test::Unit::TestCase
 
   def test_getting_test_case_result
     test_cases = get_test_cases(@fat4, '42614')
-    assert_equal('FAILED', test_cases[0].result)
-    assert_equal('PASSED', test_cases[1].result)
+    assert_equal('FAILED', test_cases[0].tco_result)
+    assert_equal('PASSED', test_cases[1].tco_result)
   end
 
   def test_getting_no_result
     test_cases = get_test_cases(@fat, '42614')
-    assert_equal('NO RESULT', test_cases[0].result)
+    assert_equal('NO RESULT', test_cases[0].tco_result)
   end
 
   def teardown

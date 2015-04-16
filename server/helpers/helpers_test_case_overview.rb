@@ -1,4 +1,5 @@
 module HelpersTestCaseOverview
+
   def get_newest_revision(environment)
     if environment.respond_to?(:name)
       executions = TestExecution.all(:environment_name => environment.name).collect do |e|
@@ -14,39 +15,27 @@ module HelpersTestCaseOverview
     else
       'Invalid environment object.'
     end
-
   end
 
   def get_test_cases(environment, revision)
-    TestCase.all.select { |tc| tc.environments.get(environment.name) }.each do |a|
-      test_case_results = TestExecution.all(:environment_name => environment.name, :revision => revision).collect do |b|
-        test_case_result = TestCaseResult.all(
+    TestCase.all.select { |tc| tc.environments.get(environment.name) }.each do |tc|
+      test_case_results = TestCaseResult.all(
             :revision => revision,
-            :test_case_id => a.id,
-            :environment_name => b.environment_name,
-            :test_suite_name => b.test_suite_name,
+            :test_case_id => tc.id,
+            :environment_name => environment.name,
             :order => [:id.asc]
-        ).first
-        test_case_result.result if test_case_result
-      end.compact
+        ).collect {|tcr|tcr.result}
       case
         when test_case_results.include?('FAILED')
-          a.result = 'FAILED'
-          a.define_singleton_method(:class) do
-            'element-item failed '
-          end
+          tc.tco_result = 'FAILED'
+          tc.tco_class = 'element-item failed '
         when test_case_results.size > 0 && !test_case_results.include?('FAILED')
-          a.result = 'PASSED'
-          a.define_singleton_method(:class) do
-            'element-item passed '
-          end
+          tc.tco_result = 'PASSED'
+          tc.tco_class = 'element-item passed '
         else
-          a.result = 'NO RESULT'
-          a.define_singleton_method(:class) do
-            'element-item no_result '
-          end
+          tc.tco_result = 'NO RESULT'
+          tc.tco_class = 'element-item no_result '
       end
     end
   end
-
 end

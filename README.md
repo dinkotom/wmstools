@@ -34,7 +34,7 @@ mysql> grant all privileges on wmstools_staging.* to wmsuser@localhost;
 ```
 
 ### For Development
-`sudo apt-get install sqlite3 libsqlite3-dev ruby ruby-dev g++ subversion curl make mysql-server mysql-client libmysqlclient-dev libmysqlclient-dev libssl-dev screen`
+`sudo apt-get install sqlite3 libsqlite3-dev ruby ruby-dev g++ subversion curl make mysql-server mysql-client libmysqlclient-dev libmysqlclient-dev libssl-dev`
 
 ## Deployment
 

@@ -17,18 +17,16 @@ end
 
 get '/test_case_overview/:environment' do
   halt 404, "Environment #{params[:environment]} does not exist." unless Environment.get(params[:environment])
-
   environment = Environment.get(params[:environment])
-
-  @test_cases = get_test_cases(environment, get_newest_revision(environment))
-
+  newest_revision = get_newest_revision(environment)
+  @test_cases = get_test_cases(environment, newest_revision)
   @environments = Environment.all.collect { |a| a.name }
   @environment = environment.name
-  @revision = get_newest_revision(environment)
+  @revision = newest_revision
   @tc_count = @test_cases.count
-  @tc_passed = @test_cases.select { |a| a.result == 'PASSED' }.count
-  @tc_failed = @test_cases.select { |a| a.result == 'FAILED' }.count
-  @tc_no_result = @test_cases.select { |a| a.result == 'NO RESULT' }.count
+  @tc_passed = @test_cases.select { |a| a.tco_result == 'PASSED' }.count
+  @tc_failed = @test_cases.select { |a| a.tco_result == 'FAILED' }.count
+  @tc_no_result = @test_cases.select { |a| a.tco_result == 'NO RESULT' }.count
   @tc_count > 0 ? @tc_passed_percent = ((@tc_passed.to_f / @tc_count.to_f) * 100).round(0) : @tc_passed_percent = 'N/A'
   if @tc_passed_percent.is_a?(Integer)
     case

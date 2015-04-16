@@ -3,6 +3,8 @@ require_relative('./helpers/helpers_test_case_overview.rb')
 
 include HelpersTestCaseOverview
 
+
+
 thread = Thread.new do
   scheduler = Rufus::Scheduler.new
 
@@ -131,11 +133,6 @@ thread = Thread.new do
       end
     end
   end
-
-
-  scheduler.every '5m', :first_at => Time.now + 2 do
-    $test_cases_for_all_environments = get_test_cases_for_all_environments
-  end if settings.production?
 
   scheduler.every CHECK_DELIVERY_SITES_COUNT_EVERY, :first_at => Time.now + 2 do
     DeliverySite.check_storage
