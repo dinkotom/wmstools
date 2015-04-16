@@ -26,10 +26,10 @@ module HelpersTestCaseOverview
             :order => [:id.asc]
         ).collect {|tcr|tcr.result}
       case
-        when test_case_results.include?('FAILED')
+        when test_case_results.last == 'FAILED'
           tc.tco_result = 'FAILED'
           tc.tco_class = 'element-item failed '
-        when test_case_results.size > 0 && !test_case_results.include?('FAILED')
+        when test_case_results.size > 0 && test_case_results.last == 'PASSED'
           tc.tco_result = 'PASSED'
           tc.tco_class = 'element-item passed '
         else
