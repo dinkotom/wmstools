@@ -40,20 +40,21 @@ FORTUM_TRUNK_REGRESSION_TESTS_JOB = {
         ]
 }
 
-#FORTUM_BRANCH_REGRESSION_TESTS_JOB = {
-#    :cron => '0 5 * * *',
-#    :suites_environments =>
-#        [
-#            {:suite => '[F] SMOKE TESTS', :environment => 'FAT4'},
-#            {:suite => '[F] REGRESSION TESTS 1', :environment => 'FAT4'},
-#            {:suite => '[F] REGRESSION TESTS 2', :environment => 'FAT4'},
-#            {:suite => '[F] REGRESSION TESTS 3', :environment => 'FAT4'},
-#            {:suite => '[F] REGRESSION TESTS 4', :environment => 'FAT4'},
-#            {:suite => '[F] REGRESSION TESTS 5', :environment => 'FAT4'},
-#            {:suite => '[F] REGRESSION TESTS 6', :environment => 'FAT4'},
-#            {:suite => '[F] WEB SERVICE TESTS', :environment => 'FAT4'},
-#        ]
-#}
+FORTUM_BRANCH_REGRESSION_TESTS_JOB = {
+    :cron => '0 7 * * *',
+    :suites_environments =>
+        [
+            {:suite => '[F] SMOKE TESTS', :environment => 'FAT4'},
+            {:suite => '[F] REGRESSION TESTS 1', :environment => 'FAT4'},
+            {:suite => '[F] REGRESSION TESTS 2', :environment => 'FAT4'},
+            {:suite => '[F] REGRESSION TESTS 3', :environment => 'FAT4'},
+            {:suite => '[F] REGRESSION TESTS 4', :environment => 'FAT4'},
+            {:suite => '[F] REGRESSION TESTS 5', :environment => 'FAT4'},
+            {:suite => '[F] REGRESSION TESTS 6', :environment => 'FAT4'},
+			{:suite => '[F] REGRESSION TESTS 7', :environment => 'FAT4'},
+            {:suite => '[F] WEB SERVICE TESTS', :environment => 'FAT4'},
+        ]
+}
 
 PROMETERA_REGRESSION_TESTS_JOB = {
     :cron => '30 1 * * *',
@@ -131,7 +132,7 @@ TEST_SUITES = [
     {:name => '[F] REGRESSION TESTS 4', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'DEV1'], :piazza => true, :default_number_of_tests => 18, :priority => 6, :soapui_project_file => 'WMS.xml'},
     {:name => '[F] REGRESSION TESTS 5', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'DEV1'], :piazza => true, :default_number_of_tests => 17, :priority => 7, :soapui_project_file => 'WMS.xml'},
     {:name => '[F] REGRESSION TESTS 6', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'DEV1'], :piazza => true, :default_number_of_tests => 24, :priority => 8, :soapui_project_file => 'WMS.xml'},
-    {:name => '[F] REGRESSION TESTS 7', :type => 'Suite', :environments => ['FAT'], :piazza => true, :default_number_of_tests => 5, :priority => 9, :soapui_project_file => 'WMS.xml'},
+    {:name => '[F] REGRESSION TESTS 7', :type => 'Suite', :environments => ['FAT', 'FAT4'], :piazza => true, :default_number_of_tests => 15, :priority => 9, :soapui_project_file => 'WMS.xml'},
     {:name => '[F] LOAD TESTS', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'DEV1'], :piazza => false, :priority => 10, :soapui_project_file => 'WMS.xml', :load => true},
     {:name => '[F] MAINTENANCE TESTS', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'DEV1'], :piazza => false, :priority => 11, :soapui_project_file => 'WMS.xml'},
     {:name => '[F] PERFORMANCE TESTS', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'DEV1'], :piazza => false, :priority => 12, :soapui_project_file => 'WMS.xml', :performance => true},
@@ -466,14 +467,14 @@ DELIVERY_SITE_TYPES = [
 ]
 
 ENVIRONMENTS = [
-    {:name => 'FAT5', :wms_version => '4.8.0'},
-    {:name => 'FAT4', :wms_version => '4.8.2'},
-    {:name => 'FAT', :wms_version => '4.8.9'},
-    {:name => 'PROMETERA', :wms_version => '4.8.9'},
+    {:name => 'FAT5', :wms_version => '4.8.2'},
+    {:name => 'FAT4', :wms_version => '4.9.0'},
+    {:name => 'FAT', :wms_version => '4.9.x'},
+    {:name => 'PROMETERA', :wms_version => '4.9.x'},
     {:name => 'DEV1', :wms_version => '4.8.2DEV'},
-    {:name => 'DEV9PROM', :wms_version => '4.8.9'},
-    {:name => 'DEV2SKA', :wms_version => '4.8.9'},
-    {:name => 'DEV7', :wms_version => '4.8.9'},
-    {:name => 'DEVHF02', :wms_version => '4.8.9'},
+    {:name => 'DEV9PROM', :wms_version => '4.9.x'},
+    {:name => 'DEV2SKA', :wms_version => '4.9.x'},
+    {:name => 'DEV7', :wms_version => '4.9.x'},
+    {:name => 'DEVHF02', :wms_version => '4.9.x'},
 
 ]
