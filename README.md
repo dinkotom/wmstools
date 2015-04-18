@@ -19,7 +19,7 @@ Only Linux is currently supported as operating system for both Server and Agents
 While any Linux distribution can be used, the following is applicable for Debian Linux.
 
 ### Server and Agents
-`sudo apt-get install ruby ruby-dev g++ subversion curl make libssl-dev screen`
+`sudo apt-get install ruby ruby-dev g++ subversion curl make libssl-dev`
 
 ### Database
 `sudo apt-get install mysql-server mysql-client libmysqlclient-dev libmysqlclient-dev`
@@ -34,7 +34,7 @@ mysql> grant all privileges on wmstools_staging.* to wmsuser@localhost;
 ```
 
 ### For Development
-`sudo apt-get install sqlite3 libsqlite3-dev ruby ruby-dev g++ subversion curl make mysql-server mysql-client libmysqlclient-dev libmysqlclient-dev libssl-dev screen`
+`sudo apt-get install sqlite3 libsqlite3-dev ruby ruby-dev g++ subversion curl make mysql-server mysql-client libmysqlclient-dev libmysqlclient-dev libssl-dev`
 
 ## Deployment
 

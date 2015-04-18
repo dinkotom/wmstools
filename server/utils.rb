@@ -1,13 +1,5 @@
 class Utils
 
-  def create_dummy_delivery_sites
-    DeliverySiteType.all.each do |ds_type|
-      100.times do
-        DeliverySite.first_or_create(:delivery_site_type_id => ds_type.id, :id => rand(100000000).to_s)
-      end
-    end
-  end
-
   def check_data_integrity
     message = String.new
     TestSuite.all(:piazza => true).each do |test|

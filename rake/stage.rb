@@ -18,10 +18,9 @@ class Stage
 
   def start
     p 'Starting...'
-    command = "cd #{@path}; screen -d -m -S wmsTools_#{@name} puma --port #{@port} --control tcp://0.0.0.0:#{@control_port} --control-token SalvatorDali01 #{@rack_file}"
+    command = "cd #{@path}; puma --port #{@port} --control tcp://0.0.0.0:#{@control_port} --control-token SalvatorDali01 #{@rack_file} -d"
     p "Running command: '#{command}'"
     ssh_exec(command)
-    check_screen_created("wmsTools_#{@name}")
   end
 
   def restart
@@ -55,22 +54,21 @@ class Stage
     p "Modified. New line in #{file}: #{key} = #{new_value} ..."
   end
 
-  def prepare_agents_for_shutdown
-    p 'Attempting to prepare agents for shutdown...'
-    response = Net::HTTP.get(@hostname, '/prepare_for_agents_shutdown')
+  def rollback_running_execs
+    delay = 5
+    p "Sleeping #{delay} seconds before attempting to rollback running and preparing executions..."
+    sleep delay
+    p 'Attempting to rollback running and preparing executions...'
+      response = Net::HTTP.get(@hostname, '/rollback_running_executions', @port)
     if response == 'OK'
-      p 'Agents successfully prepared for shutdown'
+      p 'Running and preparing executions rolled back successfully'
     else
-      p 'Failed to prepare agents for shutdown'
+      p 'Failed to rollback running and preparing executions'
       raise
     end
   end
 
   private
-
-  def check_screen_created(name)
-    ssh_exec("screen -S #{name} -Q select")
-  end
 
   def write_deployment_timestamp
     if @change_log_file

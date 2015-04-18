@@ -1,5 +1,5 @@
 class TestCase
-  attr_accessor :result
+  attr_accessor :tco_result, :tco_class
 
   include DataMapper::Resource
   property :id, String, :key => true

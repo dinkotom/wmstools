@@ -15,7 +15,6 @@ group :agent do
 end
 
 group :server do
-
   gem 'json'
   gem 'axlsx'
   gem 'simple-spreadsheet'

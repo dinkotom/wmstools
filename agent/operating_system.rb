@@ -12,7 +12,7 @@ class OperatingSystem
   PERFORMANCE_TEST_MATCHING_REGEXP = /\[(PERF\d*.?)\]\[(\d*)\]/
   START_STRING = '[SoapUITestCaseRunner] Running SoapUI tests in project'
   STOP_STRING = '[SoapUITestCaseRunner] Finished running SoapUI tests'
-  REVISION_STRING = '#\d{5}'
+  REVISION_STRING = 'WMS build #\d{5}'
 
   def compose_command
     command = "#{SOAPUI_HOME}/jre/bin/java"
@@ -102,6 +102,7 @@ class OperatingSystem
         message = "Failed to kill test execution id '#{te.id}'.\n"
         $logger.error message
         print message
+        te.status = 'Kill failed'
         te.result = 'KILL FAILED'
       end
       te.save

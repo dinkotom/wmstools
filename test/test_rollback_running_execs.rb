@@ -44,6 +44,12 @@ class RollbackRunningExecsTest < Test::Unit::TestCase
     assert_equal(PerformanceMeasurement.all(:test_execution => @running_execution).count, 0)
   end
 
+  def test_executions_from_different_agents_not_touched
+    other_agent_execution = TestExecution.create(@running_execution.attributes.merge(:id => nil, :agent => 'other_agent'))
+    TestExecution.rollback_running_executions
+    assert_equal('Running', TestExecution.get(other_agent_execution.id).status)
+  end
+
   def test_some_fields_are_cleared_out_during_rollback
     TestExecution.rollback_running_executions
     assert_nil(TestExecution.get(@running_execution.id).revision)
@@ -61,11 +67,6 @@ class RollbackRunningExecsTest < Test::Unit::TestCase
     assert_nil(TestExecution.get(@running_execution.id).output_zip_base64)
   end
 
-  def test_prepare_for_agents_shutdown
-    get '/prepare_for_agents_shutdown'
-    assert_equal('OK', last_response.body)
-  end
-
   def create_running_execution
     test_execution = TestExecution.new
     test_execution.revision = '54654'
@@ -78,7 +79,7 @@ class RollbackRunningExecsTest < Test::Unit::TestCase
     test_execution.enqueued_at = DateTime.now
     test_execution.started_at = DateTime.now + 1
     test_execution.finished_at = DateTime.now + 2
-    test_execution.agent = 'agent'
+    test_execution.agent = 'uw001685'
     test_execution.pid = 'pid'
     test_execution.exit_code = 1
     test_execution.stderr = 'stderr'

@@ -6,8 +6,9 @@ end
 
 set :bind, '0.0.0.0'
 
-DATA_SOURCE = 'mysql://wmsuser:SalvatorDali01@uw001684/wmstools_staging'
-# DATA_SOURCE = 'mysql://wmsuser:SalvatorDali01@localhost/wmstools_staging'
+DATA_SOURCE = 'mysql://wmsuser:SalvatorDali01@localhost/wmstools_staging'
+
+
 PORT = 8088
 PERFORMANCE_TEST_RESULTS_PER_PAGE = 30
 
