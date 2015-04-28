@@ -60,8 +60,8 @@ PROMETERA_REGRESSION_TESTS_JOB = {
     :cron => '30 1 * * *',
     :suites_environments =>
         [
-            {:suite => '[P] REGRESSION TESTS 1', :environment => 'DEV9PROM'},
-            {:suite => '[P] REGRESSION TESTS 2', :environment => 'DEV9PROM'},
+            {:suite => '[P] REGRESSION TESTS 1', :environment => 'DEV8PROM'},
+            {:suite => '[P] REGRESSION TESTS 2', :environment => 'DEV8PROM'},
         ]
 }
 
@@ -142,8 +142,9 @@ TEST_SUITES = [
     {:name => '[P] PERFORMANCE TESTS 4 [for IE]', :type => 'Suite', :environments => ['PROMETERA'], :piazza => false, :default_number_of_tests => 1, :priority => 14, :soapui_project_file => 'PrometeraPerformanceGUITest-soapui-project.xml', :performance => true},
     {:name => '[P] PERFORMANCE TESTS 5 [for IE]', :type => 'Suite', :environments => ['PROMETERA'], :piazza => false, :default_number_of_tests => 1, :priority => 14, :soapui_project_file => 'PrometeraPerformanceGUITest-soapui-project.xml', :performance => true},
 	{:name => '[F] BUFFER TESTS', :type => 'Suite', :environments => ['FAT', 'FAT4', 'DEV1'], :piazza => false, :default_number_of_tests => 4, :priority => 99, :soapui_project_file => 'WMS.xml', :buffer => true},
-    {:name => '[P] REGRESSION TESTS 1', :type => 'Suite', :environments => ['DEV9PROM'], :piazza => true, :default_number_of_tests => 10, :priority => 15, :soapui_project_file => 'Prometera-soapui-project.xml'},
-    {:name => '[P] REGRESSION TESTS 2', :type => 'Suite', :environments => ['DEV9PROM'], :piazza => true, :default_number_of_tests => 10, :priority => 16, :soapui_project_file => 'Prometera-soapui-project.xml'},
+    {:name => '[P] REGRESSION TESTS 1', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => true, :default_number_of_tests => 20, :priority => 15, :soapui_project_file => 'Prometera-soapui-project.xml'},
+    {:name => '[P] REGRESSION TESTS 2', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => true, :default_number_of_tests => 15, :priority => 17, :soapui_project_file => 'Prometera-soapui-project.xml'},
+	{:name => '[P] REGRESSION TESTS 3', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => true, :default_number_of_tests => 3, :priority => 18, :soapui_project_file => 'Prometera-soapui-project.xml'},
     {:name => '[S] RT1 [NEWDELIVERYPOINT]', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => false, :default_number_of_tests => 5, :priority => 26, :soapui_project_file => 'SKAGERAK-REST-soapui-project.xml'},
     {:name => '[S] RT2 [METER CHANGE]', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => false, :default_number_of_tests => 5, :priority => 27, :soapui_project_file => 'SKAGERAK-REST-soapui-project.xml'},
     {:name => '[S] RT3 [RECONNECTION]', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => false, :default_number_of_tests => 1, :priority => 28, :soapui_project_file => 'SKAGERAK-REST-soapui-project.xml'},
@@ -179,6 +180,7 @@ TEST_PACKAGES = [
          '[F] REGRESSION TESTS 7',
          '[P] REGRESSION TESTS 1',
          '[P] REGRESSION TESTS 2',
+		 '[P] REGRESSION TESTS 3',
          '[S] RT1 [NEWDELIVERYPOINT]',
          '[S] RT2 [METER CHANGE]',
          '[S] RT3 [RECONNECTION]',
@@ -273,6 +275,10 @@ TEST_PACKAGES = [
     },
     {:name => '[P] REGRESSION TESTS 2',
      :suites => ['[P] REGRESSION TESTS 2'
+     ]
+    },
+    {:name => '[P] REGRESSION TESTS 3',
+     :suites => ['[P] REGRESSION TESTS 3'
      ]
     },
     #    {:name => '[F] TRANSLATION TESTS',
@@ -443,7 +449,7 @@ PERFORMANCE_TESTS = [
 PIAZZA_SCREENS = [
     {:screen_number => 1, :environments => ['FAT4']},
     {:screen_number => 2, :environments => ['FAT']},
-    {:screen_number => 3, :environments => ['DEV9PROM']},
+    {:screen_number => 3, :environments => ['DEV8PROM']},
     {:screen_number => 4, :environments => ['DEVHF02']},
 	{:screen_number => 5, :environments => ['DEV2SKA']},
 ]
@@ -473,7 +479,7 @@ ENVIRONMENTS = [
     {:name => 'FAT', :wms_version => '4.9.x'},
     {:name => 'PROMETERA', :wms_version => '4.9.x'},
     {:name => 'DEV1', :wms_version => '4.8.2DEV'},
-    {:name => 'DEV9PROM', :wms_version => '4.9.x'},
+    {:name => 'DEV8PROM', :wms_version => '4.9.x'},
     {:name => 'DEV2SKA', :wms_version => '4.9.x'},
     {:name => 'DEV7', :wms_version => '4.9.x'},
     {:name => 'DEVHF02', :wms_version => '4.9.x'},
