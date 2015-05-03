@@ -1,4 +1,4 @@
-require 'pty' if RUBY_PLATFORM =~ /linux/
+require 'pty' if RUBY_PLATFORM =~ /linux/ || RUBY_PLATFORM =~ /darwin/ || RUBY_PLATFORM =~ /java/
 require 'zip'
 require 'base64'
 
@@ -15,7 +15,7 @@ class OperatingSystem
   REVISION_STRING = 'WMS build #\d{5}'
 
   def compose_command
-    command = "#{SOAPUI_HOME}/jre/bin/java"
+    command = "#{JAVA_HOME}"
     command << ' -Xms1024m -Xmx1024m -XX:MaxPermSize=128m -Dsoapui.properties=soapui.properties -Dgroovy.source.encoding=iso-8859-1'
     command << " -Dsoapui.home=#{SOAPUI_HOME}/bin"
     command << " -Dsoapui.ext.libraries=#{SVN_HOME}/#{branch}/requiredJARs"
@@ -32,7 +32,6 @@ class OperatingSystem
   def run_soapui(test_execution)
     begin
       raise ArgumentError, 'ERROR: folder, project_file, suite and branch must be set' unless @folder && @project_file && @suite && @branch
-
 
       Dir.mkdir(@folder) unless File.exists?(@folder)
 

@@ -1,5 +1,7 @@
 DATA_SOURCE = 'mysql://wmsuser:SalvatorDali01@localhost/wmstools_staging'
 THIS_AGENT_ID = 'localhost'
-SOAPUI_HOME = '/home/dinkotom/Dropbox/projects/wms-tools/trunk/agent/soapui-fake/bin' # without trailing slash
-SVN_HOME = '/home/dinkotom/Dropbox/projects/wms-tools/trunk/agent/svn' # without trailing slash
+SOAPUI_HOME = '/Users/tdinkov/projects/wmstools/agent/soapui' # without trailing slash
+SVN_HOME = '/Users/tdinkov/projects/wmstools/agent/svn' # without trailing slash
+JAVA_HOME = '/usr/bin/java'
 QUOTA = 5
+
