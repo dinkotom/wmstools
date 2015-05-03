@@ -12,7 +12,7 @@ SVN_TIME_OUT = 10 #seconds
 BUFFER_TEST_MAX_FAILED = 5
 
 VERSIONS = {:wms_489 =>
-                {:name => '4.8.9', # FAT,PROMETERA,DEV9PROM,DEV3SKA,DEV7
+                {:name => '4.9.x', # FAT,PROMETERA,DEV9PROM,DEV3SKA,DEV7
                  :protection_level => 'Low',
                  :svn_branch => 'trunk',
                  :responsible => 'vladan.krenek@tieto.com',
@@ -20,9 +20,9 @@ VERSIONS = {:wms_489 =>
                  :max_age => 48
                 },
             :wms_482 =>
-                {:name => '4.8.2', # FAT4
+                {:name => '4.9.0', # FAT4
                  :protection_level => 'Medium',
-                 :svn_branch => 'branch/4.8.2',
+                 :svn_branch => 'branch/4.9.0',
                  :responsible => 'vladan.krenek@tieto.com',
                  :watchers => [],
                  :max_age => 48
@@ -36,9 +36,9 @@ VERSIONS = {:wms_489 =>
                  :max_age => 48
                 },
             :wms_480 =>
-                {:name => '4.8.0', # FAT5
+                {:name => '4.8.2', # FAT5
                  :protection_level => 'High',
-                 :svn_branch => 'branch/4.8.0',
+                 :svn_branch => 'branch/4.8.2',
                  :responsible => 'vladan.krenek@tieto.com',
                  :watchers => [],
                  :max_age => 48
