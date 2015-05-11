@@ -62,6 +62,7 @@ PROMETERA_REGRESSION_TESTS_JOB = {
         [
             {:suite => '[P] REGRESSION TESTS 1', :environment => 'DEV8PROM'},
             {:suite => '[P] REGRESSION TESTS 2', :environment => 'DEV8PROM'},
+            {:suite => '[P] REGRESSION TESTS 3', :environment => 'DEV8PROM'},
         ]
 }
 
