@@ -93,7 +93,8 @@ PROMETERA_PERFORMANCE_TESTS_JOB = {
             #{:suite => '[P] PERFORMANCE TESTS 3 [for FF]', :environment => 'DEV8PROM'},
             #{:suite => '[P] PERFORMANCE TESTS 4 [for IE]', :environment => 'DEV8PROM'},
             #{:suite => '[P] PERFORMANCE TESTS 5 [for IE]', :environment => 'DEV8PROM'},
-			{:suite => '[P] PERFORMANCE TESTS 01', :environment => 'DEV8PROM'},
+		{:suite => '[P] PERFORMANCE TESTS 01 [DEV8]', :environment => 'DEV8PROM'},
+		{:suite => '[P] PERFORMANCE TESTS 01 [PROM PERF]', :environment => 'PROM_PERF'},
         ]
 }
 
@@ -143,11 +144,12 @@ TEST_SUITES = [
     {:name => '[P] PERFORMANCE TESTS 3 [for FF]', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => false, :default_number_of_tests => 1, :priority => 14, :soapui_project_file => 'PrometeraPerformanceGUITest-soapui-project.xml', :performance => true},
     {:name => '[P] PERFORMANCE TESTS 4 [for IE]', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => false, :default_number_of_tests => 1, :priority => 14, :soapui_project_file => 'PrometeraPerformanceGUITest-soapui-project.xml', :performance => true},
     {:name => '[P] PERFORMANCE TESTS 5 [for IE]', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => false, :default_number_of_tests => 1, :priority => 14, :soapui_project_file => 'PrometeraPerformanceGUITest-soapui-project.xml', :performance => true},
-	{:name => '[P] PERFORMANCE TESTS 01', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => false, :default_number_of_tests => 1, :priority => 14, :soapui_project_file => 'PrometeraPerformanceGUITest-soapui-project.xml', :performance => true},
-	{:name => '[F] BUFFER TESTS', :type => 'Suite', :environments => ['FAT', 'FAT4', 'DEV1'], :piazza => false, :default_number_of_tests => 4, :priority => 99, :soapui_project_file => 'WMS.xml', :buffer => true},
+    {:name => '[P] PERFORMANCE TESTS 01 [DEV8]', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => false, :default_number_of_tests => 1, :priority => 14, :soapui_project_file => 'PrometeraPerformanceGUITest-soapui-project.xml', :performance => true},
+    {:name => '[P] PERFORMANCE TESTS 01 [PROM PERF]', :type => 'Suite', :environments => ['PROM_PERF'], :piazza => false, :default_number_of_tests => 1, :priority => 14, :soapui_project_file => 'PrometeraPerformanceGUITest-soapui-project.xml', :performance => true},
+    {:name => '[F] BUFFER TESTS', :type => 'Suite', :environments => ['FAT', 'FAT4', 'DEV1'], :piazza => false, :default_number_of_tests => 4, :priority => 99, :soapui_project_file => 'WMS.xml', :buffer => true},
     {:name => '[P] REGRESSION TESTS 1', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => true, :default_number_of_tests => 20, :priority => 15, :soapui_project_file => 'Prometera-soapui-project.xml'},
     {:name => '[P] REGRESSION TESTS 2', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => true, :default_number_of_tests => 15, :priority => 17, :soapui_project_file => 'Prometera-soapui-project.xml'},
-	{:name => '[P] REGRESSION TESTS 3', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => true, :default_number_of_tests => 3, :priority => 18, :soapui_project_file => 'Prometera-soapui-project.xml'},
+    {:name => '[P] REGRESSION TESTS 3', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => true, :default_number_of_tests => 3, :priority => 18, :soapui_project_file => 'Prometera-soapui-project.xml'},
     {:name => '[S] RT1 [NEWDELIVERYPOINT]', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => false, :default_number_of_tests => 5, :priority => 26, :soapui_project_file => 'SKAGERAK-REST-soapui-project.xml'},
     {:name => '[S] RT2 [METER CHANGE]', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => false, :default_number_of_tests => 5, :priority => 27, :soapui_project_file => 'SKAGERAK-REST-soapui-project.xml'},
     {:name => '[S] RT3 [RECONNECTION]', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => false, :default_number_of_tests => 1, :priority => 28, :soapui_project_file => 'SKAGERAK-REST-soapui-project.xml'},
@@ -183,7 +185,7 @@ TEST_PACKAGES = [
          '[F] REGRESSION TESTS 7',
          '[P] REGRESSION TESTS 1',
          '[P] REGRESSION TESTS 2',
-		 '[P] REGRESSION TESTS 3',
+	 '[P] REGRESSION TESTS 3',
          '[S] RT1 [NEWDELIVERYPOINT]',
          '[S] RT2 [METER CHANGE]',
          '[S] RT3 [RECONNECTION]',
@@ -268,10 +270,14 @@ TEST_PACKAGES = [
      :suites => ['[P] PERFORMANCE TESTS 5 [for IE]'
      ]
     },
-	{:name => '[P] PERFORMANCE TESTS 01',
-     :suites => ['[P] PERFORMANCE TESTS 01'
+	{:name => '[P] PERFORMANCE TESTS 01 [DEV8]',
+     :suites => ['[P] PERFORMANCE TESTS 01 [DEV8]'
      ]
     },	
+	{:name => '[P] PERFORMANCE TESTS 01 [PROM PERF]',
+     :suites => ['[P] PERFORMANCE TESTS 01 [PROM PERF]'
+     ]
+    },		
     {:name => '[F] BUFFER TESTS',
      :suites => ['[F] BUFFER TESTS'
      ]
@@ -438,15 +444,18 @@ PERFORMANCE_TESTS = [
         {:id => 'PERF011', :name => 'Open Timestamps', :reference_value => 1200, :max_value => 2500},
     ]
     },
-
-     {:test_suite_name => '[P] PERFORMANCE TESTS 01', :performance_measurement_points => [
+     {:test_suite_name => '[P] PERFORMANCE TESTS 01 [DEV8]', :performance_measurement_points => [
         {:id => 'PERF001', :name => 'Create errand CH', :reference_value => 1200, :max_value => 5000},
 		{:id => 'PERF002', :name => 'Create errand FF', :reference_value => 1200, :max_value => 5000},
 		{:id => 'PERF003', :name => 'Create errand IE', :reference_value => 1200, :max_value => 5000},
     ]
     },
-
-	
+     {:test_suite_name => '[P] PERFORMANCE TESTS 01 [PROM PERF]', :performance_measurement_points => [
+        {:id => 'PERF001', :name => 'Create errand CH', :reference_value => 1200, :max_value => 5000},
+		{:id => 'PERF002', :name => 'Create errand FF', :reference_value => 1200, :max_value => 5000},
+		{:id => 'PERF003', :name => 'Create errand IE', :reference_value => 1200, :max_value => 5000},
+    ]
+    },	
     {:test_suite_name => '[AM] PERFORMANCE TESTS', :performance_measurement_points => [
         {:id => 'PERF001', :name => 'Get unique devices DB', :reference_value => 500, :max_value => 2000},
         {:id => 'PERF002', :name => 'Get unique devices REST', :reference_value => 1000, :max_value => 4000},
@@ -496,6 +505,7 @@ ENVIRONMENTS = [
     {:name => 'FAT', :wms_version => '4.9.x'},
     {:name => 'DEV1', :wms_version => '4.8.2DEV'},
     {:name => 'DEV8PROM', :wms_version => '4.9.x'},
+    {:name => 'PROM_PERF', :wms_version => '4.9.x'},
     {:name => 'DEV2SKA', :wms_version => '4.9.x'},
     {:name => 'DEV7', :wms_version => '4.9.x'},
     {:name => 'DEVHF02', :wms_version => '4.9.x'},
