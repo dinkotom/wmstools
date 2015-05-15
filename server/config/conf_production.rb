@@ -88,11 +88,12 @@ PROMETERA_PERFORMANCE_TESTS_JOB = {
     :cron => '*/20 21 * * * ',
     :suites_environments =>
         [
-            #{:suite => '[P] PERFORMANCE TESTS 1 [for FF]', :environment => 'PROMETERA'},
-            #{:suite => '[P] PERFORMANCE TESTS 2 [for FF]', :environment => 'PROMETERA'},
-            #{:suite => '[P] PERFORMANCE TESTS 3 [for FF]', :environment => 'PROMETERA'},
-            {:suite => '[P] PERFORMANCE TESTS 4 [for IE]', :environment => 'PROMETERA'},
-            {:suite => '[P] PERFORMANCE TESTS 5 [for IE]', :environment => 'PROMETERA'},
+            #{:suite => '[P] PERFORMANCE TESTS 1 [for FF]', :environment => 'DEV8PROM'},
+            #{:suite => '[P] PERFORMANCE TESTS 2 [for FF]', :environment => 'DEV8PROM'},
+            #{:suite => '[P] PERFORMANCE TESTS 3 [for FF]', :environment => 'DEV8PROM'},
+            #{:suite => '[P] PERFORMANCE TESTS 4 [for IE]', :environment => 'DEV8PROM'},
+            #{:suite => '[P] PERFORMANCE TESTS 5 [for IE]', :environment => 'DEV8PROM'},
+			{:suite => '[P] PERFORMANCE TESTS 01', :environment => 'DEV8PROM'},
         ]
 }
 
@@ -137,11 +138,12 @@ TEST_SUITES = [
     {:name => '[F] LOAD TESTS', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'DEV1'], :piazza => false, :priority => 10, :soapui_project_file => 'WMS.xml', :load => true},
     {:name => '[F] MAINTENANCE TESTS', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'DEV1'], :piazza => false, :priority => 11, :soapui_project_file => 'WMS.xml'},
     {:name => '[F] PERFORMANCE TESTS', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'DEV1'], :piazza => false, :priority => 12, :soapui_project_file => 'WMS.xml', :performance => true},
-    {:name => '[P] PERFORMANCE TESTS 1 [for FF]', :type => 'Suite', :environments => ['PROMETERA'], :piazza => false, :default_number_of_tests => 1, :priority => 12, :soapui_project_file => 'PrometeraPerformanceGUITest-soapui-project.xml', :performance => true},
-    {:name => '[P] PERFORMANCE TESTS 2 [for FF]', :type => 'Suite', :environments => ['PROMETERA'], :piazza => false, :default_number_of_tests => 1, :priority => 13, :soapui_project_file => 'PrometeraPerformanceGUITest-soapui-project.xml', :performance => true},
-    {:name => '[P] PERFORMANCE TESTS 3 [for FF]', :type => 'Suite', :environments => ['PROMETERA'], :piazza => false, :default_number_of_tests => 1, :priority => 14, :soapui_project_file => 'PrometeraPerformanceGUITest-soapui-project.xml', :performance => true},
-    {:name => '[P] PERFORMANCE TESTS 4 [for IE]', :type => 'Suite', :environments => ['PROMETERA'], :piazza => false, :default_number_of_tests => 1, :priority => 14, :soapui_project_file => 'PrometeraPerformanceGUITest-soapui-project.xml', :performance => true},
-    {:name => '[P] PERFORMANCE TESTS 5 [for IE]', :type => 'Suite', :environments => ['PROMETERA'], :piazza => false, :default_number_of_tests => 1, :priority => 14, :soapui_project_file => 'PrometeraPerformanceGUITest-soapui-project.xml', :performance => true},
+    {:name => '[P] PERFORMANCE TESTS 1 [for FF]', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => false, :default_number_of_tests => 1, :priority => 12, :soapui_project_file => 'PrometeraPerformanceGUITest-soapui-project.xml', :performance => true},
+    {:name => '[P] PERFORMANCE TESTS 2 [for FF]', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => false, :default_number_of_tests => 1, :priority => 13, :soapui_project_file => 'PrometeraPerformanceGUITest-soapui-project.xml', :performance => true},
+    {:name => '[P] PERFORMANCE TESTS 3 [for FF]', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => false, :default_number_of_tests => 1, :priority => 14, :soapui_project_file => 'PrometeraPerformanceGUITest-soapui-project.xml', :performance => true},
+    {:name => '[P] PERFORMANCE TESTS 4 [for IE]', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => false, :default_number_of_tests => 1, :priority => 14, :soapui_project_file => 'PrometeraPerformanceGUITest-soapui-project.xml', :performance => true},
+    {:name => '[P] PERFORMANCE TESTS 5 [for IE]', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => false, :default_number_of_tests => 1, :priority => 14, :soapui_project_file => 'PrometeraPerformanceGUITest-soapui-project.xml', :performance => true},
+	{:name => '[P] PERFORMANCE TESTS 01', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => false, :default_number_of_tests => 1, :priority => 14, :soapui_project_file => 'PrometeraPerformanceGUITest-soapui-project.xml', :performance => true},
 	{:name => '[F] BUFFER TESTS', :type => 'Suite', :environments => ['FAT', 'FAT4', 'DEV1'], :piazza => false, :default_number_of_tests => 4, :priority => 99, :soapui_project_file => 'WMS.xml', :buffer => true},
     {:name => '[P] REGRESSION TESTS 1', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => true, :default_number_of_tests => 20, :priority => 15, :soapui_project_file => 'Prometera-soapui-project.xml'},
     {:name => '[P] REGRESSION TESTS 2', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => true, :default_number_of_tests => 15, :priority => 17, :soapui_project_file => 'Prometera-soapui-project.xml'},
@@ -266,6 +268,10 @@ TEST_PACKAGES = [
      :suites => ['[P] PERFORMANCE TESTS 5 [for IE]'
      ]
     },
+	{:name => '[P] PERFORMANCE TESTS 01',
+     :suites => ['[P] PERFORMANCE TESTS 01'
+     ]
+    },	
     {:name => '[F] BUFFER TESTS',
      :suites => ['[F] BUFFER TESTS'
      ]
@@ -417,6 +423,7 @@ PERFORMANCE_TESTS = [
         {:id => 'PERF011', :name => 'Open Timestamps', :reference_value => 1200, :max_value => 2500},
     ]
     },
+	
      {:test_suite_name => '[P] PERFORMANCE TESTS 5 [for IE]', :performance_measurement_points => [
         {:id => 'PERF001', :name => 'Login', :reference_value => 1200, :max_value => 2500},
         {:id => 'PERF002', :name => 'Click on Home Link', :reference_value => 1200, :max_value => 2500},
@@ -431,6 +438,15 @@ PERFORMANCE_TESTS = [
         {:id => 'PERF011', :name => 'Open Timestamps', :reference_value => 1200, :max_value => 2500},
     ]
     },
+
+     {:test_suite_name => '[P] PERFORMANCE TESTS 01', :performance_measurement_points => [
+        {:id => 'PERF001', :name => 'Create errand CH', :reference_value => 1200, :max_value => 5000},
+		{:id => 'PERF002', :name => 'Create errand FF', :reference_value => 1200, :max_value => 5000},
+		{:id => 'PERF003', :name => 'Create errand IE', :reference_value => 1200, :max_value => 5000},
+    ]
+    },
+
+	
     {:test_suite_name => '[AM] PERFORMANCE TESTS', :performance_measurement_points => [
         {:id => 'PERF001', :name => 'Get unique devices DB', :reference_value => 500, :max_value => 2000},
         {:id => 'PERF002', :name => 'Get unique devices REST', :reference_value => 1000, :max_value => 4000},
@@ -458,8 +474,8 @@ PIAZZA_SCREENS = [
 DELIVERY_SITE_TYPES = [
     {:id => '[F] M1 1C', :name => '[F] M1 1C', :environments => ['FAT', 'FAT4'], :test_suite_name => '[F] BUFFER TESTS', :quota => 50},
     {:id => '[F] M1 1C RDR', :name => '[F] M1 1C RDR', :environments => ['FAT', 'FAT4'], :test_suite_name => '[F] BUFFER TESTS', :quota => 50},
-    {:id => '[F] M1 2C', :name => '[F] M1 2C', :environments => ['FAT', 'FAT4'], :test_suite_name => '[F] BUFFER TESTS', :quota => 50},
-    {:id => '[F] T7 1C', :name => '[F] T7 1C', :environments => ['FAT', 'FAT4'], :test_suite_name => '[F] BUFFER TESTS', :quota => 50},
+    {:id => '[F] M1 2C', :name => '[F] M1 2C', :environments => ['FAT', 'FAT4'], :test_suite_name => '[F] BUFFER TESTS', :quota => 0},
+    {:id => '[F] T7 1C', :name => '[F] T7 1C', :environments => ['FAT', 'FAT4'], :test_suite_name => '[F] BUFFER TESTS', :quota => 0},
     {:id => '[F] T1 1C', :name => '[F] T1 1C', :environments => ['FAT', 'FAT4'], :test_suite_name => '[F] BUFFER TESTS', :quota => 50},
     {:id => '[F] T1 2C', :name => '[F] T1 2C', :environments => ['FAT', 'FAT4'], :test_suite_name => '[F] BUFFER TESTS', :quota => 50},
     {:id => '[F] T1 4C', :name => '[F] T1 4C', :environments => ['FAT', 'FAT4'], :test_suite_name => '[F] BUFFER TESTS', :quota => 50},
@@ -478,7 +494,6 @@ ENVIRONMENTS = [
     {:name => 'FAT5', :wms_version => '4.8.2'},
     {:name => 'FAT4', :wms_version => '4.9.0'},
     {:name => 'FAT', :wms_version => '4.9.x'},
-    {:name => 'PROMETERA', :wms_version => '4.9.x'},
     {:name => 'DEV1', :wms_version => '4.8.2DEV'},
     {:name => 'DEV8PROM', :wms_version => '4.9.x'},
     {:name => 'DEV2SKA', :wms_version => '4.9.x'},
