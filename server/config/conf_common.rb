@@ -1,7 +1,7 @@
 ENVIRONMENT = 'development'
-PIAZZA_REFRESH_INTERVAL = 5000 # in milliseconds
-CHECK_DELIVERY_SITES_COUNT_EVERY = '1m'
-NO_SHOWN_ITEMS = 100 #number of test results to be shown
+PIAZZA_REFRESH_INTERVAL = 300000 # in milliseconds
+CHECK_DELIVERY_SITES_COUNT_EVERY = '5m'
+NO_SHOWN_ITEMS = 50 #number of test results to be shown
 SVN_BASE_PATH = 'http://192.176.148.85/svnrepo/wms'
 JIRA_BASE_PATH = 'http://192.176.148.85:8070/browse/'
 JIRA_REST_BASE_PATH = 'http://192.176.148.85:8070/rest/api/latest' # don't put slash at the end
