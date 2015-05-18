@@ -44,8 +44,10 @@ class OperatingSystem
       $logger.info(message)
 
       begin
+        $logger.info("Opening PTY using following command: #{compose_command}")
         PTY.spawn(compose_command) do |r, w, pid|
           save_pid(pid, test_execution)
+          $logger.info("PTY opened with following PID: #{pid}")
           begin
             r.each do |line|
 
