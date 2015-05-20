@@ -11,7 +11,7 @@ class DeliverySite
   def self.first_or_create(attributes)
     attributes[:created_at] = DateTime.now
     begin
-      super
+      super unless DeliverySite.get(attributes[:id])
     rescue DataMapper::SaveFailureError => e
       message = "Saving delivery site failed with message: #{e.resource.errors.inspect}"
       p message

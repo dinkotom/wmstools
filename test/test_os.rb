@@ -1,6 +1,7 @@
 Bundler.require(:test)
 require_relative('../agent/operating_system')
 require_relative('../agent/config/conf_test')
+require_relative('../test/setup_tests')
 
 class TestOs < Test::Unit::TestCase
 
@@ -65,6 +66,7 @@ class TestOs < Test::Unit::TestCase
     }
 
     @stdout_buffer_passed = %q{
+      [TC005] [P] New delivery site [basic] PASSED for DS 735999102110642463
       [TC005] [P] New delivery site [basic] PASSED for DS 735999102110642463
       [TC005] [P] New delivery site [basic] PASSED for DS 735999102110642464
       [TC005] [P] New delivery site [basic] PASSED for DS 735999102110642465
@@ -150,7 +152,7 @@ class TestOs < Test::Unit::TestCase
     DeliverySite.destroy!
     @te.test_suite_name = '[F] BUFFER TESTS'
     @te.delivery_site_type_id = 'type1'
-    @stdout_buffer_passed.each_line {|line|@os.send(:scan_for_delivery_sites, line, @te)}
+    @stdout_buffer_passed.each_line { |line| @os.send(:scan_for_delivery_sites, line, @te) }
     assert_equal(5, DeliverySite.all.count)
     @te.destroy!
   end
