@@ -21,7 +21,7 @@ VERSIONS = {:wms_489 =>
                 },
             :wms_490 =>
                 {:name => '4.9.0', # FAT5
-                 :protection_level => 'Medium',
+                 :protection_level => 'High',
                  :svn_branch => 'branch/4.9.0',
                  :responsible => 'vladan.krenek@tieto.com',
                  :watchers => [],
