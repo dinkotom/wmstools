@@ -19,8 +19,8 @@ VERSIONS = {:wms_489 =>
                  :watchers => [],
                  :max_age => 48
                 },
-            :wms_482 =>
-                {:name => '4.9.0', # FAT4
+            :wms_490 =>
+                {:name => '4.9.0', # FAT5
                  :protection_level => 'Medium',
                  :svn_branch => 'branch/4.9.0',
                  :responsible => 'vladan.krenek@tieto.com',
@@ -35,10 +35,10 @@ VERSIONS = {:wms_489 =>
                  :watchers => [],
                  :max_age => 48
                 },
-            :wms_480 =>
-                {:name => '4.8.2', # FAT5
+            :wms_491 =>
+                {:name => '4.9.1', # FAT4
                  :protection_level => 'High',
-                 :svn_branch => 'branch/4.8.2',
+                 :svn_branch => 'branch/4.9.1',
                  :responsible => 'vladan.krenek@tieto.com',
                  :watchers => [],
                  :max_age => 48
