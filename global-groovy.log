@@ -1,5 +1,0 @@
-2015-04-21 22:30:05,945 INFO  [log] [TC001W] WMSWorkFlowWSSOAP [Fortex Installer] FAILED for DS TEMPORARY
-2015-04-21 22:31:21,220 INFO  [log] [TC002W] CreateUpdateInstaller [Fortex Installer] FAILED for DS TEMPORARY
-2015-04-21 22:32:36,396 INFO  [log] [TC003W] CreateUpdateCompany [Fortex Installer] FAILED for DS TEMPORARY
-2015-04-21 22:33:51,533 INFO  [log] [TC004W] AddRemoveConnectionOfInstallerToCompany [Fortex Installer] FAILED for DS TEMPORARY
-2015-04-21 22:35:51,676 INFO  [log] [TC005W] WMS Web Services tests [WMS] FAILED for DS TEMPORARY
