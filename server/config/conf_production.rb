@@ -492,7 +492,7 @@ PERFORMANCE_TESTS = [
 PIAZZA_SCREENS = [
     {:screen_number => 1, :environments => ['FAT']},
     {:screen_number => 2, :environments => ['FAT4']},
-    {:screen_number => 3, :environments => ['FAT5']}
+    {:screen_number => 3, :environments => ['FAT5']},
     {:screen_number => 4, :environments => ['DEV8PROM']},
     {:screen_number => 5, :environments => ['DEVHF02']},
     {:screen_number => 6, :environments => ['DEV2SKA']},
