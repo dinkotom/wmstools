@@ -11,18 +11,18 @@ FISHEYE_BASE_PATH = 'http://192.176.148.85:8060/browse/WMS-SVN' # don't put slas
 SVN_TIME_OUT = 10 #seconds
 BUFFER_TEST_MAX_FAILED = 5
 
-VERSIONS = {:wms_489 =>
-                {:name => '4.9.x', # FAT,PROMETERA,DEV9PROM,DEV3SKA,DEV7
+VERSIONS = {:wms_500 =>
+                {:name => '5.0.x', # FAT,PROMETERA,DEV9PROM,DEV3SKA,DEV7
                  :protection_level => 'Low',
                  :svn_branch => 'trunk',
                  :responsible => 'vladan.krenek@tieto.com',
                  :watchers => [],
                  :max_age => 48
                 },
-            :wms_490 =>
-                {:name => '4.9.0', # FAT5
-                 :protection_level => 'High',
-                 :svn_branch => 'branch/4.9.0',
+            :wms_491 =>
+                {:name => '4.9.1', # FAT4
+                 :protection_level => 'Medium',
+                 :svn_branch => 'branch/4.9.1',
                  :responsible => 'vladan.krenek@tieto.com',
                  :watchers => [],
                  :max_age => 48
@@ -35,10 +35,10 @@ VERSIONS = {:wms_489 =>
                  :watchers => [],
                  :max_age => 48
                 },
-            :wms_491 =>
-                {:name => '4.9.1', # FAT4
+            :wms_490 =>
+                {:name => '4.9.0', # FAT5
                  :protection_level => 'High',
-                 :svn_branch => 'branch/4.9.1',
+                 :svn_branch => 'branch/4.9.0',
                  :responsible => 'vladan.krenek@tieto.com',
                  :watchers => [],
                  :max_age => 48
