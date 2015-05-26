@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="wmstools_staging@localhost" uuid="b02550b3-01dc-4c1f-9ba8-16bc2d0475a3">
+    <database-info product="MySQL" version="5.6.24" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="upper"/>
+    <schema name="" catalog="wmstools_staging"/>
+    <table name="delivery_site_type_environments" schema="" catalog="wmstools_staging" type="TABLE">
+      <column name="delivery_site_type_id" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="environment_name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="delivery_site_type_id,environment_name"/>
+    </table>
+    <table name="delivery_site_types" schema="" catalog="wmstools_staging" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="quota" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" def="MA=="/>
+      <column name="test_suite_name" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="index_delivery_site_types_test_suite" unique="false" columns="test_suite_name"/>
+    </table>
+    <table name="delivery_sites" schema="" catalog="wmstools_staging" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="expired" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="delivery_site_type_id" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="environment_name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91" def="JzE5NDUtMDUtMDgn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="index_delivery_sites_delivery_site_type" unique="false" columns="delivery_site_type_id"/>
+      <index name="index_delivery_sites_environment" unique="false" columns="environment_name"/>
+    </table>
+    <table name="environment_piazza_screens" schema="" catalog="wmstools_staging" type="TABLE">
+      <column name="environment_name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="piazza_screen_screen_number" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="environment_name,piazza_screen_screen_number"/>
+    </table>
+    <table name="environment_test_cases" schema="" catalog="wmstools_staging" type="TABLE">
+      <column name="environment_name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="test_case_id" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="environment_name,test_case_id"/>
+    </table>
+    <table name="environment_test_suites" schema="" catalog="wmstools_staging" type="TABLE">
+      <column name="test_suite_name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="environment_name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="test_suite_name,environment_name"/>
+    </table>
+    <table name="environments" schema="" catalog="wmstools_staging" type="TABLE">
+      <column name="name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="wms_version_name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="name"/>
+      <index name="index_environments_wms_version" unique="false" columns="wms_version_name"/>
+    </table>
+    <table name="performance_measurement_points" schema="" catalog="wmstools_staging" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="reference_value" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="max_value" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="test_suite_name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id,test_suite_name"/>
+    </table>
+    <table name="performance_measurements" schema="" catalog="wmstools_staging" type="TABLE">
+      <column name="value" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="test_execution_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="performance_measurement_point_id" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="performance_measurement_point_test_suite_name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="test_execution_id,performance_measurement_point_id,performance_measurement_point_test_suite_name"/>
+      <index name="index_performance_measurements_performance_measurement_point" unique="false" columns="performance_measurement_point_id,performance_measurement_point_test_suite_name"/>
+      <index name="index_performance_measurements_test_execution" unique="false" columns="test_execution_id"/>
+    </table>
+    <table name="piazza_screens" schema="" catalog="wmstools_staging" type="TABLE">
+      <column name="screen_number" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="screen_number"/>
+    </table>
+    <table name="test_case_results" schema="" catalog="wmstools_staging" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="result" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="message" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="revision" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="test_execution_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="test_case_id" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="environment_name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="test_suite_name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="index_test_case_results_environment" unique="false" columns="environment_name"/>
+      <index name="index_test_case_results_test_case" unique="false" columns="test_case_id"/>
+      <index name="index_test_case_results_test_execution" unique="false" columns="test_execution_id"/>
+      <index name="index_test_case_results_test_suite" unique="false" columns="test_suite_name"/>
+    </table>
+    <table name="test_cases" schema="" catalog="wmstools_staging" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="test_executions" schema="" catalog="wmstools_staging" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="revision" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="report" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="comment" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="jira_issue" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="result" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="for" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="status" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="enqueued_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="started_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="finished_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="hidden" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="agent" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="pid" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="exit_code" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="stderr" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="output_zip_base64" sqlType="MEDIUMTEXT" precision="16777215" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="environment_name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="test_suite_name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="delivery_site_type_id" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="index_test_executions_delivery_site_type" unique="false" columns="delivery_site_type_id"/>
+      <index name="index_test_executions_environment" unique="false" columns="environment_name"/>
+      <index name="index_test_executions_test_suite" unique="false" columns="test_suite_name"/>
+    </table>
+    <table name="test_package_test_suites" schema="" catalog="wmstools_staging" type="TABLE">
+      <column name="test_suite_name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="test_package_name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="test_suite_name,test_package_name"/>
+    </table>
+    <table name="test_packages" schema="" catalog="wmstools_staging" type="TABLE">
+      <column name="name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="name"/>
+    </table>
+    <table name="test_suites" schema="" catalog="wmstools_staging" type="TABLE">
+      <column name="name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="type" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="piazza" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6"/>
+      <column name="default_number_of_tests" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="priority" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="performance" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6"/>
+      <column name="load" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6"/>
+      <column name="buffer" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6"/>
+      <column name="soapui_project_file" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="name"/>
+    </table>
+    <table name="wms_versions" schema="" catalog="wmstools_staging" type="TABLE">
+      <column name="name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="jira_name" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="responsible" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="protection_level" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="fat_deploy_project_id" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="fat_deploy_buildtype_id" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="svn_branch" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="watchers" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="max_age" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="name"/>
+    </table>
+  </data-source>
+</component>

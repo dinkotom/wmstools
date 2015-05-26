@@ -1,0 +1,7 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+Name=SoapUI-5.0.0
+Exec=/bin/sh "/home/vladan/work/soapui/bin/SoapUI-5.0.0"
+Icon=/home/vladan/work/soapui/.install4j/SoapUI-5.0.0.png
+Categories=Application;

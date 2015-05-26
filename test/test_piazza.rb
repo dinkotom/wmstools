@@ -3,7 +3,7 @@ require_relative('setup_tests')
 class PiazzaTest < Test::Unit::TestCase
   def setup
     @piazza_data = {:environments =>
-                        [{:branch => 'branch/4.8.2',
+                        [{:branch => 'branch/4.9.0',
                           :name => 'FAT',
                           :result => 'Failure',
                           :running? => true,

@@ -1,0 +1,11 @@
+-Xms128m
+-Xmx1000m
+-Dsoapui.properties=soapui.properties
+-Dsoapui.home=/home/vladan/work/soapui/bin
+-Dsoapui.ext.libraries=/home/vladan/work/soapui/bin/ext
+-Dsoapui.ext.listeners=/home/vladan/work/soapui/bin/listeners
+-Dsoapui.ext.actions=/home/vladan/work/soapui/bin/actions
+-Dwsi.dir=/home/vladan/work/soapui/wsi-test-tools
+-Djava.library.path=/home/vladan/work/soapui/bin
+-Djava.util.Arrays.useLegacyMergeSort=true
+-splash:soapui-splash.png
