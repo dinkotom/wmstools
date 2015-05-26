@@ -1,1 +1,0 @@
-This is where you add the project files for the automated SoapUI tests.
