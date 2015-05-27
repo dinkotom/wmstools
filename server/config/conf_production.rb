@@ -521,12 +521,12 @@ DELIVERY_SITE_TYPES = [
 ENVIRONMENTS = [
     {:name => 'FAT5', :wms_version => '4.9.0'},
     {:name => 'FAT4', :wms_version => '4.9.1'},
-    {:name => 'FAT', :wms_version => '4.9.x'},
+    {:name => 'FAT', :wms_version => '5.0.x'},
     {:name => 'DEV1', :wms_version => '4.8.2DEV'},
-    {:name => 'DEV8PROM', :wms_version => '4.9.x'},
-    {:name => 'PROM_PERF', :wms_version => '4.9.x'},
-    {:name => 'DEV2SKA', :wms_version => '4.9.x'},
-    {:name => 'DEV7', :wms_version => '4.9.x'},
-    {:name => 'DEVHF02', :wms_version => '4.9.x'},
+    {:name => 'DEV8PROM', :wms_version => '5.0.x'},
+    {:name => 'PROM_PERF', :wms_version => '5.0.x'},
+    {:name => 'DEV2SKA', :wms_version => '5.0.x'},
+    {:name => 'DEV7', :wms_version => '5.0.x'},
+    {:name => 'DEVHF02', :wms_version => '5.0.x'},
 
 ]
