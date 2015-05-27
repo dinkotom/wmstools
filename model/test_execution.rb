@@ -121,8 +121,9 @@ class TestExecution
 
   def run(os = OperatingSystem.new)
     os.folder = self.id.to_s
-    os.project_file = self.test_suite.soapui_project_file
+    os.project_file = self.test_suite.project_file
     os.suite = self.test_suite.name
+    os.environment = self.environment.name
     os.test_case = self.delivery_site_type.id if self.delivery_site_type
     os.branch = self.environment.wms_version.svn_branch
 
@@ -131,7 +132,7 @@ class TestExecution
     self.started_at = DateTime.now
     self.save
 
-    self.status = os.run_soapui(self)
+    self.status = os.run(self)
     self.result = evaluate_result unless TestExecution.get(self.id).result == 'KILLED'
     self.finished_at = DateTime.now
     self.exit_code = os.exit_status

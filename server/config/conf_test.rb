@@ -7,23 +7,23 @@ PORT = 8080
 PERFORMANCE_TEST_RESULTS_PER_PAGE = 3
 
 TEST_SUITES = [
-    {:name => '[F] SMOKE TESTS', :type => 'Suite', :environments => ['FAT', 'FAT4'], :piazza => true, :default_number_of_tests => 1, :priority => 1, :soapui_project_file => 'WMS.xml'},
-    {:name => '[F] WEB SERVICE TESTS', :type => 'Suite', :environments => ['FAT', 'FAT4'], :piazza => true, :default_number_of_tests => 5, :priority => 2, :soapui_project_file => 'WMS.xml'},
-    {:name => '[F] REGRESSION TESTS 1', :type => 'Suite', :environments => ['FAT', 'FAT4'], :piazza => true, :default_number_of_tests => 30, :priority => 3, :soapui_project_file => 'WMS.xml'},
-    {:name => '[F] REGRESSION TESTS 2', :type => 'Suite', :environments => ['FAT', 'FAT4'], :piazza => true, :default_number_of_tests => 30, :priority => 4, :soapui_project_file => 'WMS.xml'},
-    {:name => '[F] REGRESSION TESTS 3', :type => 'Suite', :environments => ['FAT', 'FAT4'], :piazza => true, :default_number_of_tests => 30, :priority => 5, :soapui_project_file => 'WMS.xml'},
-    {:name => '[F] REGRESSION TESTS 4', :type => 'Suite', :environments => ['FAT'], :piazza => true, :default_number_of_tests => 30, :priority => 6, :soapui_project_file => 'WMS.xml'},
-    {:name => '[F] REGRESSION TESTS 5', :type => 'Suite', :environments => ['FAT'], :piazza => true, :default_number_of_tests => 30, :priority => 6, :soapui_project_file => 'WMS.xml'},
-    {:name => '[F] LOAD TESTS', :type => 'Suite', :environments => ['FAT', 'FAT4'], :piazza => false, :priority => 7, :soapui_project_file => 'WMS.xml', :load => true},
-    {:name => '[F] MAINTENANCE TESTS', :type => 'Suite', :environments => ['FAT', 'FAT4'], :piazza => false, :priority => 8, :soapui_project_file => 'WMS.xml'},
-    {:name => '[F] PERFORMANCE TESTS', :type => 'Suite', :environments => ['FAT', 'FAT4'], :piazza => false, :priority => 9, :soapui_project_file => 'WMS.xml', :performance => true},
-    {:name => '[H] REGRESSION TESTS 1', :type => 'Suite', :environments => ['DEVHF01'], :piazza => true, :default_number_of_tests => 4, :priority => 10, :soapui_project_file => 'WMS.xml'},
-    {:name => '[H] PERFORMANCE TESTS', :type => 'Suite', :environments => ['DEVHF01'], :piazza => true, :default_number_of_tests => 4, :priority => 11, :soapui_project_file => 'WMS.xml', :performance => true},
-    {:name => '[P] PERFORMANCE TESTS 1', :type => 'Suite', :environments => ['PROMETERA'], :piazza => true, :default_number_of_tests => 4, :priority => 11, :soapui_project_file => 'WMS_Prometera.xml', :performace => true},
-    {:name => '[P] PERFORMANCE TESTS 2', :type => 'Suite', :environments => ['PROMETERA'], :piazza => true, :default_number_of_tests => 4, :priority => 11, :soapui_project_file => 'WMS_Prometera.xml', :performace => true},
-    {:name => '[F] BUFFER TESTS', :type => 'Suite', :environments => ['FAT', 'FAT4'], :piazza => false, :default_number_of_tests => 4, :priority => 11, :soapui_project_file => 'WMS.xml', :buffer => true},
-    {:name => '[H] BUFFER TESTS', :type => 'Suite', :environments => ['DEVHF01'], :piazza => false, :default_number_of_tests => 4, :priority => 11, :soapui_project_file => 'WMS_Hafslund.xml', :buffer => true},
-
+    {:name => '[F] SMOKE TESTS', :type => 'Suite', :environments => ['FAT', 'FAT4'], :piazza => true, :default_number_of_tests => 1, :priority => 1, :project_file => 'WMS.xml'},
+    {:name => '[F] WEB SERVICE TESTS', :type => 'Suite', :environments => ['FAT', 'FAT4'], :piazza => true, :default_number_of_tests => 5, :priority => 2, :project_file => 'WMS.xml'},
+    {:name => '[F] REGRESSION TESTS 1', :type => 'Suite', :environments => ['FAT', 'FAT4'], :piazza => true, :default_number_of_tests => 30, :priority => 3, :project_file => 'WMS.xml'},
+    {:name => '[F] REGRESSION TESTS 2', :type => 'Suite', :environments => ['FAT', 'FAT4'], :piazza => true, :default_number_of_tests => 30, :priority => 4, :project_file => 'WMS.xml'},
+    {:name => '[F] REGRESSION TESTS 3', :type => 'Suite', :environments => ['FAT', 'FAT4'], :piazza => true, :default_number_of_tests => 30, :priority => 5, :project_file => 'WMS.xml'},
+    {:name => '[F] REGRESSION TESTS 4', :type => 'Suite', :environments => ['FAT'], :piazza => true, :default_number_of_tests => 30, :priority => 6, :project_file => 'WMS.xml'},
+    {:name => '[F] REGRESSION TESTS 5', :type => 'Suite', :environments => ['FAT'], :piazza => true, :default_number_of_tests => 30, :priority => 6, :project_file => 'WMS.xml'},
+    {:name => '[F] LOAD TESTS', :type => 'Suite', :environments => ['FAT', 'FAT4'], :piazza => false, :priority => 7, :project_file => 'WMS.xml', :load => true},
+    {:name => '[F] MAINTENANCE TESTS', :type => 'Suite', :environments => ['FAT', 'FAT4'], :piazza => false, :priority => 8, :project_file => 'WMS.xml'},
+    {:name => '[F] PERFORMANCE TESTS', :type => 'Suite', :environments => ['FAT', 'FAT4'], :piazza => false, :priority => 9, :project_file => 'WMS.xml', :performance => true},
+    {:name => '[H] REGRESSION TESTS 1', :type => 'Suite', :environments => ['DEVHF01'], :piazza => true, :default_number_of_tests => 4, :priority => 10, :project_file => 'WMS.xml'},
+    {:name => '[H] PERFORMANCE TESTS', :type => 'Suite', :environments => ['DEVHF01'], :piazza => true, :default_number_of_tests => 4, :priority => 11, :project_file => 'WMS.xml', :performance => true},
+    {:name => '[P] PERFORMANCE TESTS 1', :type => 'Suite', :environments => ['PROMETERA'], :piazza => true, :default_number_of_tests => 4, :priority => 11, :project_file => 'WMS_Prometera.xml', :performace => true},
+    {:name => '[P] PERFORMANCE TESTS 2', :type => 'Suite', :environments => ['PROMETERA'], :piazza => true, :default_number_of_tests => 4, :priority => 11, :project_file => 'WMS_Prometera.xml', :performace => true},
+    {:name => '[F] BUFFER TESTS', :type => 'Suite', :environments => ['FAT', 'FAT4'], :piazza => false, :default_number_of_tests => 4, :priority => 11, :project_file => 'WMS.xml', :buffer => true},
+    {:name => '[H] BUFFER TESTS', :type => 'Suite', :environments => ['DEVHF01'], :piazza => false, :default_number_of_tests => 4, :priority => 11, :project_file => 'WMS_Hafslund.xml', :buffer => true},
+    {:name => '[P] KAMIL', :type => 'Suite', :environments => ['DEV8'], :piazza => false, :default_number_of_tests => 3, :priority => 20, :project_file => 'test-automation-demo-1.0-SNAPSHOT.jar', :performance => true},
 ]
 
 TEST_PACKAGES = [
@@ -93,6 +93,10 @@ TEST_PACKAGES = [
     },
     {:name => '[F] BUFFER TESTS',
      :suites => ['[F] BUFFER TESTS'
+     ]
+    },
+    {:name => '[P] KAMIL',
+     :suites => ['[P] KAMIL'
      ]
     },
 ]
@@ -219,5 +223,6 @@ ENVIRONMENTS = [
     {:name => 'TINA1', :wms_version => '4.9.0'},
     {:name => 'PROMETERA', :wms_version => '4.9.0'},
     {:name => 'DEVHF01', :wms_version => '4.9.0'},
+    {:name => 'DEV8', :wms_version => '4.9.0'},
 ]
 

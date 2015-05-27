@@ -4,7 +4,7 @@ require 'base64'
 
 class OperatingSystem
 
-  attr_accessor :folder, :branch, :project_file, :suite, :test_case
+  attr_accessor :folder, :branch, :project_file, :suite, :environment, :test_case
   attr_reader :exit_status, :stderr
 
   UNIVERSAL_TESTS_MATCHING_REGEXP = /(\[TC\d{3}.*?\]) (.+) (PASSED|FAILED) .+/
@@ -16,20 +16,30 @@ class OperatingSystem
 
   def compose_command
     command = "#{JAVA_HOME}"
-    command << ' -Xms1024m -Xmx1024m -XX:MaxPermSize=128m -Dsoapui.properties=soapui.properties -Dgroovy.source.encoding=iso-8859-1'
-    command << " -Dsoapui.home=#{SOAPUI_HOME}/bin"
-    command << " -Dsoapui.ext.libraries=#{SVN_HOME}/#{branch}/requiredJARs"
-    command << " -Dsoapui.ext.listeners=#{SOAPUI_HOME}/bin/listeners -Dsoapui.ext.actions=#{SOAPUI_HOME}/bin/actions"
-    command << " -cp #{SOAPUI_HOME}/bin/soapui-5.0.0.jar:#{SOAPUI_HOME}/lib/*"
-    command << " com.eviware.soapui.tools.SoapUITestCaseRunner -t #{SOAPUI_HOME}/soapui-settings.xml"
-    command << " -s '#{@suite}'"
-    command << " -c '#{@test_case}'" if test_case
-    command << " -r #{SVN_HOME}/#{branch}/#{@project_file}"
-    command << " -f '#{@folder}'"
+
+    if @project_file.split('.').last == 'xml'
+      command << ' -Xms1024m -Xmx1024m -XX:MaxPermSize=128m -Dsoapui.properties=soapui.properties -Dgroovy.source.encoding=iso-8859-1'
+      command << " -Dsoapui.home=#{SOAPUI_HOME}/bin"
+      command << " -Dsoapui.ext.libraries=#{SVN_HOME}/#{branch}/requiredJARs"
+      command << " -Dsoapui.ext.listeners=#{SOAPUI_HOME}/bin/listeners -Dsoapui.ext.actions=#{SOAPUI_HOME}/bin/actions"
+      command << " -cp #{SOAPUI_HOME}/bin/soapui-5.0.0.jar:#{SOAPUI_HOME}/lib/*"
+      command << " com.eviware.soapui.tools.SoapUITestCaseRunner -t #{SOAPUI_HOME}/soapui-settings.xml"
+      command << " -s '#{@suite}'"
+      command << " -c '#{@test_case}'" if test_case
+      command << " -r #{SVN_HOME}/#{branch}/#{@project_file}"
+      command << " -f '#{@folder}'"
+    elsif @project_file.split('.').last == 'jar'
+      command << " -cp #{JAR_HOME}/#{@project_file}:#{JAR_HOME}/lib/*"
+      command << ' com.tieto.test.ui.demo.Run'
+      command << " #{@environment}"
+    else
+      raise 'Invalid project file. Must be either xml or jar.'
+    end
+
     command << " 2> ./#{@folder}/stderr.txt|tee ./#{@folder}/stdout.txt"
   end
 
-  def run_soapui(test_execution)
+  def run(test_execution)
     begin
       raise ArgumentError, 'ERROR: folder, project_file, suite and branch must be set' unless @folder && @project_file && @suite && @branch
 

@@ -23,7 +23,8 @@ class TestExecutionTest < Test::Unit::TestCase
     @os.expects(:project_file=).returns('WMS.xml')
     @os.expects(:suite=).returns('[F] SMOKE TESTS')
     @os.expects(:branch=).returns('trunk')
-    @os.expects(:run_soapui, test_execution).returns('Finished')
+    @os.expects(:environment=).returns('FAT')
+    @os.expects(:run, test_execution).returns('Finished')
     @os.expects(:exit_status, test_execution).returns(0)
     @os.expects(:stderr).at_least_once.returns('')
 
@@ -44,8 +45,9 @@ class TestExecutionTest < Test::Unit::TestCase
     @os.expects(:folder=).returns(test_execution.id)
     @os.expects(:project_file=).returns('WMS.xml')
     @os.expects(:suite=).returns('[F] SMOKE TESTS')
+    @os.expects(:environment=).returns('FAT')
     @os.expects(:branch=).returns('trunk')
-    @os.expects(:run_soapui, test_execution).returns('Running')
+    @os.expects(:run, test_execution).returns('Running')
     @os.expects(:exit_status).returns(0)
     @os.expects(:stderr).at_least_once.returns('')
 
@@ -71,7 +73,8 @@ class TestExecutionTest < Test::Unit::TestCase
       @os.expects(:project_file=).returns('WMS.xml')
       @os.expects(:suite=).returns('[F] SMOKE TESTS')
       @os.expects(:branch=).returns('trunk')
-      @os.expects(:run_soapui, test_execution).returns('Running')
+      @os.expects(:environment=).returns('FAT')
+      @os.expects(:run, test_execution).returns('Running')
       @os.expects(:exit_status).returns(0)
       @os.expects(:stderr).returns('')
 
@@ -86,7 +89,7 @@ class TestExecutionTest < Test::Unit::TestCase
     test_execution.for = 'TEST'
     test_execution.enqueue
 
-    @os.expects(:run_soapui, test_execution).never
+    @os.expects(:run, test_execution).never
 
     TestExecution.dequeue(@os)
     # comment end
@@ -103,7 +106,7 @@ class TestExecutionTest < Test::Unit::TestCase
     test_execution.status = 'Preparing'
     test_execution.save
 
-    @os.expects(:run_soapui, test_execution).never
+    @os.expects(:run, test_execution).never
     TestExecution.dequeue(@os)
   end
 

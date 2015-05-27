@@ -8,7 +8,7 @@ class TestSuite
   property :performance, Boolean
   property :load, Boolean
   property :buffer, Boolean
-  property :soapui_project_file, String
+  property :project_file, String
 
   has n, :test_executions
   has n, :environments, :through => Resource

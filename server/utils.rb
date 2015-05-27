@@ -32,7 +32,7 @@ class Utils
             :performance => test_suite[:performance],
             :load => test_suite[:load],
             :buffer => test_suite[:buffer],
-            :soapui_project_file => test_suite[:soapui_project_file]
+            :project_file => test_suite[:project_file]
         )
         test_suite[:environments].each do |environment|
           test_suite_resource.environments << Environment.get(environment)

@@ -10,7 +10,12 @@ class TestViewPerformance < Test::Unit::TestCase
 
   def test_getting_performance_test_suits
     get '/performance/suites'
-    assert_equal([{:name => '[F] PERFORMANCE TESTS'}, {:name => '[H] PERFORMANCE TESTS'}].to_json, last_response.body)
+    assert_equal(
+        [
+            {:name => '[F] PERFORMANCE TESTS'},
+            {:name => '[H] PERFORMANCE TESTS'},
+            {:name => '[P] KAMIL'},
+        ].to_json, last_response.body)
   end
 
   def test_calling_existent_test_suite_that_is_not_performance

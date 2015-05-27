@@ -114,6 +114,14 @@ class TestOs < Test::Unit::TestCase
     assert_equal(command, @os.send(:compose_command))
   end
 
+  def test_composing_jar_project_command
+    @te.environment_name = 'DEV8'
+    @te.test_suite_name = '[P] KAMIL'
+    @os.project_file = 'test.jar'
+    @os.environment = 'DEV8'
+    assert_equal('/usr/bin/java -cp /Users/tdinkov/Git/wmstools/agent/jar_projects/test.jar:/Users/tdinkov/Git/wmstools/agent/jar_projects/lib/* com.tieto.test.ui.demo.Run DEV8 2> ./output/stderr.txt|tee ./output/stdout.txt', @os.send(:compose_command))
+  end
+
   def test_storing_svn_revision
     log = %q{
 09:54:51,954 INFO  [SoapUITestCaseRunner] running step [extract version number]
