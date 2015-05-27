@@ -11,10 +11,11 @@ class Stage
               :port,
               :control_port,
               :change_log_file,
-              :rack_file
+              :rack_file,
 
   attr_accessor :path,
-                :hostname
+                :hostname,
+                :quota
 
   def start
     p 'Starting...'

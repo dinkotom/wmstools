@@ -23,6 +23,7 @@ require_relative './rake/stage.rb'
 @staging_agent.control_port = 8082
 @staging_agent.change_log_file = '/home/testAgent/work/agent/staging/deployment'
 @staging_agent.rack_file = 'agent.ru'
+@staging_agent.quota = 2
 
 @production_server = Stage.new
 @production_server.name = 'production_server'
@@ -45,6 +46,7 @@ require_relative './rake/stage.rb'
 @production_agent_1.control_port = 8082
 @production_agent_1.change_log_file = '/home/testAgent/work/agent/production/agent/deployment'
 @production_agent_1.rack_file = 'agent.ru'
+@production_agent_1.quota = 6
 
 @production_agent_2 = Stage.new
 @production_agent_2.name = 'production_agent_2'
@@ -56,6 +58,7 @@ require_relative './rake/stage.rb'
 @production_agent_2.control_port = 8082
 @production_agent_2.change_log_file = '/home/testAgent/work/agent/production/agent/deployment'
 @production_agent_2.rack_file = 'agent.ru'
+@production_agent_2.quota = 6
 
 task(:default => [:test, :deploy_staging_server, :deploy_staging_agent]) {}
 
@@ -82,6 +85,11 @@ task :deploy_staging_agent do
       @staging_agent.path + '/agent/config/conf_development.rb',
       'THIS_AGENT_ID',
       "#{@staging_agent.hostname}_staging"
+  )
+  agent.modify_config(
+      agent.path + '/agent/config/conf_development.rb',
+      'QUOTA',
+      agent.quota.to_s
   )
   @staging_agent.modify_config(
                     @staging_agent.path + '/agent/config/conf_common.rb',
@@ -112,6 +120,11 @@ task :deploy_production_agents do
         agent.path + '/agent/config/conf_production.rb',
         'THIS_AGENT_ID',
         "#{agent.hostname}_production"
+    )
+    agent.modify_config(
+        agent.path + '/agent/config/conf_production.rb',
+        'QUOTA',
+        agent.quota.to_s
     )
     agent.modify_config(
         agent.path + '/agent/config/conf_common.rb',
