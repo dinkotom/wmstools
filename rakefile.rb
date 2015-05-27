@@ -86,10 +86,10 @@ task :deploy_staging_agent do
       'THIS_AGENT_ID',
       "#{@staging_agent.hostname}_staging"
   )
-  agent.modify_config(
-      agent.path + '/agent/config/conf_development.rb',
+  @staging_agent.modify_config(
+      @staging_agent.path + '/agent/config/conf_development.rb',
       'QUOTA',
-      agent.quota.to_s
+      @staging_agent.quota.to_s
   )
   @staging_agent.modify_config(
                     @staging_agent.path + '/agent/config/conf_common.rb',
