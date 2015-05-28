@@ -15,7 +15,9 @@ class Stage
 
   attr_accessor :path,
                 :hostname,
-                :quota
+                :quota,
+                :soapui_home,
+                :svn_home
 
   def start
     p 'Starting...'
