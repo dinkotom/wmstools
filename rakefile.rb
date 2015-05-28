@@ -131,6 +131,11 @@ task :deploy_production_agents do
         'ENVIRONMENT',
         'production'
     )
+    agent.modify_config(
+        agent.path + '/agent/config/conf_production.rb',
+        'SVN_HOME',
+        'someStupidString'
+    )
     agent.bundle_install
     agent.restart
     agent.rollback_running_execs
