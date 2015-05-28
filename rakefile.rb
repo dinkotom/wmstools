@@ -92,9 +92,9 @@ task :deploy_staging_agent do
       @staging_agent.quota.to_s
   )
   @staging_agent.modify_config(
-    @staging_agent.path + '/agent/config/conf_common.rb',
-    'ENVIRONMENT',
-    'staging'
+                    @staging_agent.path + '/agent/config/conf_common.rb',
+                    'ENVIRONMENT',
+                    'staging'
   )
   @staging_agent.bundle_install
   @staging_agent.restart
@@ -104,9 +104,9 @@ end
 task :deploy_production_server do
   @production_server.deploy
   @production_server.modify_config(
-    @production_server.path + '/server/config/conf_common.rb',
-    'ENVIRONMENT',
-    'production'
+                        @production_server.path + '/server/config/conf_common.rb',
+                        'ENVIRONMENT',
+                        'production'
   )
   @production_server.bundle_install
   @production_server.restart
@@ -127,30 +127,12 @@ task :deploy_production_agents do
         agent.quota.to_s
     )
     agent.modify_config(
-        agent.path + '/agent/config/conf_production.rb',
-        'DATA_SOURCE',
-        "mysql:\/\/wmsuser:SalvatorDali01@uw001781\/wmstools"
-    )
-    agent.modify_config(
-        agent.path + '/agent/config/conf_production.rb',
-        'SOAPUI_HOME',
-        "\/root\/work\/wmsTools\/soapui"
-    )
-    agent.modify_config(
-        agent.path + '/agent/config/conf_production.rb',
-        'SVN_HOME',
-        "\/root\/work\/wmsTools\/svn"
-    )
-    agent.modify_config(
         agent.path + '/agent/config/conf_common.rb',
         'ENVIRONMENT',
-        "production"
+        'production'
     )
     agent.bundle_install
     agent.restart
     agent.rollback_running_execs
   end
 end
-
-
-
