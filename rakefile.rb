@@ -27,38 +27,38 @@ require_relative './rake/stage.rb'
 
 @production_server = Stage.new
 @production_server.name = 'production_server'
-@production_server.hostname = 'uw001684'
+@production_server.hostname = 'uw001781'
 @production_server.username = 'root'
 @production_server.password = 'bender'
-@production_server.path = '/home/wmsTools/work/wms-tools_production'
+@production_server.path = '/root/work/wmsTools/server'
 @production_server.port = 80
 @production_server.control_port = 8083
-@production_server.change_log_file = '/home/wmsTools/work/wms-tools_production/server/views/change_log.erb'
+@production_server.change_log_file = '/root/work/wmsTools/server/server/views/change_log.erb'
 @production_server.rack_file = 'server.ru'
 
 @production_agent_1 = Stage.new
 @production_agent_1.name = 'production_agent_1'
-@production_agent_1.hostname = 'uw001685'
+@production_agent_1.hostname = 'uw001781'
 @production_agent_1.username = 'root'
 @production_agent_1.password = 'bender'
-@production_agent_1.path = '/home/testAgent/work/agent/production'
+@production_agent_1.path = '/root/work/wmsTools/agent'
 @production_agent_1.port = 8081
 @production_agent_1.control_port = 8082
-@production_agent_1.change_log_file = '/home/testAgent/work/agent/production/agent/deployment'
+@production_agent_1.change_log_file = '/root/work/wmsTools/agent/agent/deployment'
 @production_agent_1.rack_file = 'agent.ru'
-@production_agent_1.quota = 6
+@production_agent_1.quota = 10
 
 @production_agent_2 = Stage.new
 @production_agent_2.name = 'production_agent_2'
-@production_agent_2.hostname = 'uw001686'
-@production_agent_2.username = 'root'
-@production_agent_2.password = 'bender'
-@production_agent_2.path = '/home/testAgent/work/agent/production'
-@production_agent_2.port = 8081
-@production_agent_2.control_port = 8082
-@production_agent_2.change_log_file = '/home/testAgent/work/agent/production/agent/deployment'
-@production_agent_2.rack_file = 'agent.ru'
-@production_agent_2.quota = 6
+@production_agent_1.hostname = 'uw001782'
+@production_agent_1.username = 'root'
+@production_agent_1.password = 'bender'
+@production_agent_1.path = '/root/work/wmsTools/agent'
+@production_agent_1.port = 8081
+@production_agent_1.control_port = 8082
+@production_agent_1.change_log_file = '/root/work/wmsTools/agent/agent/deployment'
+@production_agent_1.rack_file = 'agent.ru'
+@production_agent_1.quota = 10
 
 task(:default => [:test, :deploy_staging_server, :deploy_staging_agent]) {}
 
