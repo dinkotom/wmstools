@@ -127,6 +127,21 @@ task :deploy_production_agents do
         agent.quota.to_s
     )
     agent.modify_config(
+        agent.path + '/agent/config/conf_production.rb',
+        'DATA_SOURCE',
+        'mysql://wmsuser:SalvatorDali01@uw001781/wmstools'
+    )
+    agent.modify_config(
+        agent.path + '/agent/config/conf_production.rb',
+        'SOAPUI_HOME',
+        '/root/work/wmsTools/soapui'
+    )
+    agent.modify_config(
+        agent.path + '/agent/config/conf_production.rb',
+        'SVN_HOME',
+        '/root/work/wmsTools/svn'
+    )
+    agent.modify_config(
         agent.path + '/agent/config/conf_common.rb',
         'ENVIRONMENT',
         'production'
