@@ -17,7 +17,8 @@ class Stage
                 :hostname,
                 :quota,
                 :soapui_home,
-                :svn_home
+                :svn_home,
+                :data_source
 
   def start
     p 'Starting...'
