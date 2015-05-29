@@ -122,11 +122,6 @@ task :deploy_production_agents do
         "#{agent.hostname}_production"
     )
     agent.modify_config(
-        agent.path + '/agent/config/conf_production.rb',
-        'QUOTA',
-        agent.quota.to_s
-    )
-    agent.modify_config(
         agent.path + '/agent/config/conf_common.rb',
         'ENVIRONMENT',
         'production'
