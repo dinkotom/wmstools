@@ -14,8 +14,7 @@ class Stage
               :rack_file
 
   attr_accessor :path,
-                :hostname,
-                :quota
+                :hostname
 
   def start
     p 'Starting...'
