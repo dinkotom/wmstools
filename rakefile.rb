@@ -113,7 +113,7 @@ task :deploy_production_server do
 end
 
 task :deploy_production_agents do
-  agents = [@production_agent_1, @production_agent_2]
+  agents = [@production_agent_1]
   agents.each do |agent|
     agent.deploy
     agent.modify_config(
