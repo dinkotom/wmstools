@@ -46,19 +46,19 @@ require_relative './rake/stage.rb'
 @production_agent_1.control_port = 8082
 @production_agent_1.change_log_file = '/root/work/wmsTools/agent/agent/deployment'
 @production_agent_1.rack_file = 'agent.ru'
-@production_agent_1.quota = 10
+@production_agent_1.quota = 11
 
 @production_agent_2 = Stage.new
 @production_agent_2.name = 'production_agent_2'
-@production_agent_1.hostname = 'uw001782'
-@production_agent_1.username = 'root'
-@production_agent_1.password = 'bender'
-@production_agent_1.path = '/root/work/wmsTools/agent'
-@production_agent_1.port = 8081
-@production_agent_1.control_port = 8082
-@production_agent_1.change_log_file = '/root/work/wmsTools/agent/agent/deployment'
-@production_agent_1.rack_file = 'agent.ru'
-@production_agent_1.quota = 10
+@production_agent_2.hostname = 'uw001782'
+@production_agent_2.username = 'root'
+@production_agent_2.password = 'bender'
+@production_agent_2.path = '/root/work/wmsTools/agent'
+@production_agent_2.port = 8081
+@production_agent_2.control_port = 8082
+@production_agent_2.change_log_file = '/root/work/wmsTools/agent/agent/deployment'
+@production_agent_2.rack_file = 'agent.ru'
+@production_agent_2.quota = 11
 
 task(:default => [:test, :deploy_staging_server, :deploy_staging_agent]) {}
 
@@ -84,7 +84,7 @@ task :deploy_staging_agent do
   @staging_agent.modify_config(
       @staging_agent.path + '/agent/config/conf_development.rb',
       'THIS_AGENT_ID',
-      "#{@staging_agent.hostname}_staging"
+      "'#{@staging_agent.hostname}_staging'"
   )
   @staging_agent.modify_config(
       @staging_agent.path + '/agent/config/conf_development.rb',
@@ -94,7 +94,7 @@ task :deploy_staging_agent do
   @staging_agent.modify_config(
                     @staging_agent.path + '/agent/config/conf_common.rb',
                     'ENVIRONMENT',
-                    'staging'
+                    "'staging'"
   )
   @staging_agent.bundle_install
   @staging_agent.restart
@@ -106,7 +106,7 @@ task :deploy_production_server do
   @production_server.modify_config(
                         @production_server.path + '/server/config/conf_common.rb',
                         'ENVIRONMENT',
-                        'production'
+                        "'production'"
   )
   @production_server.bundle_install
   @production_server.restart
@@ -119,12 +119,17 @@ task :deploy_production_agents do
     agent.modify_config(
         agent.path + '/agent/config/conf_production.rb',
         'THIS_AGENT_ID',
-        "#{agent.hostname}_production"
+        "'#{agent.hostname}_production'"
+    )
+    agent.modify_config(
+        agent.path + '/agent/config/conf_production.rb',
+        'QUOTA',
+        agent.quota.to_s
     )
     agent.modify_config(
         agent.path + '/agent/config/conf_common.rb',
         'ENVIRONMENT',
-        'production'
+        "'production'"
     )
     agent.bundle_install
     agent.restart

@@ -50,7 +50,7 @@ class Stage
 
   def modify_config(file, key, new_value)
     p "Modifying #{file} ..."
-    ssh_exec("sed -i \"s/\\(#{key} *= *\\).*/\\1'#{new_value}'/\" #{file}")
+    ssh_exec("sed -i \"s/\\(#{key} *= *\\).*/\\1#{new_value}/\" #{file}")
     raise unless ssh_exec("grep #{key} #{file}").include?(new_value)
     p "Modified. New line in #{file}: #{key} = #{new_value} ..."
   end
