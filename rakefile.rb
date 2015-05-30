@@ -54,8 +54,8 @@ require_relative './rake/stage.rb'
 @production_agent_2.username = 'root'
 @production_agent_2.password = 'bender'
 @production_agent_2.path = '/root/work/wmsTools/agent'
-@production_agent_2.port = 8084
-@production_agent_2.control_port = 8085
+@production_agent_2.port = 8081
+@production_agent_2.control_port = 8082
 @production_agent_2.change_log_file = '/root/work/wmsTools/agent/agent/deployment'
 @production_agent_2.rack_file = 'agent.ru'
 @production_agent_2.quota = 10
