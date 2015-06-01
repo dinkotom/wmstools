@@ -4,24 +4,24 @@ require_relative './rake/stage.rb'
 
 @staging_server = Stage.new
 @staging_server.name = 'staging_server'
-@staging_server.hostname = 'uw001684'
+@staging_server.hostname = 'uw001685'
 @staging_server.username = 'root'
 @staging_server.password = 'bender'
-@staging_server.path = '/home/wmsTools/work/wms-tools_staging'
+@staging_server.path = '/root/work/wmsTools/server_staging'
 @staging_server.port = 8088
 @staging_server.control_port = 8080
-@staging_server.change_log_file = '/home/wmsTools/work/wms-tools_staging/server/views/change_log.erb'
+@staging_server.change_log_file = '/root/work/wmsTools/server_staging/server/views/change_log.erb'
 @staging_server.rack_file = 'server.ru'
 
 @staging_agent = Stage.new
 @staging_agent.name = 'staging_agent'
-@staging_agent.hostname = 'uw001684'
+@staging_agent.hostname = 'uw001685'
 @staging_agent.username = 'root'
 @staging_agent.password = 'bender'
-@staging_agent.path = '/home/testAgent/work/agent/staging'
+@staging_agent.path = '/root/work/wmsTools/agent_staging'
 @staging_agent.port = 8081
 @staging_agent.control_port = 8082
-@staging_agent.change_log_file = '/home/testAgent/work/agent/staging/deployment'
+@staging_agent.change_log_file = '/root/work/wmsTools/agent_staging/agent/deployment'
 @staging_agent.rack_file = 'agent.ru'
 @staging_agent.quota = 2
 
@@ -137,7 +137,7 @@ task :deploy_production_server do
 end
 
 task :deploy_production_agents do
-  agents = [@production_agent_1, @production_agent_2, @production_agent_3]
+  agents = [@production_agent_1, @production_agent_2, @production_agent_3, @production_agent_4]
   agents.each do |agent|
     agent.deploy
     agent.modify_config(
