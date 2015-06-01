@@ -19,10 +19,11 @@ Only Linux is currently supported as operating system for both Server and Agents
 While any Linux distribution can be used, the following is applicable for Debian Linux.
 
 ### Server and Agents
-`sudo apt-get install ruby ruby-dev g++ subversion curl make libssl-dev sqlite3 rake`
+`sudo apt-get install ruby ruby-dev g++ subversion curl make libssl-dev sqlite3 rake libmysqlclient-dev`
+`sudo gem install bundler do_mysql`
 
 ### Database
-`sudo apt-get install mysql-server mysql-client libmysqlclient-dev libmysqlclient-dev`
+`sudo apt-get install mysql-server mysql-client libmysqlclient-dev`
 
 ```
 mysql -u root -p
