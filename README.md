@@ -21,7 +21,7 @@ While any Linux distribution can be used, the following is applicable for Debian
 ### Server and Agents
 `sudo apt-get install ruby ruby-dev g++ subversion curl make libssl-dev sqlite3 rake libmysqlclient-dev libsqlite3-dev`
 
-`sudo gem install bundler do_mysql do_sqlie3`
+`sudo gem install bundler do_mysql do_sqlite3`
 
 ### Database
 `sudo apt-get install mysql-server mysql-client libmysqlclient-dev`
