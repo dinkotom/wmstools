@@ -72,6 +72,18 @@ require_relative './rake/stage.rb'
 @production_agent_3.rack_file = 'agent.ru'
 @production_agent_3.quota = 4
 
+@production_agent_4 = Stage.new
+@production_agent_4.name = 'production_agent_4'
+@production_agent_4.hostname = 'uw001684'
+@production_agent_4.username = 'root'
+@production_agent_4.password = 'bender'
+@production_agent_4.path = '/root/work/wmsTools/agent'
+@production_agent_4.port = 8081
+@production_agent_4.control_port = 8082
+@production_agent_4.change_log_file = '/root/work/wmsTools/agent/agent/deployment'
+@production_agent_4.rack_file = 'agent.ru'
+@production_agent_4.quota = 4
+
 task(:default => [:test, :deploy_staging_server, :deploy_staging_agent]) {}
 
 task(:deploy_production_stack => [:test, :deploy_production_server, :deploy_production_agents]) {}
