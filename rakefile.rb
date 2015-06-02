@@ -8,8 +8,8 @@ require_relative './rake/stage.rb'
 @staging_server.username = 'root'
 @staging_server.password = 'bender'
 @staging_server.path = '/root/work/wmsTools/server_staging'
-@staging_server.port = 8088
-@staging_server.control_port = 8080
+@staging_server.port = 80
+@staging_server.control_port = 8083
 @staging_server.change_log_file = '/root/work/wmsTools/server_staging/server/views/change_log.erb'
 @staging_server.rack_file = 'server.ru'
 
