@@ -3,5 +3,6 @@ THIS_AGENT_ID = 'localhost'
 SOAPUI_HOME = '/root/work/wmsTools/soapui' # without trailing slash
 SVN_HOME = '/root/work/wmsTools/svn' # without trailing slash
 JAVA_HOME = "#{SOAPUI_HOME}/jre/bin/java" # without trailing slash
+JAR_HOME = '/TestAutomation'
 QUOTA = 2
 
