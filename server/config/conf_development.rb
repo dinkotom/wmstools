@@ -63,8 +63,9 @@ TEST_SUITES = [
     {:name => '[S] WEB SERVICE TESTS', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => false, :default_number_of_tests => 1, :priority => 23, :project_file => 'Skagerak-soapui-project.xml', :performance => true},
     {:name => '[AM] PERFORMANCE TESTS 2 [for IE]', :type => 'Suite', :environments => ['DEV7'], :piazza => false, :default_number_of_tests => 1, :priority => 24, :project_file => 'ASSET_MANAGEMENT-REST.xml', :performance => true},
     {:name => '[H] REGRESSION TESTS 1', :type => 'Suite', :environments => ['DEVHF02'], :piazza => true, :default_number_of_tests => 4, :priority => 25, :project_file => 'WMS-AMS.xml'},
-	{:name => '[H] REGRESSION TESTS 2', :type => 'Suite', :environments => ['DEVHF02'], :piazza => true, :default_number_of_tests => 10, :priority => 26, :project_file => 'WMS-AMS.xml'},
+    {:name => '[H] REGRESSION TESTS 2', :type => 'Suite', :environments => ['DEVHF02'], :piazza => true, :default_number_of_tests => 10, :priority => 26, :project_file => 'WMS-AMS.xml'},
     {:name => '[H] BUFFER TESTS', :type => 'Suite', :environments => ['DEVHF02'], :piazza => false, :default_number_of_tests => 2, :priority => 99, :project_file => 'WMS-AMS.xml', :buffer => true},
+    {:name => '[P] PERFORMANCE TESTS 01', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => false, :default_number_of_tests => 1, :priority => 14, :project_file => 'test-automation-demo-1.0-SNAPSHOT.jar', :performance => true},
     
 
 ]
@@ -264,6 +265,10 @@ TEST_PACKAGES = [
      :suites => ['[H] BUFFER TESTS'
      ]
     },
+    {:name => '[P] PERFORMANCE TESTS 01',
+     :suites => ['[P] PERFORMANCE TESTS 01'
+     ]
+    },
 ]
 
 PERFORMANCE_TESTS = [
@@ -368,6 +373,18 @@ PERFORMANCE_TESTS = [
         {:id => 'PERF005', :name => 'Overview search all', :reference_value => 15000, :max_value => 20000},
     ]
     },
+     {:test_suite_name => '[P] PERFORMANCE TESTS 01', :performance_measurement_points => [
+        {:id => 'PERF_FF001', :name => 'Login FF', :reference_value => 1200, :max_value => 5000},
+        {:id => 'PERF_CH001', :name => 'Login CH', :reference_value => 1200, :max_value => 5000},
+        {:id => 'PERF_IE001', :name => 'Login IE', :reference_value => 1200, :max_value => 5000},
+	{:id => 'PERF_FF002', :name => 'Select errand FF', :reference_value => 1200, :max_value => 5000},
+        {:id => 'PERF_CH002', :name => 'Select errand CH', :reference_value => 1200, :max_value => 5000},
+        {:id => 'PERF_IE002', :name => 'Select errand IE', :reference_value => 1200, :max_value => 5000},
+	{:id => 'PERF_FF003', :name => 'Save FF', :reference_value => 1200, :max_value => 5000},
+        {:id => 'PERF_CH003', :name => 'Save CH', :reference_value => 1200, :max_value => 5000},
+        {:id => 'PERF_IE003', :name => 'Save IE', :reference_value => 1200, :max_value => 5000},
+    ]
+    },	
 ]
 
 PIAZZA_SCREENS = [
