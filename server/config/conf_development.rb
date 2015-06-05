@@ -374,15 +374,15 @@ PERFORMANCE_TESTS = [
     ]
     },
      {:test_suite_name => '[P] PERFORMANCE TESTS 01', :performance_measurement_points => [
-        {:id => 'PERF_FF001', :name => 'Login FF', :reference_value => 1200, :max_value => 5000},
-        {:id => 'PERF_CH001', :name => 'Login CH', :reference_value => 1200, :max_value => 5000},
-        {:id => 'PERF_IE001', :name => 'Login IE', :reference_value => 1200, :max_value => 5000},
-	{:id => 'PERF_FF002', :name => 'Select errand FF', :reference_value => 1200, :max_value => 5000},
-        {:id => 'PERF_CH002', :name => 'Select errand CH', :reference_value => 1200, :max_value => 5000},
-        {:id => 'PERF_IE002', :name => 'Select errand IE', :reference_value => 1200, :max_value => 5000},
-	{:id => 'PERF_FF003', :name => 'Save FF', :reference_value => 1200, :max_value => 5000},
-        {:id => 'PERF_CH003', :name => 'Save CH', :reference_value => 1200, :max_value => 5000},
-        {:id => 'PERF_IE003', :name => 'Save IE', :reference_value => 1200, :max_value => 5000},
+        {:id => 'PERF001F', :name => 'Login FF', :reference_value => 1200, :max_value => 5000},
+        {:id => 'PERF001C', :name => 'Login CH', :reference_value => 1200, :max_value => 5000},
+        {:id => 'PERF001E', :name => 'Login IE', :reference_value => 1200, :max_value => 5000},
+	{:id => 'PERF002F', :name => 'Select errand FF', :reference_value => 1200, :max_value => 5000},
+        {:id => 'PERF002C', :name => 'Select errand CH', :reference_value => 1200, :max_value => 5000},
+        {:id => 'PERF002E', :name => 'Select errand IE', :reference_value => 1200, :max_value => 5000},
+	{:id => 'PERF003F', :name => 'Save FF', :reference_value => 1200, :max_value => 5000},
+        {:id => 'PERF003C', :name => 'Save CH', :reference_value => 1200, :max_value => 5000},
+        {:id => 'PERF003E', :name => 'Save IE', :reference_value => 1200, :max_value => 5000},
     ]
     },	
 ]
