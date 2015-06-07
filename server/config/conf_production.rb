@@ -57,7 +57,7 @@ FORTUM_BRANCH_REGRESSION_TESTS_JOB = {
         ]
 }
 
-FORTUM_LAWCHANGES_REGRESSION_TESTS_JOB = {
+FORTUM_LC_REGRESSION_TESTS_JOB = {
     :cron => '0 6 * * *',
     :suites_environments =>
         [
