@@ -55,3 +55,111 @@ I, [2015-05-27T13:48:38.648392 #2781]  INFO -- : PTY opened with following PID: 
 I, [2015-05-27T13:48:38.968993 #2781]  INFO -- : Finished running test execution id '75' on branch 'branch/4.9.0', suite '[F] PERFORMANCE TESTS', project file 'WMS.xml' 
 
 I, [2015-05-27T13:48:39.163610 #2781]  INFO -- : Email has been successfully sent to tomas.dinkov@tieto.com.
+I, [2015-06-08T06:10:41.147954 #5536]  INFO -- : Starting running test execution id '75' on branch 'branch/4.9.0', suite '[F] PERFORMANCE TESTS', project file 'WMS.xml' 
+
+I, [2015-06-08T06:10:41.148370 #5536]  INFO -- : Opening PTY using following command: /usr/bin/java -Xms1024m -Xmx1024m -XX:MaxPermSize=128m -Dsoapui.properties=soapui.properties -Dgroovy.source.encoding=iso-8859-1 -Dsoapui.home=/home/nodeTest/work/soapui/bin -Dsoapui.ext.libraries=/home/nodeTest/work/svn/branch/4.9.0/requiredJARs -Dsoapui.ext.listeners=/home/nodeTest/work/soapui/bin/listeners -Dsoapui.ext.actions=/home/nodeTest/work/soapui/bin/actions -cp /home/nodeTest/work/soapui/bin/soapui-5.0.0.jar:/home/nodeTest/work/soapui/lib/* com.eviware.soapui.tools.SoapUITestCaseRunner -t /home/nodeTest/work/soapui/soapui-settings.xml -s '[F] PERFORMANCE TESTS' -r /home/nodeTest/work/svn/branch/4.9.0/WMS.xml -f '75' 2> ./75/stderr.txt|tee ./75/stdout.txt
+I, [2015-06-08T06:10:41.153395 #5536]  INFO -- : PTY opened with following PID: 5545
+I, [2015-06-08T06:10:41.740600 #5536]  INFO -- : Finished running test execution id '75' on branch 'branch/4.9.0', suite '[F] PERFORMANCE TESTS', project file 'WMS.xml' 
+
+I, [2015-06-08T06:10:41.927851 #5536]  INFO -- : Email has been successfully sent to tomas.dinkov@tieto.com.
+I, [2015-06-08T06:15:25.586042 #5570]  INFO -- : Starting running test execution id '75' on branch 'branch/4.9.0', suite '[F] PERFORMANCE TESTS', project file 'WMS.xml' 
+
+I, [2015-06-08T06:15:25.586208 #5570]  INFO -- : Opening PTY using following command: /usr/bin/java -Xms1024m -Xmx1024m -XX:MaxPermSize=128m -Dsoapui.properties=soapui.properties -Dgroovy.source.encoding=iso-8859-1 -Dsoapui.home=/home/nodeTest/work/soapui/bin -Dsoapui.ext.libraries=/home/nodeTest/work/svn/branch/4.9.0/requiredJARs -Dsoapui.ext.listeners=/home/nodeTest/work/soapui/bin/listeners -Dsoapui.ext.actions=/home/nodeTest/work/soapui/bin/actions -cp /home/nodeTest/work/soapui/bin/soapui-5.0.0.jar:/home/nodeTest/work/soapui/lib/* com.eviware.soapui.tools.SoapUITestCaseRunner -t /home/nodeTest/work/soapui/soapui-settings.xml -s '[F] PERFORMANCE TESTS' -r /home/nodeTest/work/svn/branch/4.9.0/WMS.xml -f '75' 2> ./75/stderr.txt|tee ./75/stdout.txt
+I, [2015-06-08T06:15:25.591003 #5570]  INFO -- : PTY opened with following PID: 5578
+I, [2015-06-08T06:15:25.885288 #5570]  INFO -- : Finished running test execution id '75' on branch 'branch/4.9.0', suite '[F] PERFORMANCE TESTS', project file 'WMS.xml' 
+
+I, [2015-06-08T06:15:26.044598 #5570]  INFO -- : Email has been successfully sent to tomas.dinkov@tieto.com.
+I, [2015-06-08T06:16:30.741414 #5605]  INFO -- : Starting running test execution id '75' on branch 'branch/4.9.0', suite '[F] PERFORMANCE TESTS', project file 'WMS.xml' 
+
+I, [2015-06-08T06:16:30.741565 #5605]  INFO -- : Opening PTY using following command: /usr/bin/java -Xms1024m -Xmx1024m -XX:MaxPermSize=128m -Dsoapui.properties=soapui.properties -Dgroovy.source.encoding=iso-8859-1 -Dsoapui.home=/home/nodeTest/work/soapui/bin -Dsoapui.ext.libraries=/home/nodeTest/work/svn/branch/4.9.0/requiredJARs -Dsoapui.ext.listeners=/home/nodeTest/work/soapui/bin/listeners -Dsoapui.ext.actions=/home/nodeTest/work/soapui/bin/actions -cp /home/nodeTest/work/soapui/bin/soapui-5.0.0.jar:/home/nodeTest/work/soapui/lib/* com.eviware.soapui.tools.SoapUITestCaseRunner -t /home/nodeTest/work/soapui/soapui-settings.xml -s '[F] PERFORMANCE TESTS' -r /home/nodeTest/work/svn/branch/4.9.0/WMS.xml -f '75' 2> ./75/stderr.txt|tee ./75/stdout.txt
+I, [2015-06-08T06:16:30.746039 #5605]  INFO -- : PTY opened with following PID: 5613
+I, [2015-06-08T06:16:31.034609 #5605]  INFO -- : Finished running test execution id '75' on branch 'branch/4.9.0', suite '[F] PERFORMANCE TESTS', project file 'WMS.xml' 
+
+I, [2015-06-08T06:16:31.187684 #5605]  INFO -- : Email has been successfully sent to tomas.dinkov@tieto.com.
+I, [2015-06-08T06:17:39.130038 #5636]  INFO -- : Starting running test execution id '75' on branch 'branch/4.9.0', suite '[F] PERFORMANCE TESTS', project file 'WMS.xml' 
+
+I, [2015-06-08T06:17:39.130213 #5636]  INFO -- : Opening PTY using following command: /usr/bin/java -Xms1024m -Xmx1024m -XX:MaxPermSize=128m -Dsoapui.properties=soapui.properties -Dgroovy.source.encoding=iso-8859-1 -Dsoapui.home=/home/nodeTest/work/soapui/bin -Dsoapui.ext.libraries=/home/nodeTest/work/svn/branch/4.9.0/requiredJARs -Dsoapui.ext.listeners=/home/nodeTest/work/soapui/bin/listeners -Dsoapui.ext.actions=/home/nodeTest/work/soapui/bin/actions -cp /home/nodeTest/work/soapui/bin/soapui-5.0.0.jar:/home/nodeTest/work/soapui/lib/* com.eviware.soapui.tools.SoapUITestCaseRunner -t /home/nodeTest/work/soapui/soapui-settings.xml -s '[F] PERFORMANCE TESTS' -r /home/nodeTest/work/svn/branch/4.9.0/WMS.xml -f '75' 2> ./75/stderr.txt|tee ./75/stdout.txt
+I, [2015-06-08T06:17:39.134754 #5636]  INFO -- : PTY opened with following PID: 5644
+I, [2015-06-08T06:17:39.425132 #5636]  INFO -- : Finished running test execution id '75' on branch 'branch/4.9.0', suite '[F] PERFORMANCE TESTS', project file 'WMS.xml' 
+
+I, [2015-06-08T06:17:39.579395 #5636]  INFO -- : Email has been successfully sent to tomas.dinkov@tieto.com.
+I, [2015-06-08T06:19:16.217571 #5667]  INFO -- : Starting running test execution id '75' on branch 'branch/4.9.0', suite '[F] PERFORMANCE TESTS', project file 'WMS.xml' 
+
+I, [2015-06-08T06:19:16.217730 #5667]  INFO -- : Opening PTY using following command: /usr/bin/java -Xms1024m -Xmx1024m -XX:MaxPermSize=128m -Dsoapui.properties=soapui.properties -Dgroovy.source.encoding=iso-8859-1 -Dsoapui.home=/home/nodeTest/work/soapui/bin -Dsoapui.ext.libraries=/home/nodeTest/work/svn/branch/4.9.0/requiredJARs -Dsoapui.ext.listeners=/home/nodeTest/work/soapui/bin/listeners -Dsoapui.ext.actions=/home/nodeTest/work/soapui/bin/actions -cp /home/nodeTest/work/soapui/bin/soapui-5.0.0.jar:/home/nodeTest/work/soapui/lib/* com.eviware.soapui.tools.SoapUITestCaseRunner -t /home/nodeTest/work/soapui/soapui-settings.xml -s '[F] PERFORMANCE TESTS' -r /home/nodeTest/work/svn/branch/4.9.0/WMS.xml -f '75' 2> ./75/stderr.txt|tee ./75/stdout.txt
+I, [2015-06-08T06:19:16.221956 #5667]  INFO -- : PTY opened with following PID: 5675
+I, [2015-06-08T06:19:16.516128 #5667]  INFO -- : Finished running test execution id '75' on branch 'branch/4.9.0', suite '[F] PERFORMANCE TESTS', project file 'WMS.xml' 
+
+I, [2015-06-08T06:19:16.673191 #5667]  INFO -- : Email has been successfully sent to tomas.dinkov@tieto.com.
+I, [2015-06-08T06:19:51.539835 #5699]  INFO -- : Starting running test execution id '75' on branch 'branch/4.9.0', suite '[F] PERFORMANCE TESTS', project file 'WMS.xml' 
+
+I, [2015-06-08T06:19:51.540003 #5699]  INFO -- : Opening PTY using following command: /usr/bin/java -Xms1024m -Xmx1024m -XX:MaxPermSize=128m -Dsoapui.properties=soapui.properties -Dgroovy.source.encoding=iso-8859-1 -Dsoapui.home=/home/nodeTest/work/soapui/bin -Dsoapui.ext.libraries=/home/nodeTest/work/svn/branch/4.9.0/requiredJARs -Dsoapui.ext.listeners=/home/nodeTest/work/soapui/bin/listeners -Dsoapui.ext.actions=/home/nodeTest/work/soapui/bin/actions -cp /home/nodeTest/work/soapui/bin/soapui-5.0.0.jar:/home/nodeTest/work/soapui/lib/* com.eviware.soapui.tools.SoapUITestCaseRunner -t /home/nodeTest/work/soapui/soapui-settings.xml -s '[F] PERFORMANCE TESTS' -r /home/nodeTest/work/svn/branch/4.9.0/WMS.xml -f '75' 2> ./75/stderr.txt|tee ./75/stdout.txt
+I, [2015-06-08T06:19:51.544713 #5699]  INFO -- : PTY opened with following PID: 5707
+I, [2015-06-08T06:19:51.833301 #5699]  INFO -- : Finished running test execution id '75' on branch 'branch/4.9.0', suite '[F] PERFORMANCE TESTS', project file 'WMS.xml' 
+
+I, [2015-06-08T06:19:51.990011 #5699]  INFO -- : Email has been successfully sent to tomas.dinkov@tieto.com.
+I, [2015-06-08T06:20:09.441501 #5730]  INFO -- : Starting running test execution id '75' on branch 'branch/4.9.0', suite '[F] PERFORMANCE TESTS', project file 'WMS.xml' 
+
+I, [2015-06-08T06:20:09.441661 #5730]  INFO -- : Opening PTY using following command: /usr/bin/java -Xms1024m -Xmx1024m -XX:MaxPermSize=128m -Dsoapui.properties=soapui.properties -Dgroovy.source.encoding=iso-8859-1 -Dsoapui.home=/home/nodeTest/work/soapui/bin -Dsoapui.ext.libraries=/home/nodeTest/work/svn/branch/4.9.0/requiredJARs -Dsoapui.ext.listeners=/home/nodeTest/work/soapui/bin/listeners -Dsoapui.ext.actions=/home/nodeTest/work/soapui/bin/actions -cp /home/nodeTest/work/soapui/bin/soapui-5.0.0.jar:/home/nodeTest/work/soapui/lib/* com.eviware.soapui.tools.SoapUITestCaseRunner -t /home/nodeTest/work/soapui/soapui-settings.xml -s '[F] PERFORMANCE TESTS' -r /home/nodeTest/work/svn/branch/4.9.0/WMS.xml -f '75' 2> ./75/stderr.txt|tee ./75/stdout.txt
+I, [2015-06-08T06:20:09.445948 #5730]  INFO -- : PTY opened with following PID: 5738
+I, [2015-06-08T06:20:09.736493 #5730]  INFO -- : Finished running test execution id '75' on branch 'branch/4.9.0', suite '[F] PERFORMANCE TESTS', project file 'WMS.xml' 
+
+I, [2015-06-08T06:20:09.910073 #5730]  INFO -- : Email has been successfully sent to tomas.dinkov@tieto.com.
+I, [2015-06-08T06:21:01.640745 #5761]  INFO -- : Starting running test execution id '75' on branch 'branch/4.9.0', suite '[F] PERFORMANCE TESTS', project file 'WMS.xml' 
+
+I, [2015-06-08T06:21:01.640909 #5761]  INFO -- : Opening PTY using following command: /usr/bin/java -Xms1024m -Xmx1024m -XX:MaxPermSize=128m -Dsoapui.properties=soapui.properties -Dgroovy.source.encoding=iso-8859-1 -Dsoapui.home=/home/nodeTest/work/soapui/bin -Dsoapui.ext.libraries=/home/nodeTest/work/svn/branch/4.9.0/requiredJARs -Dsoapui.ext.listeners=/home/nodeTest/work/soapui/bin/listeners -Dsoapui.ext.actions=/home/nodeTest/work/soapui/bin/actions -cp /home/nodeTest/work/soapui/bin/soapui-5.0.0.jar:/home/nodeTest/work/soapui/lib/* com.eviware.soapui.tools.SoapUITestCaseRunner -t /home/nodeTest/work/soapui/soapui-settings.xml -s '[F] PERFORMANCE TESTS' -r /home/nodeTest/work/svn/branch/4.9.0/WMS.xml -f '75' 2> ./75/stderr.txt|tee ./75/stdout.txt
+I, [2015-06-08T06:21:01.644867 #5761]  INFO -- : PTY opened with following PID: 5769
+I, [2015-06-08T06:21:01.932457 #5761]  INFO -- : Finished running test execution id '75' on branch 'branch/4.9.0', suite '[F] PERFORMANCE TESTS', project file 'WMS.xml' 
+
+I, [2015-06-08T06:21:02.081283 #5761]  INFO -- : Email has been successfully sent to tomas.dinkov@tieto.com.
+I, [2015-06-08T06:33:53.788860 #5800]  INFO -- : Starting running test execution id '75' on branch 'branch/4.9.0', suite '[F] PERFORMANCE TESTS', project file 'WMS.xml' 
+
+I, [2015-06-08T06:33:53.789034 #5800]  INFO -- : Opening PTY using following command: /usr/bin/java -Xms1024m -Xmx1024m -XX:MaxPermSize=128m -Dsoapui.properties=soapui.properties -Dgroovy.source.encoding=iso-8859-1 -Dsoapui.home=/home/nodeTest/work/soapui/bin -Dsoapui.ext.libraries=/home/nodeTest/work/svn/branch/4.9.0/requiredJARs -Dsoapui.ext.listeners=/home/nodeTest/work/soapui/bin/listeners -Dsoapui.ext.actions=/home/nodeTest/work/soapui/bin/actions -cp /home/nodeTest/work/soapui/bin/soapui-5.0.0.jar:/home/nodeTest/work/soapui/lib/* com.eviware.soapui.tools.SoapUITestCaseRunner -t /home/nodeTest/work/soapui/soapui-settings.xml -s '[F] PERFORMANCE TESTS' -r /home/nodeTest/work/svn/branch/4.9.0/WMS.xml -f '75' 2> ./75/stderr.txt|tee ./75/stdout.txt
+I, [2015-06-08T06:33:53.793344 #5800]  INFO -- : PTY opened with following PID: 5808
+I, [2015-06-08T06:33:54.077817 #5800]  INFO -- : Finished running test execution id '75' on branch 'branch/4.9.0', suite '[F] PERFORMANCE TESTS', project file 'WMS.xml' 
+
+I, [2015-06-08T06:33:54.241449 #5800]  INFO -- : Email has been successfully sent to tomas.dinkov@tieto.com.
+I, [2015-06-08T06:40:50.203942 #5839]  INFO -- : Starting running test execution id '75' on branch 'branch/4.9.0', suite '[F] PERFORMANCE TESTS', project file 'WMS.xml' 
+
+I, [2015-06-08T06:40:50.204096 #5839]  INFO -- : Opening PTY using following command: /usr/bin/java -Xms1024m -Xmx1024m -XX:MaxPermSize=128m -Dsoapui.properties=soapui.properties -Dgroovy.source.encoding=iso-8859-1 -Dsoapui.home=/home/nodeTest/work/soapui/bin -Dsoapui.ext.libraries=/home/nodeTest/work/svn/branch/4.9.0/requiredJARs -Dsoapui.ext.listeners=/home/nodeTest/work/soapui/bin/listeners -Dsoapui.ext.actions=/home/nodeTest/work/soapui/bin/actions -cp /home/nodeTest/work/soapui/bin/soapui-5.0.0.jar:/home/nodeTest/work/soapui/lib/* com.eviware.soapui.tools.SoapUITestCaseRunner -t /home/nodeTest/work/soapui/soapui-settings.xml -s '[F] PERFORMANCE TESTS' -r /home/nodeTest/work/svn/branch/4.9.0/target/WMS.xml -f '75' 2> ./75/stderr.txt|tee ./75/stdout.txt
+I, [2015-06-08T06:40:50.208591 #5839]  INFO -- : PTY opened with following PID: 5849
+I, [2015-06-08T06:40:50.493587 #5839]  INFO -- : Finished running test execution id '75' on branch 'branch/4.9.0', suite '[F] PERFORMANCE TESTS', project file 'WMS.xml' 
+
+I, [2015-06-08T06:40:50.647616 #5839]  INFO -- : Email has been successfully sent to tomas.dinkov@tieto.com.
+I, [2015-06-08T06:41:28.400209 #5907]  INFO -- : Starting running test execution id '75' on branch 'branch/4.9.0', suite '[F] PERFORMANCE TESTS', project file 'WMS.xml' 
+
+I, [2015-06-08T06:41:28.400365 #5907]  INFO -- : Opening PTY using following command: /usr/bin/java -Xms1024m -Xmx1024m -XX:MaxPermSize=128m -Dsoapui.properties=soapui.properties -Dgroovy.source.encoding=iso-8859-1 -Dsoapui.home=/home/nodeTest/work/soapui/bin -Dsoapui.ext.libraries=/home/nodeTest/work/svn/branch/4.9.0/requiredJARs -Dsoapui.ext.listeners=/home/nodeTest/work/soapui/bin/listeners -Dsoapui.ext.actions=/home/nodeTest/work/soapui/bin/actions -cp /home/nodeTest/work/soapui/bin/soapui-5.0.0.jar:/home/nodeTest/work/soapui/lib/* com.eviware.soapui.tools.SoapUITestCaseRunner -t /home/nodeTest/work/soapui/soapui-settings.xml -s '[F] PERFORMANCE TESTS' -r /home/nodeTest/work/svn/branch/4.9.0/WMS.xml -f '75' 2> ./75/stderr.txt|tee ./75/stdout.txt
+I, [2015-06-08T06:41:28.404337 #5907]  INFO -- : PTY opened with following PID: 5916
+I, [2015-06-08T06:41:28.692590 #5907]  INFO -- : Finished running test execution id '75' on branch 'branch/4.9.0', suite '[F] PERFORMANCE TESTS', project file 'WMS.xml' 
+
+I, [2015-06-08T06:41:28.861852 #5907]  INFO -- : Email has been successfully sent to tomas.dinkov@tieto.com.
+I, [2015-06-08T06:44:30.106201 #5949]  INFO -- : Starting running test execution id '75' on branch 'branch/4.9.0', suite '[F] PERFORMANCE TESTS', project file 'WMS.xml' 
+
+I, [2015-06-08T06:44:30.106369 #5949]  INFO -- : Opening PTY using following command: /usr/bin/java -Xms1024m -Xmx1024m -XX:MaxPermSize=128m -Dsoapui.properties=soapui.properties -Dgroovy.source.encoding=iso-8859-1 -Dsoapui.home=/home/nodeTest/work/soapui/bin -Dsoapui.ext.libraries=/home/nodeTest/work/svn/branch/4.9.0/requiredJARs -Dsoapui.ext.listeners=/home/nodeTest/work/soapui/bin/listeners -Dsoapui.ext.actions=/home/nodeTest/work/soapui/bin/actions -cp /home/nodeTest/work/soapui/bin/soapui-5.0.0.jar:/home/nodeTest/work/soapui/lib/* com.eviware.soapui.tools.SoapUITestCaseRunner -t /home/nodeTest/work/soapui/soapui-settings.xml -s '[F] PERFORMANCE TESTS' -r /home/nodeTest/work/svn/branch/4.9.0/WMS.xml -f '75' 2> ./75/stderr.txt|tee ./75/stdout.txt
+I, [2015-06-08T06:44:30.110979 #5949]  INFO -- : PTY opened with following PID: 5958
+I, [2015-06-08T06:44:30.405009 #5949]  INFO -- : Finished running test execution id '75' on branch 'branch/4.9.0', suite '[F] PERFORMANCE TESTS', project file 'WMS.xml' 
+
+I, [2015-06-08T06:44:30.605200 #5949]  INFO -- : Email has been successfully sent to tomas.dinkov@tieto.com.
+I, [2015-06-08T07:01:49.883636 #6013]  INFO -- : Starting running test execution id '75' on branch 'branch/4.9.0', suite '[F] PERFORMANCE TESTS', project file 'WMS.xml' 
+
+I, [2015-06-08T07:01:49.883867 #6013]  INFO -- : Opening PTY using following command: /usr/bin/java -Xms1024m -Xmx1024m -XX:MaxPermSize=128m -Dsoapui.properties=soapui.properties -Dgroovy.source.encoding=iso-8859-1 -Dsoapui.home=/home/nodeTest/work/soapui/bin -Dsoapui.ext.libraries=/home/nodeTest/work/svn/branch/4.9.0/requiredJARs -Dsoapui.ext.listeners=/home/nodeTest/work/soapui/bin/listeners -Dsoapui.ext.actions=/home/nodeTest/work/soapui/bin/actions -cp /home/nodeTest/work/soapui/bin/soapui-5.0.0.jar:/home/nodeTest/work/soapui/lib/* com.eviware.soapui.tools.SoapUITestCaseRunner -t /home/nodeTest/work/soapui/soapui-settings.xml -s '[F] PERFORMANCE TESTS' -r /home/nodeTest/work/svn/branch/4.9.0/WMS.xml -f '75' 2> ./75/stderr.txt|tee ./75/stdout.txt
+I, [2015-06-08T07:01:49.888290 #6013]  INFO -- : PTY opened with following PID: 6022
+I, [2015-06-08T07:01:50.177969 #6013]  INFO -- : Finished running test execution id '75' on branch 'branch/4.9.0', suite '[F] PERFORMANCE TESTS', project file 'WMS.xml' 
+
+I, [2015-06-08T07:01:50.344370 #6013]  INFO -- : Email has been successfully sent to tomas.dinkov@tieto.com.
+W, [2015-06-08T07:01:51.050894 #6013]  WARN -- : Performance measurement point 'PERF001F' is not defined for test suite '[F] PERFORMANCE TESTS'
+W, [2015-06-08T07:01:51.051415 #6013]  WARN -- : Performance measurement point 'PERF001C' is not defined for test suite '[F] PERFORMANCE TESTS'
+W, [2015-06-08T07:01:51.051900 #6013]  WARN -- : Performance measurement point 'PERF001E' is not defined for test suite '[F] PERFORMANCE TESTS'
+W, [2015-06-08T07:01:51.052348 #6013]  WARN -- : Performance measurement point 'PERF002F' is not defined for test suite '[F] PERFORMANCE TESTS'
+W, [2015-06-08T07:01:51.052791 #6013]  WARN -- : Performance measurement point 'PERF002C' is not defined for test suite '[F] PERFORMANCE TESTS'
+W, [2015-06-08T07:01:51.053238 #6013]  WARN -- : Performance measurement point 'PERF002E' is not defined for test suite '[F] PERFORMANCE TESTS'
+W, [2015-06-08T07:01:51.053638 #6013]  WARN -- : Performance measurement point 'PERF003F' is not defined for test suite '[F] PERFORMANCE TESTS'
+W, [2015-06-08T07:01:51.054031 #6013]  WARN -- : Performance measurement point 'PERF003C' is not defined for test suite '[F] PERFORMANCE TESTS'
+W, [2015-06-08T07:01:51.054428 #6013]  WARN -- : Performance measurement point 'PERF003E' is not defined for test suite '[F] PERFORMANCE TESTS'
+I, [2015-06-08T07:05:45.828950 #6061]  INFO -- : Starting running test execution id '75' on branch 'branch/4.9.0', suite '[F] PERFORMANCE TESTS', project file 'WMS.xml' 
+
+I, [2015-06-08T07:05:45.829135 #6061]  INFO -- : Opening PTY using following command: /usr/bin/java -Xms1024m -Xmx1024m -XX:MaxPermSize=128m -Dsoapui.properties=soapui.properties -Dgroovy.source.encoding=iso-8859-1 -Dsoapui.home=/home/nodeTest/work/soapui/bin -Dsoapui.ext.libraries=/home/nodeTest/work/svn/branch/4.9.0/requiredJARs -Dsoapui.ext.listeners=/home/nodeTest/work/soapui/bin/listeners -Dsoapui.ext.actions=/home/nodeTest/work/soapui/bin/actions -cp /home/nodeTest/work/soapui/bin/soapui-5.0.0.jar:/home/nodeTest/work/soapui/lib/* com.eviware.soapui.tools.SoapUITestCaseRunner -t /home/nodeTest/work/soapui/soapui-settings.xml -s '[F] PERFORMANCE TESTS' -r /home/nodeTest/work/svn/branch/4.9.0/WMS.xml -f '75' 2> ./75/stderr.txt|tee ./75/stdout.txt
+I, [2015-06-08T07:05:45.833924 #6061]  INFO -- : PTY opened with following PID: 6069
+I, [2015-06-08T07:05:46.135104 #6061]  INFO -- : Finished running test execution id '75' on branch 'branch/4.9.0', suite '[F] PERFORMANCE TESTS', project file 'WMS.xml' 
+
+I, [2015-06-08T07:05:46.298497 #6061]  INFO -- : Email has been successfully sent to tomas.dinkov@tieto.com.
+W, [2015-06-08T07:05:47.015699 #6061]  WARN -- : Performance measurement point 'PERF001b' is not defined for test suite '[F] PERFORMANCE TESTS'

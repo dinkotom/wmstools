@@ -29,9 +29,10 @@ class OperatingSystem
       command << " -r #{SVN_HOME}/#{branch}/#{@project_file}"
       command << " -f '#{@folder}'"
     elsif @project_file.split('.').last == 'jar'
-      command << " -cp #{JAR_HOME}/#{@project_file}:#{JAR_HOME}/lib/*"
+      command << " -cp #{JAR_HOME}/#{branch}/target/#{@project_file}:#{JAR_HOME}/#{branch}/target/lib/*"
       command << ' com.tieto.test.ui.demo.Run'
       command << " #{@environment}"
+      command << " '#{@suite}'"
     else
       raise 'Invalid project file. Must be either xml or jar.'
     end
@@ -192,6 +193,8 @@ class OperatingSystem
                                       :performance_measurement_point_test_suite_name => test_execution.test_suite_name,
                                       :value => value
         )
+      else
+        $logger.warn("Performance measurement point '#{id}' is not defined for test suite '#{test_execution.test_suite_name}'")
       end
     end
   end

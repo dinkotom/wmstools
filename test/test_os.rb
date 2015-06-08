@@ -93,6 +93,23 @@ class TestOs < Test::Unit::TestCase
       [TC079] Manual reconnection [basic RDR SelfReadYes] PASSED for DS 735999102110642593
     }
 
+    @stdout_performance_kamil = %q{
+      2015-06-05 23:10:55,048  INFO com.tieto.test.ui.demo.Run - [SoapUITestCaseRunner] Running SoapUI tests in project
+      2015-06-05 23:10:55,049  INFO com.tieto.test.ui.demo.Run - WMS build #12345
+      2015-06-05 23:10:55,049  INFO com.tieto.test.ui.demo.Run - [SoapUITestCaseRunner] Running TestSuite [[P] PERFORMANCE TESTS 01], runType = SEQUENTIAL
+      2015-06-05 23:10:55,051  INFO com.tieto.test.ui.demo.Run - DEV8PROM [P] PERFORMANCE TESTS 01 [TC1] Login, login - PASSED [PERF001F][200]
+      2015-06-05 23:10:55,051  INFO com.tieto.test.ui.demo.Run - DEV8PROM [P] PERFORMANCE TESTS 01 [TC1] Login, login - PASSED [PERF001C][300]
+      2015-06-05 23:10:55,052  INFO com.tieto.test.ui.demo.Run - DEV8PROM [P] PERFORMANCE TESTS 01 [TC1] Login, login - PASSED [PERF001E][400]
+      2015-06-05 23:10:55,052  INFO com.tieto.test.ui.demo.Run - DEV8PROM [P] PERFORMANCE TESTS 01 [TC2] Create new delivery point, select errand - PASSED [PERF002F][4200]
+      2015-06-05 23:10:55,052  INFO com.tieto.test.ui.demo.Run - DEV8PROM [P] PERFORMANCE TESTS 01 [TC2] Create new delivery point, select errand - PASSED [PERF002C][4300]
+      2015-06-05 23:10:55,053  INFO com.tieto.test.ui.demo.Run - DEV8PROM [P] PERFORMANCE TESTS 01 [TC2] Create new delivery point, select errand - PASSED [PERF002E][4400]
+      2015-06-05 23:10:55,053  INFO com.tieto.test.ui.demo.Run - DEV8PROM [P] PERFORMANCE TESTS 01 [TC2] Create new delivery point, save - PASSED [PERF003F][4200]
+      2015-06-05 23:10:55,053  INFO com.tieto.test.ui.demo.Run - DEV8PROM [P] PERFORMANCE TESTS 01 [TC2] Create new delivery point, save - PASSED [PERF003C][4300]
+      2015-06-05 23:10:55,054  INFO com.tieto.test.ui.demo.Run - DEV8PROM [P] PERFORMANCE TESTS 01 [TC2] Create new delivery point, save - PASSED [PERF003E][4400]
+      2015-06-05 23:10:55,054  INFO com.tieto.test.ui.demo.Run - [SoapUITestCaseRunner] Finished running SoapUI tests
+      2015-06-05 23:10:55,054  INFO com.tieto.test.ui.demo.Run - [SoapUITestCaseRunner] TestSuite [[P] PERFORMANCE TESTS 01] finished with status [FINISHED] in 276104ms
+    }
+
     @os = OperatingSystem.new
     @os.folder, @os.branch, @os.project_file, @os.suite = 'output', 'trunk', 'WMS.xml', '[F] LOAD TEST'
 
@@ -116,10 +133,11 @@ class TestOs < Test::Unit::TestCase
 
   def test_composing_jar_project_command
     @te.environment_name = 'DEV8'
-    @te.test_suite_name = '[P] KAMIL'
+    @os.branch = 'branch/4.9.0'
+    @os.suite = '[P] KAMIL'
     @os.project_file = 'test.jar'
     @os.environment = 'DEV8'
-    assert_equal('/usr/bin/java -cp /Users/tdinkov/Git/wmstools/agent/jar_projects/test.jar:/Users/tdinkov/Git/wmstools/agent/jar_projects/lib/* com.tieto.test.ui.demo.Run DEV8 2> ./output/stderr.txt|tee ./output/stdout.txt', @os.send(:compose_command))
+    assert_equal("/usr/bin/java -cp /Users/tdinkov/Git/wmstools/agent/jar_projects/branch/4.9.0/target/test.jar:/Users/tdinkov/Git/wmstools/agent/jar_projects/branch/4.9.0/target/lib/* com.tieto.test.ui.demo.Run DEV8 '[P] KAMIL' 2> ./output/stderr.txt|tee ./output/stdout.txt", @os.send(:compose_command))
   end
 
   def test_storing_svn_revision
@@ -179,7 +197,9 @@ class TestOs < Test::Unit::TestCase
     @te.test_suite_name = '[F] PERFORMANCE TESTS'
     @te.save
     PerformanceMeasurement.destroy!
-    @stdout_performance.each_line {|line|@os.send(:scan_for_performance_measurements, line, @te)}
+    @stdout_performance.each_line do |line|
+      @os.send(:scan_for_performance_measurements, line, @te)
+    end
     assert_equal(2, PerformanceMeasurement.all.count)
     assert_equal(180, PerformanceMeasurement.get(@te.id, 'PERF001', @te.test_suite_name).value)
     assert_equal(154454, PerformanceMeasurement.get(@te.id, 'PERF002', @te.test_suite_name).value)
