@@ -57,7 +57,7 @@ FORTUM_BRANCH_REGRESSION_TESTS_JOB = {
         ]
 }
 
-FORTUM_BRANCH_LAWCHANGES_REGRESSION_TESTS_JOB = {
+FORTUM_LC_REGRESSION_TESTS_JOB = {
     :cron => '0 6 * * *',
     :suites_environments =>
         [
@@ -87,16 +87,16 @@ SKAGERAK_TRUNK_REGRESSION_TESTS_JOB = {
     :cron => '30 2 * * *',
     :suites_environments =>
         [
-            {:suite => '[S] RT1 [NEWDELIVERYPOINT]', :environment => 'DEV2SKA'},
-            {:suite => '[S] RT2 [METER CHANGE]', :environment => 'DEV2SKA'},
-            {:suite => '[S] RT3 [RECONNECTION]', :environment => 'DEV2SKA'},
-            {:suite => '[S] RT4 [DISCONNECTION]', :environment => 'DEV2SKA'},
-            {:suite => '[S] RT5 [NEWDELIVERYPOINT_PREQUALIFIED]', :environment => 'DEV2SKA'},
-            {:suite => '[S] RT6 [JMS EXECUTE WORK FLOW INFORMATION]', :environment => 'DEV2SKA'},
-            {:suite => '[S] RT7 [TERMINATION]', :environment => 'DEV2SKA'},
-            {:suite => '[S] RT8 [ADD DOCUMENT]', :environment => 'DEV2SKA'},
-            {:suite => '[S] TRANSLATION TESTS', :environment => 'DEV2SKA'},
-            {:suite => '[S] WEB SERVICE TESTS', :environment => 'DEV2SKA'},
+#            {:suite => '[S] RT1 [NEWDELIVERYPOINT]', :environment => 'DEV2SKA'},
+#            {:suite => '[S] RT2 [METER CHANGE]', :environment => 'DEV2SKA'},
+#            {:suite => '[S] RT3 [RECONNECTION]', :environment => 'DEV2SKA'},
+#            {:suite => '[S] RT4 [DISCONNECTION]', :environment => 'DEV2SKA'},
+#            {:suite => '[S] RT5 [NEWDELIVERYPOINT_PREQUALIFIED]', :environment => 'DEV2SKA'},
+#            {:suite => '[S] RT6 [JMS EXECUTE WORK FLOW INFORMATION]', :environment => 'DEV2SKA'},
+#            {:suite => '[S] RT7 [TERMINATION]', :environment => 'DEV2SKA'},
+#            {:suite => '[S] RT8 [ADD DOCUMENT]', :environment => 'DEV2SKA'},
+#            {:suite => '[S] TRANSLATION TESTS', :environment => 'DEV2SKA'},
+#            {:suite => '[S] WEB SERVICE TESTS', :environment => 'DEV2SKA'},
         ]
 }
 
@@ -127,8 +127,8 @@ ASSET_MANAGEMENT_REGRESSION_TESTS_JOB = {
     :cron => '30 3 * * * ',
     :suites_environments =>
         [
-            {:suite => '[AM] SMOKE TESTS', :environment => 'DEV7'},
-            {:suite => '[AM] REGRESSION TESTS 1', :environment => 'DEV7'},
+#            {:suite => '[AM] SMOKE TESTS', :environment => 'DEV7'},
+#            {:suite => '[AM] REGRESSION TESTS 1', :environment => 'DEV7'},
         ]
 }
 
@@ -136,7 +136,7 @@ ASSET_MANAGEMENT_PERFORMANCE_TESTS_JOB = {
     :cron => '*/20 20 * * * ',
     :suites_environments =>
         [
-            {:suite => '[AM] PERFORMANCE TESTS 2 [for IE]', :environment => 'DEV7'},
+#            {:suite => '[AM] PERFORMANCE TESTS 2 [for IE]', :environment => 'DEV7'},
         ]
 }
 
@@ -499,8 +499,8 @@ PIAZZA_SCREENS = [
 ]
 
 DELIVERY_SITE_TYPES = [
-    {:id => '[F] M1 1C', :name => '[F] M1 1C', :environments => ['FAT', 'FAT4', 'FAT5'], :test_suite_name => '[F] BUFFER TESTS', :quota => 50},
-    {:id => '[F] M1 1C RDR', :name => '[F] M1 1C RDR', :environments => ['FAT', 'FAT4', 'FAT5'], :test_suite_name => '[F] BUFFER TESTS', :quota => 50},
+    {:id => '[F] M1 1C', :name => '[F] M1 1C', :environments => ['FAT', 'FAT4', 'FAT5'], :test_suite_name => '[F] BUFFER TESTS', :quota => 100},
+    {:id => '[F] M1 1C RDR', :name => '[F] M1 1C RDR', :environments => ['FAT', 'FAT4', 'FAT5'], :test_suite_name => '[F] BUFFER TESTS', :quota => 100},
     {:id => '[F] M1 2C', :name => '[F] M1 2C', :environments => ['FAT', 'FAT4', 'FAT5'], :test_suite_name => '[F] BUFFER TESTS', :quota => 50},
     {:id => '[F] T7 1C', :name => '[F] T7 1C', :environments => ['FAT', 'FAT4', 'FAT5'], :test_suite_name => '[F] BUFFER TESTS', :quota => 50},
     {:id => '[F] T1 1C MicroProduction', :name => '[F] T1 1C MicroProduction', :environments => ['FAT', 'FAT4'], :test_suite_name => '[F] BUFFER TESTS', :quota => 50},

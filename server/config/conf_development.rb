@@ -12,22 +12,13 @@ DATA_SOURCE = 'mysql://wmsuser:SalvatorDali01@localhost/wmstools_staging'
 PORT = 8088
 PERFORMANCE_TEST_RESULTS_PER_PAGE = 30
 
-FORTUM_REGRESSION_TESTS_JOB = {
-    :cron => '0 * * * *',
+FORTUM_SMOKE_TESTS_JOB = {
+    :cron => '30 5 * * *',
     :suites_environments =>
         [
-            {:suite => '[F] MAINTENANCE TESTS', :enviroment => 'FAT'},
-            {:suite => '[F] SMOKE TESTS', :enviroment => 'FAT4'},
-        ]
-}
-
-PROMETERA_PERFORMANCE_TESTS_JOB = {
-    :cron => '/10 18-21,02-05 * * *',
-    :suites_environments =>
-        [
-            {:suite => '[P] PERFORMANCE TESTS 1', :enviroment => 'PROMETERA'},
-            #{:suite => '[P] PERFORMANCE TESTS 2', :enviroment => 'PROMETERA'},
-	          {:suite => '[P] PERFORMANCE TESTS 3', :enviroment => 'PROMETERA'},
+            {:suite => '[F] SMOKE TESTS', :environment => 'FAT'},
+            {:suite => '[F] SMOKE TESTS', :environment => 'FAT4'},
+            {:suite => '[F] SMOKE TESTS', :environment => 'FAT5'},
         ]
 }
 
@@ -72,8 +63,9 @@ TEST_SUITES = [
     {:name => '[S] WEB SERVICE TESTS', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => false, :default_number_of_tests => 1, :priority => 23, :project_file => 'Skagerak-soapui-project.xml', :performance => true},
     {:name => '[AM] PERFORMANCE TESTS 2 [for IE]', :type => 'Suite', :environments => ['DEV7'], :piazza => false, :default_number_of_tests => 1, :priority => 24, :project_file => 'ASSET_MANAGEMENT-REST.xml', :performance => true},
     {:name => '[H] REGRESSION TESTS 1', :type => 'Suite', :environments => ['DEVHF02'], :piazza => true, :default_number_of_tests => 4, :priority => 25, :project_file => 'WMS-AMS.xml'},
-	{:name => '[H] REGRESSION TESTS 2', :type => 'Suite', :environments => ['DEVHF02'], :piazza => true, :default_number_of_tests => 10, :priority => 26, :project_file => 'WMS-AMS.xml'},
+    {:name => '[H] REGRESSION TESTS 2', :type => 'Suite', :environments => ['DEVHF02'], :piazza => true, :default_number_of_tests => 10, :priority => 26, :project_file => 'WMS-AMS.xml'},
     {:name => '[H] BUFFER TESTS', :type => 'Suite', :environments => ['DEVHF02'], :piazza => false, :default_number_of_tests => 2, :priority => 99, :project_file => 'WMS-AMS.xml', :buffer => true},
+    {:name => '[P] PERFORMANCE TESTS 01', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => false, :default_number_of_tests => 1, :priority => 14, :project_file => 'test-automation-demo-1.0-SNAPSHOT.jar', :performance => true},
     
 
 ]
@@ -273,6 +265,10 @@ TEST_PACKAGES = [
      :suites => ['[H] BUFFER TESTS'
      ]
     },
+    {:name => '[P] PERFORMANCE TESTS 01',
+     :suites => ['[P] PERFORMANCE TESTS 01'
+     ]
+    },
 ]
 
 PERFORMANCE_TESTS = [
@@ -377,6 +373,18 @@ PERFORMANCE_TESTS = [
         {:id => 'PERF005', :name => 'Overview search all', :reference_value => 15000, :max_value => 20000},
     ]
     },
+     {:test_suite_name => '[P] PERFORMANCE TESTS 01', :performance_measurement_points => [
+        {:id => 'PERF001F', :name => 'Login FF', :reference_value => 1200, :max_value => 5000},
+        {:id => 'PERF001C', :name => 'Login CH', :reference_value => 1200, :max_value => 5000},
+        {:id => 'PERF001E', :name => 'Login IE', :reference_value => 1200, :max_value => 5000},
+	{:id => 'PERF002F', :name => 'Select errand FF', :reference_value => 1200, :max_value => 5000},
+        {:id => 'PERF002C', :name => 'Select errand CH', :reference_value => 1200, :max_value => 5000},
+        {:id => 'PERF002E', :name => 'Select errand IE', :reference_value => 1200, :max_value => 5000},
+	{:id => 'PERF003F', :name => 'Save FF', :reference_value => 1200, :max_value => 5000},
+        {:id => 'PERF003C', :name => 'Save CH', :reference_value => 1200, :max_value => 5000},
+        {:id => 'PERF003E', :name => 'Save IE', :reference_value => 1200, :max_value => 5000},
+    ]
+    },	
 ]
 
 PIAZZA_SCREENS = [
@@ -389,23 +397,23 @@ PIAZZA_SCREENS = [
 ]
 
 DELIVERY_SITE_TYPES = [
-    {:id => '[F] M1 1C', :name => '[F] M1 1C', :environments => ['FAT', 'FAT4', 'FAT5'], :test_suite_name => '[F] BUFFER TESTS', :quota => 50},
-    {:id => '[F] M1 1C RDR', :name => '[F] M1 1C RDR', :environments => ['FAT', 'FAT4', 'FAT5'], :test_suite_name => '[F] BUFFER TESTS', :quota => 50},
-    {:id => '[F] M1 2C', :name => '[F] M1 2C', :environments => ['FAT', 'FAT4', 'FAT5'], :test_suite_name => '[F] BUFFER TESTS', :quota => 50},
-    {:id => '[F] T7 1C', :name => '[F] T7 1C', :environments => ['FAT', 'FAT4', 'FAT5'], :test_suite_name => '[F] BUFFER TESTS', :quota => 50},
-    {:id => '[F] T1 1C MicroProduction', :name => '[F] T1 1C MicroProduction', :environments => ['FAT', 'FAT4'], :test_suite_name => '[F] BUFFER TESTS', :quota => 50},
-    {:id => '[F] T1 1C', :name => '[F] T1 1C', :environments => ['FAT', 'FAT4', 'FAT5'], :test_suite_name => '[F] BUFFER TESTS', :quota => 50},
-    {:id => '[F] T1 2C', :name => '[F] T1 2C', :environments => ['FAT', 'FAT4', 'FAT5'], :test_suite_name => '[F] BUFFER TESTS', :quota => 50},
-    {:id => '[F] T1 4C', :name => '[F] T1 4C', :environments => ['FAT', 'FAT4', 'FAT5'], :test_suite_name => '[F] BUFFER TESTS', :quota => 50},
+    {:id => '[F] M1 1C', :name => '[F] M1 1C', :environments => ['FAT', 'FAT4', 'FAT5'], :test_suite_name => '[F] BUFFER TESTS', :quota => 2},
+    {:id => '[F] M1 1C RDR', :name => '[F] M1 1C RDR', :environments => ['FAT', 'FAT4', 'FAT5'], :test_suite_name => '[F] BUFFER TESTS', :quota => 2},
+    {:id => '[F] M1 2C', :name => '[F] M1 2C', :environments => ['FAT', 'FAT4', 'FAT5'], :test_suite_name => '[F] BUFFER TESTS', :quota => 2},
+    {:id => '[F] T7 1C', :name => '[F] T7 1C', :environments => ['FAT', 'FAT4', 'FAT5'], :test_suite_name => '[F] BUFFER TESTS', :quota => 2},
+    {:id => '[F] T1 1C MicroProduction', :name => '[F] T1 1C MicroProduction', :environments => ['FAT', 'FAT4'], :test_suite_name => '[F] BUFFER TESTS', :quota => 2},
+    {:id => '[F] T1 1C', :name => '[F] T1 1C', :environments => ['FAT', 'FAT4', 'FAT5'], :test_suite_name => '[F] BUFFER TESTS', :quota => 2},
+    {:id => '[F] T1 2C', :name => '[F] T1 2C', :environments => ['FAT', 'FAT4', 'FAT5'], :test_suite_name => '[F] BUFFER TESTS', :quota => 2},
+    {:id => '[F] T1 4C', :name => '[F] T1 4C', :environments => ['FAT', 'FAT4', 'FAT5'], :test_suite_name => '[F] BUFFER TESTS', :quota => 2},
     {:id => '[S] SKA REG', :name => '[S] Regular', :environments => ['DEV2SKA'], :quota => 0},
     {:id => '[S] SKA REG + TRA', :name => '[S] Regular + Trafo', :environments => ['DEV2SKA'], :quota => 0},
     {:id => '[S] SKA REG DISC', :name => '[S] Regular - Disconnected', :environments => ['DEV2SKA'], :quota => 0},
     {:id => '[S] SKA REG DISC + TRA', :name => '[S] Regular - Disconnected + Trafo', :environments => ['DEV2SKA'],:quota => 0},
     {:id => '[S] SKA HOUR', :name => '[S] Hourly', :environments => ['DEV2SKA'], :quota => 0},
     {:id => '[S] SKA HOUR + TRAFO', :name => '[S] Hourly + Trafo', :environments => ['DEV2SKA'], :quota => 0},
-    {:id => '[H] AMS Z31 1c', :name => '[H] AMS Z31 1c', :environments => ['DEVHF02'], :test_suite_name => '[H] BUFFER TESTS', :quota => 1000},
-    {:id => '[H] AMS Z31 2c', :name => '[H] AMS Z31 2c', :environments => ['DEVHF02'], :test_suite_name => '[H] BUFFER TESTS', :quota => 500},
-	{:id => '[H] AMS Z32 1c', :name => '[H] AMS Z32 1c', :environments => ['DEVHF02'], :test_suite_name => '[H] BUFFER TESTS', :quota => 500},
+    {:id => '[H] AMS Z31 1c', :name => '[H] AMS Z31 1c', :environments => ['DEVHF02'], :test_suite_name => '[H] BUFFER TESTS', :quota => 2},
+    {:id => '[H] AMS Z31 2c', :name => '[H] AMS Z31 2c', :environments => ['DEVHF02'], :test_suite_name => '[H] BUFFER TESTS', :quota => 2},
+	{:id => '[H] AMS Z32 1c', :name => '[H] AMS Z32 1c', :environments => ['DEVHF02'], :test_suite_name => '[H] BUFFER TESTS', :quota => 2},
 ]
 
 ENVIRONMENTS = [
