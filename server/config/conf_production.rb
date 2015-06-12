@@ -37,6 +37,7 @@ FORTUM_TRUNK_REGRESSION_TESTS_JOB = {
             {:suite => '[F] REGRESSION TESTS 5', :environment => 'FAT'},
             {:suite => '[F] REGRESSION TESTS 6', :environment => 'FAT'},
             {:suite => '[F] REGRESSION TESTS 7', :environment => 'FAT'},
+            {:suite => '[F] REGRESSION TESTS 8', :environment => 'FAT'},
             {:suite => '[F] WEB SERVICE TESTS', :environment => 'FAT'},
         ]
 }
@@ -153,6 +154,7 @@ TEST_SUITES = [
     {:name => '[F] REGRESSION TESTS 5', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'DEV1'], :piazza => true, :default_number_of_tests => 17, :priority => 7, :project_file => 'WMS.xml'},
     {:name => '[F] REGRESSION TESTS 6', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'DEV1'], :piazza => true, :default_number_of_tests => 24, :priority => 8, :project_file => 'WMS.xml'},
     {:name => '[F] REGRESSION TESTS 7', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5'], :piazza => true, :default_number_of_tests => 15, :priority => 9, :project_file => 'WMS.xml'},
+    {:name => '[F] REGRESSION TESTS 8', :type => 'Suite', :environments => ['FAT'], :piazza => true, :default_number_of_tests => 15, :priority => 9, :project_file => 'WMS.xml'},
     {:name => '[F] LOAD TESTS', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'DEV1'], :piazza => false, :priority => 10, :project_file => 'WMS.xml', :load => true},
     {:name => '[F] MAINTENANCE TESTS', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'DEV1'], :piazza => false, :priority => 11, :project_file => 'WMS.xml'},
     {:name => '[F] PERFORMANCE TESTS', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'DEV1'], :piazza => false, :priority => 12, :project_file => 'WMS.xml', :performance => true},
@@ -200,6 +202,7 @@ TEST_PACKAGES = [
          '[F] REGRESSION TESTS 5',
          '[F] REGRESSION TESTS 6',
          '[F] REGRESSION TESTS 7',
+         '[F] REGRESSION TESTS 8',
          '[P] REGRESSION TESTS 1',
          '[P] REGRESSION TESTS 2',
 	 '[P] REGRESSION TESTS 3',
@@ -249,6 +252,10 @@ TEST_PACKAGES = [
     },
     {:name => '[F] REGRESSION TESTS 7',
      :suites => ['[F] REGRESSION TESTS 7'
+     ]
+    },
+    {:name => '[F] REGRESSION TESTS 8',
+     :suites => ['[F] REGRESSION TESTS 8'
      ]
     },
     {:name => '[F] LOAD TESTS',
