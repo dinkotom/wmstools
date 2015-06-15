@@ -42,37 +42,21 @@ FORTUM_TRUNK_REGRESSION_TESTS_JOB = {
         ]
 }
 
-FORTUM_BRANCH_REGRESSION_TESTS_JOB = {
-    :cron => '0 7 * * *',
-    :suites_environments =>
-        [
-            {:suite => '[F] SMOKE TESTS', :environment => 'FAT5'},
-            {:suite => '[F] REGRESSION TESTS 1', :environment => 'FAT5'},
-            {:suite => '[F] REGRESSION TESTS 2', :environment => 'FAT5'},
-            {:suite => '[F] REGRESSION TESTS 3', :environment => 'FAT5'},
-            {:suite => '[F] REGRESSION TESTS 4', :environment => 'FAT5'},
-            {:suite => '[F] REGRESSION TESTS 5', :environment => 'FAT5'},
-            {:suite => '[F] REGRESSION TESTS 6', :environment => 'FAT5'},
-	    {:suite => '[F] REGRESSION TESTS 7', :environment => 'FAT5'},
-            {:suite => '[F] WEB SERVICE TESTS', :environment => 'FAT5'},
-        ]
-}
-
-FORTUM_LC_REGRESSION_TESTS_JOB = {
-    :cron => '0 6 * * *',
-    :suites_environments =>
-        [
-            {:suite => '[F] SMOKE TESTS', :environment => 'FAT4'},
-            {:suite => '[F] REGRESSION TESTS 1', :environment => 'FAT4'},
-            {:suite => '[F] REGRESSION TESTS 2', :environment => 'FAT4'},
-            {:suite => '[F] REGRESSION TESTS 3', :environment => 'FAT4'},
-            {:suite => '[F] REGRESSION TESTS 4', :environment => 'FAT4'},
-            {:suite => '[F] REGRESSION TESTS 5', :environment => 'FAT4'},
-            {:suite => '[F] REGRESSION TESTS 6', :environment => 'FAT4'},
-	    {:suite => '[F] REGRESSION TESTS 7', :environment => 'FAT4'},
-            {:suite => '[F] WEB SERVICE TESTS', :environment => 'FAT4'},
-        ]
-}
+#FORTUM_BRANCH_REGRESSION_TESTS_JOB = {
+#    :cron => '0 7 * * *',
+#    :suites_environments =>
+#        [
+#            {:suite => '[F] SMOKE TESTS', :environment => 'FAT5'},
+#            {:suite => '[F] REGRESSION TESTS 1', :environment => 'FAT5'},
+#            {:suite => '[F] REGRESSION TESTS 2', :environment => 'FAT5'},
+#           {:suite => '[F] REGRESSION TESTS 3', :environment => 'FAT5'},
+#            {:suite => '[F] REGRESSION TESTS 4', :environment => 'FAT5'},
+#            {:suite => '[F] REGRESSION TESTS 5', :environment => 'FAT5'},
+#            {:suite => '[F] REGRESSION TESTS 6', :environment => 'FAT5'},
+#	    {:suite => '[F] REGRESSION TESTS 7', :environment => 'FAT5'},
+#            {:suite => '[F] WEB SERVICE TESTS', :environment => 'FAT5'},
+#        ]
+#}
 
 PROMETERA_REGRESSION_TESTS_JOB = {
     :cron => '30 1 * * *',
@@ -84,10 +68,10 @@ PROMETERA_REGRESSION_TESTS_JOB = {
         ]
 }
 
-SKAGERAK_TRUNK_REGRESSION_TESTS_JOB = {
-    :cron => '30 2 * * *',
-    :suites_environments =>
-        [
+#SKAGERAK_TRUNK_REGRESSION_TESTS_JOB = {
+#    :cron => '30 2 * * *',
+#    :suites_environments =>
+#        [
 #            {:suite => '[S] RT1 [NEWDELIVERYPOINT]', :environment => 'DEV2SKA'},
 #            {:suite => '[S] RT2 [METER CHANGE]', :environment => 'DEV2SKA'},
 #            {:suite => '[S] RT3 [RECONNECTION]', :environment => 'DEV2SKA'},
@@ -98,19 +82,14 @@ SKAGERAK_TRUNK_REGRESSION_TESTS_JOB = {
 #            {:suite => '[S] RT8 [ADD DOCUMENT]', :environment => 'DEV2SKA'},
 #            {:suite => '[S] TRANSLATION TESTS', :environment => 'DEV2SKA'},
 #            {:suite => '[S] WEB SERVICE TESTS', :environment => 'DEV2SKA'},
-        ]
-}
+#        ]
+#}
 
 
 PROMETERA_PERFORMANCE_TESTS_JOB = {
     :cron => '*/20 21 * * * ',
     :suites_environments =>
         [
-            #{:suite => '[P] PERFORMANCE TESTS 1 [for FF]', :environment => 'DEV8PROM'},
-            #{:suite => '[P] PERFORMANCE TESTS 2 [for FF]', :environment => 'DEV8PROM'},
-            #{:suite => '[P] PERFORMANCE TESTS 3 [for FF]', :environment => 'DEV8PROM'},
-            #{:suite => '[P] PERFORMANCE TESTS 4 [for IE]', :environment => 'DEV8PROM'},
-            #{:suite => '[P] PERFORMANCE TESTS 5 [for IE]', :environment => 'DEV8PROM'},
 		{:suite => '[P] PERFORMANCE TESTS 01 [DEV8]', :environment => 'DEV8PROM'},
 		{:suite => '[P] PERFORMANCE TESTS 01 [PROM PERF]', :environment => 'PROM_PERF'},
         ]
@@ -121,23 +100,6 @@ FORTUM_PERFORMANCE_TESTS_JOB = {
     :suites_environments =>
         [
             {:suite => '[F] PERFORMANCE TESTS', :environment => 'FAT'},
-        ]
-}
-
-ASSET_MANAGEMENT_REGRESSION_TESTS_JOB = {
-    :cron => '30 3 * * * ',
-    :suites_environments =>
-        [
-#            {:suite => '[AM] SMOKE TESTS', :environment => 'DEV7'},
-#            {:suite => '[AM] REGRESSION TESTS 1', :environment => 'DEV7'},
-        ]
-}
-
-ASSET_MANAGEMENT_PERFORMANCE_TESTS_JOB = {
-    :cron => '*/20 20 * * * ',
-    :suites_environments =>
-        [
-#            {:suite => '[AM] PERFORMANCE TESTS 2 [for IE]', :environment => 'DEV7'},
         ]
 }
 
