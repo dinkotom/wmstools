@@ -14,10 +14,15 @@ class OperatingSystem
   STOP_STRING = '[SoapUITestCaseRunner] Finished running SoapUI tests'
   REVISION_STRING = 'WMS build #\d{5}'
 
+  def project_file=(file)
+    @project_file = file
+    @project_file_extension = @project_file.split('.').last
+  end
+
   def compose_command
     command = "#{JAVA_HOME}"
 
-    if @project_file.split('.').last == 'xml'
+    if @project_file_extension == 'xml'
       command << ' -Xms1024m -Xmx1024m -XX:MaxPermSize=128m -Dsoapui.properties=soapui.properties -Dgroovy.source.encoding=iso-8859-1'
       command << " -Dsoapui.home=#{SOAPUI_HOME}/bin"
       command << " -Dsoapui.ext.libraries=#{SVN_HOME}/#{branch}/requiredJARs"
@@ -28,11 +33,13 @@ class OperatingSystem
       command << " -c '#{@test_case}'" if test_case
       command << " -r #{SVN_HOME}/#{branch}/#{@project_file}"
       command << " -f '#{@folder}'"
-    elsif @project_file.split('.').last == 'jar'
+    elsif @project_file_extension == 'jar'
       command << " -cp #{JAR_HOME}/#{branch}/target/#{@project_file}:#{JAR_HOME}/#{branch}/target/lib/*"
       command << ' com.tieto.test.ui.demo.Run'
       command << " #{@environment}"
       command << " '#{@suite}'"
+    elsif @project_file_extension == 'txt'
+      command = "#{FAKE_OUTPUT_HOME}/fake_output.sh #{FAKE_OUTPUT_HOME}/#{@project_file}"
     else
       raise 'Invalid project file. Must be either xml or jar.'
     end
@@ -124,7 +131,16 @@ class OperatingSystem
   private
 
   def update_svn(branch)
-    command = "svn update #{SVN_HOME}/#{branch}"
+    case @project_file_extension
+      when 'xml'
+        dir = SVN_HOME
+      when 'jar'
+        dir = JAR_HOME
+      else
+        dir = SVN_HOME
+    end
+
+    command = "svn update #{dir}/#{branch}"
     system command
     $logger.error "Failed to update svn on branch '#{branch}'." unless $? == 0
   end

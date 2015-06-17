@@ -100,7 +100,7 @@ GEM
       rack (>= 1.1, < 2.0)
     puma (2.10.2-java)
       rack (>= 1.1, < 2.0)
-    rack (1.6.0)
+    rack (1.6.1)
     rack-protection (1.5.3)
       rack
     rack-test (0.6.2)
@@ -151,7 +151,7 @@ DEPENDENCIES
   mocha
   net-ssh
   puma
-  rack
+  rack (~> 1.6.1)
   rack-test
   rubyzip (~> 1.0.0)
   rufus-scheduler

@@ -1,0 +1,14 @@
+2015-06-08 08:48:38,489  INFO com.tieto.test.ui.demo.Run - [SoapUITestCaseRunner] Running SoapUI tests in project
+2015-06-08 08:48:38,489  INFO com.tieto.test.ui.demo.Run - WMS build #12345
+2015-06-08 08:48:38,489  INFO com.tieto.test.ui.demo.Run - [SoapUITestCaseRunner] Running TestSuite [[P] PERFORMANCE TESTS 01], runType = SEQUENTIAL
+2015-06-08 08:48:38,505  INFO com.tieto.test.ui.demo.Run - DEV8 [P] PERFORMANCE TESTS 01 [TC001] Login, login - PASSED [PERF001F][200]
+2015-06-08 08:48:38,505  INFO com.tieto.test.ui.demo.Run - DEV8 [P] PERFORMANCE TESTS 01 [TC002] Login, login - PASSED [PERF001C][300]
+2015-06-08 08:48:38,505  INFO com.tieto.test.ui.demo.Run - DEV8 [P] PERFORMANCE TESTS 01 [TC003] Login, login - PASSED [PERF001E][400]
+2015-06-08 08:48:38,505  INFO com.tieto.test.ui.demo.Run - DEV8 [P] PERFORMANCE TESTS 01 [TC004] Create new delivery point, select errand - PASSED [PERF002F][4200]
+2015-06-08 08:48:38,505  INFO com.tieto.test.ui.demo.Run - DEV8 [P] PERFORMANCE TESTS 01 [TC005] Create new delivery point, select errand - PASSED [PERF002C][4300]
+2015-06-08 08:48:38,505  INFO com.tieto.test.ui.demo.Run - DEV8 [P] PERFORMANCE TESTS 01 [TC006] Create new delivery point, select errand - PASSED [PERF002E][4400]
+2015-06-08 08:48:38,505  INFO com.tieto.test.ui.demo.Run - DEV8 [P] PERFORMANCE TESTS 01 [TC007] Create new delivery point, save - PASSED [PERF003F][4200]
+2015-06-08 08:48:38,505  INFO com.tieto.test.ui.demo.Run - DEV8 [P] PERFORMANCE TESTS 01 [TC008] Create new delivery point, save - PASSED [PERF003C][4300]
+2015-06-08 08:48:38,505  INFO com.tieto.test.ui.demo.Run - DEV8 [P] PERFORMANCE TESTS 01 [TC009] Create new delivery point, save - PASSED [PERF003E][4400]
+2015-06-08 08:48:38,505  INFO com.tieto.test.ui.demo.Run - [SoapUITestCaseRunner] Finished running SoapUI tests
+2015-06-08 08:48:38,505  INFO com.tieto.test.ui.demo.Run - [SoapUITestCaseRunner] TestSuite [[P] PERFORMANCE TESTS 01] finished with status [FINISHED] in 276104ms

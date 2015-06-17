@@ -25,7 +25,7 @@ group :test do
   gem 'test-unit'
   gem 'mocha'
   gem 'rack-test'
-  gem 'rack'
+  gem 'rack', '~> 1.6.1'
 end
 
 group :rake do

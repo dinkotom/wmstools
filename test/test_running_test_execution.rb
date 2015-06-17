@@ -15,7 +15,7 @@ class RunningTestExecutionTest < Test::Unit::TestCase
   end
 
   def test_sending_email
-    omit('Omitted for compatibility with Windows TeamCity Agent') unless RUBY_PLATFORM =~ /linux/ || RUBY_PLATFORM =~ /darwin/
+    omit('Omitted for compatibility with Windows TeamCity Agent') unless RUBY_PLATFORM =~ /linux/ || RUBY_PLATFORM =~ /darwin/ || RUBY_PLATFORM =~ /java/
     Mail::TestMailer.deliveries.clear
     @sut.report = 'fake report'
     @sut.run(@os)
