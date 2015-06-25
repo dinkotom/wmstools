@@ -469,22 +469,23 @@ PIAZZA_SCREENS = [
 
 DELIVERY_SITE_TYPES = [
     {:id => '[F] M1 1C', :name => '[F] M1 1C', :environments => ['FAT', 'FAT4', 'FAT5'], :test_suite_name => '[F] BUFFER TESTS', :quota => 100},
-    {:id => '[F] M1 1C RDR', :name => '[F] M1 1C RDR', :environments => ['FAT', 'FAT4', 'FAT5'], :test_suite_name => '[F] BUFFER TESTS', :quota => 100},
+    {:id => '[F] M1 1C PTB RDR', :name => '[F] M1 1C RDR', :environments => ['FAT', 'FAT4', 'FAT5'], :test_suite_name => '[F] BUFFER TESTS', :quota => 100},
+    {:id => '[F] M1 1C FULL RDR', :name => '[F] M1 1C FULL RDR', :environments => ['FAT'], :test_suite_name => '[F] BUFFER TESTS', :quota => 100},
     {:id => '[F] M1 2C', :name => '[F] M1 2C', :environments => ['FAT', 'FAT4', 'FAT5'], :test_suite_name => '[F] BUFFER TESTS', :quota => 50},
     {:id => '[F] T7 1C', :name => '[F] T7 1C', :environments => ['FAT', 'FAT4', 'FAT5'], :test_suite_name => '[F] BUFFER TESTS', :quota => 50},
     {:id => '[F] T1 1C MicroProduction', :name => '[F] T1 1C MicroProduction', :environments => ['FAT', 'FAT4'], :test_suite_name => '[F] BUFFER TESTS', :quota => 50},
     {:id => '[F] T1 1C', :name => '[F] T1 1C', :environments => ['FAT', 'FAT4', 'FAT5'], :test_suite_name => '[F] BUFFER TESTS', :quota => 50},
     {:id => '[F] T1 2C', :name => '[F] T1 2C', :environments => ['FAT', 'FAT4', 'FAT5'], :test_suite_name => '[F] BUFFER TESTS', :quota => 50},
     {:id => '[F] T1 4C', :name => '[F] T1 4C', :environments => ['FAT', 'FAT4', 'FAT5'], :test_suite_name => '[F] BUFFER TESTS', :quota => 50},
-    {:id => '[S] SKA REG', :name => '[S] Regular', :environments => ['DEV2SKA'], :quota => 0},
-    {:id => '[S] SKA REG + TRA', :name => '[S] Regular + Trafo', :environments => ['DEV2SKA'], :quota => 0},
-    {:id => '[S] SKA REG DISC', :name => '[S] Regular - Disconnected', :environments => ['DEV2SKA'], :quota => 0},
-    {:id => '[S] SKA REG DISC + TRA', :name => '[S] Regular - Disconnected + Trafo', :environments => ['DEV2SKA'],:quota => 0},
-    {:id => '[S] SKA HOUR', :name => '[S] Hourly', :environments => ['DEV2SKA'], :quota => 0},
-    {:id => '[S] SKA HOUR + TRAFO', :name => '[S] Hourly + Trafo', :environments => ['DEV2SKA'], :quota => 0},
+    #{:id => '[S] SKA REG', :name => '[S] Regular', :environments => ['DEV2SKA'], :quota => 0},
+    #{:id => '[S] SKA REG + TRA', :name => '[S] Regular + Trafo', :environments => ['DEV2SKA'], :quota => 0},
+    #{:id => '[S] SKA REG DISC', :name => '[S] Regular - Disconnected', :environments => ['DEV2SKA'], :quota => 0},
+    #{:id => '[S] SKA REG DISC + TRA', :name => '[S] Regular - Disconnected + Trafo', :environments => ['DEV2SKA'],:quota => 0},
+    #{:id => '[S] SKA HOUR', :name => '[S] Hourly', :environments => ['DEV2SKA'], :quota => 0},
+    #{:id => '[S] SKA HOUR + TRAFO', :name => '[S] Hourly + Trafo', :environments => ['DEV2SKA'], :quota => 0},
     {:id => '[H] AMS Z31 1c', :name => '[H] AMS Z31 1c', :environments => ['DEVHF02'], :test_suite_name => '[H] BUFFER TESTS', :quota => 1000},
     {:id => '[H] AMS Z31 2c', :name => '[H] AMS Z31 2c', :environments => ['DEVHF02'], :test_suite_name => '[H] BUFFER TESTS', :quota => 500},
-	{:id => '[H] AMS Z32 1c', :name => '[H] AMS Z32 1c', :environments => ['DEVHF02'], :test_suite_name => '[H] BUFFER TESTS', :quota => 500},
+    {:id => '[H] AMS Z32 1c', :name => '[H] AMS Z32 1c', :environments => ['DEVHF02'], :test_suite_name => '[H] BUFFER TESTS', :quota => 500},
 ]
 
 ENVIRONMENTS = [
