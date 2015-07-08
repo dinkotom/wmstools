@@ -25,7 +25,7 @@ FORTUM_SMOKE_TESTS_JOB = {
 # everything below this should be the same for both production and development
 
 TEST_SUITES = [
-    {:name => '[F] SMOKE TESTS', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'DEV1'], :piazza => true, :default_number_of_tests => 2, :priority => 1, :project_file => 'output.txt'},
+    {:name => '[F] SMOKE TESTS', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'DEV1'], :piazza => true, :default_number_of_tests => 2, :priority => 1, :project_file => 'WMS.xml'},
     {:name => '[F] WEB SERVICE TESTS', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'DEV1'], :piazza => true, :default_number_of_tests => 5, :priority => 2, :project_file => 'WMS.xml'},
     {:name => '[F] REGRESSION TESTS 1', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'DEV1'], :piazza => true, :default_number_of_tests => 30, :priority => 3, :project_file => 'WMS.xml'},
     {:name => '[F] REGRESSION TESTS 2', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'DEV1'], :piazza => true, :default_number_of_tests => 32, :priority => 4, :project_file => 'WMS.xml'},
