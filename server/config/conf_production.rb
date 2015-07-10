@@ -469,7 +469,8 @@ PIAZZA_SCREENS = [
 
 DELIVERY_SITE_TYPES = [
     {:id => '[F] M1 1C', :name => '[F] M1 1C', :environments => ['FAT', 'FAT4', 'FAT5'], :test_suite_name => '[F] BUFFER TESTS', :quota => 100},
-    {:id => '[F] M1 1C PTB RDR', :name => '[F] M1 1C RDR', :environments => ['FAT', 'FAT4', 'FAT5'], :test_suite_name => '[F] BUFFER TESTS', :quota => 100},
+    {:id => '[F] M1 1C PTB RDR SelfRead Yes', :name => '[F] M1 1C RDR SelfRead Yes', :environments => ['FAT', 'FAT4', 'FAT5'], :test_suite_name => '[F] BUFFER TESTS', :quota => 100},
+    {:id => '[F] M1 1C PTB RDR SelfRead No', :name => '[F] M1 1C RDR SelfRead No', :environments => ['FAT'], :test_suite_name => '[F] BUFFER TESTS', :quota => 100},
     {:id => '[F] M1 1C FULL RDR', :name => '[F] M1 1C FULL RDR', :environments => ['FAT'], :test_suite_name => '[F] BUFFER TESTS', :quota => 100},
     {:id => '[F] M1 2C', :name => '[F] M1 2C', :environments => ['FAT', 'FAT4', 'FAT5'], :test_suite_name => '[F] BUFFER TESTS', :quota => 50},
     {:id => '[F] T7 1C', :name => '[F] T7 1C', :environments => ['FAT', 'FAT4', 'FAT5'], :test_suite_name => '[F] BUFFER TESTS', :quota => 50},
