@@ -19,6 +19,14 @@ VERSIONS = {:wms_500 =>
                  :watchers => [],
                  :max_age => 48
                 },
+            :wms_500fat12 =>
+                {:name => '5.0.xFAT12', # FAT12
+                 :protection_level => 'Low',
+                 :svn_branch => 'branch/5.0.xFAT12',
+                 :responsible => 'vladan.krenek@tieto.com',
+                 :watchers => [],
+                 :max_age => 48
+                },
             :wms_491 =>
                 {:name => '4.9.1', # FAT4
                  :protection_level => 'Medium',
