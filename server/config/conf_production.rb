@@ -21,6 +21,7 @@ FORTUM_SMOKE_TESTS_JOB = {
             {:suite => '[F] SMOKE TESTS', :environment => 'FAT4'},
             {:suite => '[F] SMOKE TESTS', :environment => 'FAT5'},
             {:suite => '[F] SMOKE TESTS', :environment => 'DEV1'},
+            {:suite => '[F] SMOKE TESTS', :environment => 'FAT12'},
         ]
 }
 
