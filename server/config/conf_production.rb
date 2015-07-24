@@ -74,15 +74,6 @@ SKAGERAK_TRUNK_REGRESSION_TESTS_JOB = {
     :suites_environments =>
         [
             {:suite => '[S] REGRESSION SET [mocked]', :environment => 'DEV2SKA'},
-#            {:suite => '[S] RT2 [METER CHANGE]', :environment => 'DEV2SKA'},
-#            {:suite => '[S] RT3 [RECONNECTION]', :environment => 'DEV2SKA'},
-#            {:suite => '[S] RT4 [DISCONNECTION]', :environment => 'DEV2SKA'},
-#            {:suite => '[S] RT5 [NEWDELIVERYPOINT_PREQUALIFIED]', :environment => 'DEV2SKA'},
-#            {:suite => '[S] RT6 [JMS EXECUTE WORK FLOW INFORMATION]', :environment => 'DEV2SKA'},
-#            {:suite => '[S] RT7 [TERMINATION]', :environment => 'DEV2SKA'},
-#            {:suite => '[S] RT8 [ADD DOCUMENT]', :environment => 'DEV2SKA'},
-#            {:suite => '[S] TRANSLATION TESTS', :environment => 'DEV2SKA'},
-#            {:suite => '[S] WEB SERVICE TESTS', :environment => 'DEV2SKA'},
         ]
 }
 
@@ -132,19 +123,9 @@ TEST_SUITES = [
     {:name => '[P] REGRESSION TESTS 1', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => true, :default_number_of_tests => 20, :priority => 15, :project_file => 'Prometera-soapui-project.xml'},
     {:name => '[P] REGRESSION TESTS 2', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => true, :default_number_of_tests => 15, :priority => 17, :project_file => 'Prometera-soapui-project.xml'},
     {:name => '[P] REGRESSION TESTS 3', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => true, :default_number_of_tests => 3, :priority => 18, :project_file => 'Prometera-soapui-project.xml'},
-    {:name => '[S] RT1 [NEWDELIVERYPOINT]', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => false, :default_number_of_tests => 5, :priority => 26, :project_file => 'SKAGERAK-REST-soapui-project.xml'},
-    {:name => '[S] RT2 [METER CHANGE]', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => false, :default_number_of_tests => 5, :priority => 27, :project_file => 'SKAGERAK-REST-soapui-project.xml'},
-    {:name => '[S] RT3 [RECONNECTION]', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => false, :default_number_of_tests => 1, :priority => 28, :project_file => 'SKAGERAK-REST-soapui-project.xml'},
-    {:name => '[S] RT4 [DISCONNECTION]', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => false, :default_number_of_tests => 1, :priority => 29, :project_file => 'SKAGERAK-REST-soapui-project.xml'},
-    {:name => '[S] RT5 [NEWDELIVERYPOINT_PREQUALIFIED]', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => false, :default_number_of_tests => 1, :priority => 30, :project_file => 'SKAGERAK-REST-soapui-project.xml'},
-    {:name => '[S] RT6 [JMS EXECUTE WORK FLOW INFORMATION]', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => false, :default_number_of_tests => 8, :priority => 31, :project_file => 'SKAGERAK-REST-soapui-project.xml'},
-    {:name => '[S] RT7 [TERMINATION]', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => false, :default_number_of_tests => 8, :priority => 31, :project_file => 'SKAGERAK-REST-soapui-project.xml'},
-    {:name => '[S] RT8 [ADD DOCUMENT]', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => false, :default_number_of_tests => 8, :priority => 31, :project_file => 'SKAGERAK-REST-soapui-project.xml'},
-    {:name => '[S] TRANSLATION TESTS', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => false, :default_number_of_tests => 1, :priority => 19, :project_file => 'Ska-Translation-soapui-project.xml'},
     {:name => '[AM] SMOKE TESTS', :type => 'Suite', :environments => ['DEV7'], :piazza => true, :default_number_of_tests => 1, :priority => 20, :project_file => 'ASSET_MANAGEMENT-GUI.xml'},
     {:name => '[AM] REGRESSION TESTS 1', :type => 'Suite', :environments => ['DEV7'], :piazza => true, :default_number_of_tests => 1, :priority => 21, :project_file => 'ASSET_MANAGEMENT-REST.xml'},
     {:name => '[AM] PERFORMANCE TESTS', :type => 'Suite', :environments => ['DEV7'], :piazza => false, :default_number_of_tests => 3, :priority => 22, :project_file => 'ASSET_MANAGEMENT-REST.xml', :performance => true},
-    {:name => '[S] WEB SERVICE TESTS', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => false, :default_number_of_tests => 1, :priority => 23, :project_file => 'Skagerak-soapui-project.xml', :performance => true},
     {:name => '[AM] PERFORMANCE TESTS 2 [for IE]', :type => 'Suite', :environments => ['DEV7'], :piazza => false, :default_number_of_tests => 1, :priority => 24, :project_file => 'ASSET_MANAGEMENT-REST.xml', :performance => true},
     {:name => '[H] REGRESSION TESTS 1', :type => 'Suite', :environments => ['DEVHF02'], :piazza => true, :default_number_of_tests => 4, :priority => 25, :project_file => 'WMS-AMS.xml'},
     {:name => '[H] REGRESSION TESTS 2', :type => 'Suite', :environments => ['DEVHF02'], :piazza => true, :default_number_of_tests => 10, :priority => 26, :project_file => 'WMS-AMS.xml'},
@@ -170,14 +151,6 @@ TEST_PACKAGES = [
          '[P] REGRESSION TESTS 1',
          '[P] REGRESSION TESTS 2',
 	 '[P] REGRESSION TESTS 3',
-         '[S] RT1 [NEWDELIVERYPOINT]',
-         '[S] RT2 [METER CHANGE]',
-         '[S] RT3 [RECONNECTION]',
-         '[S] RT4 [DISCONNECTION]',
-         '[S] RT5 [NEWDELIVERYPOINT_PREQUALIFIED]',
-         '[S] RT6 [JMS EXECUTE WORK FLOW INFORMATION]',
-         '[S] RT7 [TERMINATION]',
-         '[S] RT8 [ADD DOCUMENT]',
          '[AM] SMOKE TESTS',
          '[AM] REGRESSION TESTS 1',
          '[H] REGRESSION TESTS 1',
@@ -283,45 +256,9 @@ TEST_PACKAGES = [
      :suites => ['[P] REGRESSION TESTS 3'
      ]
     },
-        {:name => '[S] REGRESSION SET [mocked]',
-         :suites => ['[S] REGRESSION SET [mocked]'
-         ]
-        },
-    {:name => '[S] RT1 [NEWDELIVERYPOINT]',
-     :suites => ['[S] RT1 [NEWDELIVERYPOINT]'
-     ]
-    },
-    {:name => '[S] RT2 [METER CHANGE]',
-     :suites => ['[S] RT2 [METER CHANGE]'
-     ]
-    },
-    {:name => '[S] RT3 [RECONNECTION]',
-     :suites => ['[S] RT3 [RECONNECTION]'
-     ]
-    },
-    {:name => '[S] RT4 [DISCONNECTION]',
-     :suites => ['[S] RT4 [DISCONNECTION]'
-     ]
-    },
-    {:name => '[S] RT5 [NEWDELIVERYPOINT_PREQUALIFIED]',
-     :suites => ['[S] RT5 [NEWDELIVERYPOINT_PREQUALIFIED]'
-     ]
-    },
-    {:name => '[S] RT6 [JMS EXECUTE WORK FLOW INFORMATION]',
-     :suites => ['[S] RT6 [JMS EXECUTE WORK FLOW INFORMATION]',
-     ]
-    },
-     {:name => '[S] RT7 [TERMINATION]',
-     :suites => ['[S] RT7 [TERMINATION]',
-     ]
-    },
-     {:name => '[S] RT8 [ADD DOCUMENT]',
-     :suites => ['[S] RT8 [ADD DOCUMENT]',
-     ]
-    },
-    {:name => '[S] TRANSLATION TESTS',
-     :suites => ['[S] TRANSLATION TESTS'
-     ]
+     {:name => '[S] REGRESSION SET [mocked]',
+      :suites => ['[S] REGRESSION SET [mocked]'
+      ]
     },
     {:name => '[AM] SMOKE TESTS',
      :suites => ['[AM] SMOKE TESTS'
@@ -333,10 +270,6 @@ TEST_PACKAGES = [
     },
     {:name => '[AM] PERFORMANCE TESTS',
      :suites => ['[AM] PERFORMANCE TESTS'
-     ]
-    },
-    {:name => '[S] WEB SERVICE TESTS',
-     :suites => ['[S] WEB SERVICE TESTS'
      ]
     },
     {:name => '[AM] PERFORMANCE TESTS 2 [for IE]',
