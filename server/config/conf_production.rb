@@ -69,11 +69,11 @@ PROMETERA_REGRESSION_TESTS_JOB = {
         ]
 }
 
-#SKAGERAK_TRUNK_REGRESSION_TESTS_JOB = {
-#    :cron => '30 2 * * *',
-#    :suites_environments =>
-#        [
-#            {:suite => '[S] RT1 [NEWDELIVERYPOINT]', :environment => 'DEV2SKA'},
+SKAGERAK_TRUNK_REGRESSION_TESTS_JOB = {
+    :cron => '30 4 * * *',
+    :suites_environments =>
+        [
+            {:suite => '[S] REGRESSION SET [mocked]', :environment => 'DEV2SKA'},
 #            {:suite => '[S] RT2 [METER CHANGE]', :environment => 'DEV2SKA'},
 #            {:suite => '[S] RT3 [RECONNECTION]', :environment => 'DEV2SKA'},
 #            {:suite => '[S] RT4 [DISCONNECTION]', :environment => 'DEV2SKA'},
@@ -83,8 +83,8 @@ PROMETERA_REGRESSION_TESTS_JOB = {
 #            {:suite => '[S] RT8 [ADD DOCUMENT]', :environment => 'DEV2SKA'},
 #            {:suite => '[S] TRANSLATION TESTS', :environment => 'DEV2SKA'},
 #            {:suite => '[S] WEB SERVICE TESTS', :environment => 'DEV2SKA'},
-#        ]
-#}
+        ]
+}
 
 
 PROMETERA_PERFORMANCE_TESTS_JOB = {
@@ -147,8 +147,9 @@ TEST_SUITES = [
     {:name => '[S] WEB SERVICE TESTS', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => false, :default_number_of_tests => 1, :priority => 23, :project_file => 'Skagerak-soapui-project.xml', :performance => true},
     {:name => '[AM] PERFORMANCE TESTS 2 [for IE]', :type => 'Suite', :environments => ['DEV7'], :piazza => false, :default_number_of_tests => 1, :priority => 24, :project_file => 'ASSET_MANAGEMENT-REST.xml', :performance => true},
     {:name => '[H] REGRESSION TESTS 1', :type => 'Suite', :environments => ['DEVHF02'], :piazza => true, :default_number_of_tests => 4, :priority => 25, :project_file => 'WMS-AMS.xml'},
-	{:name => '[H] REGRESSION TESTS 2', :type => 'Suite', :environments => ['DEVHF02'], :piazza => true, :default_number_of_tests => 10, :priority => 26, :project_file => 'WMS-AMS.xml'},
+    {:name => '[H] REGRESSION TESTS 2', :type => 'Suite', :environments => ['DEVHF02'], :piazza => true, :default_number_of_tests => 10, :priority => 26, :project_file => 'WMS-AMS.xml'},
     {:name => '[H] BUFFER TESTS', :type => 'Suite', :environments => ['DEVHF02'], :piazza => false, :default_number_of_tests => 2, :priority => 99, :project_file => 'WMS-AMS.xml', :buffer => true},
+    {:name => '[S] REGRESSION SET [mocked]', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => true, :default_number_of_tests => 27, :priority => 27, :project_file => 'Skagerak-Daily-processes-soapui-project.xml'},
     
 
 ]
@@ -180,7 +181,8 @@ TEST_PACKAGES = [
          '[AM] SMOKE TESTS',
          '[AM] REGRESSION TESTS 1',
          '[H] REGRESSION TESTS 1',
-		 '[H] REGRESSION TESTS 2',
+         '[H] REGRESSION TESTS 2',
+         '[S] REGRESSION SET [mocked]',
      ]
     },
     {:name => '[F] SMOKE TESTS',
@@ -281,10 +283,10 @@ TEST_PACKAGES = [
      :suites => ['[P] REGRESSION TESTS 3'
      ]
     },
-    #    {:name => '[F] TRANSLATION TESTS',
-    #     :suites => ['[F] TRANSLATION TESTS'
-    #     ]
-    #    },
+        {:name => '[S] REGRESSION SET [mocked]',
+         :suites => ['[S] REGRESSION SET [mocked]'
+         ]
+        },
     {:name => '[S] RT1 [NEWDELIVERYPOINT]',
      :suites => ['[S] RT1 [NEWDELIVERYPOINT]'
      ]
@@ -466,6 +468,7 @@ PIAZZA_SCREENS = [
     {:screen_number => 4, :environments => ['DEV8PROM']},
     {:screen_number => 5, :environments => ['DEVHF02']},
     {:screen_number => 6, :environments => ['DEV2SKA']},
+    {:screen_number => 7, :environments => ['FAT12']},
 ]
 
 DELIVERY_SITE_TYPES = [
