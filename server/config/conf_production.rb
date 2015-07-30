@@ -73,7 +73,8 @@ SKAGERAK_TRUNK_REGRESSION_TESTS_JOB = {
     :cron => '30 4 * * *',
     :suites_environments =>
         [
-            {:suite => '[S] REGRESSION SET [mocked]', :environment => 'DEV2SKA'},
+            {:suite => '[S] REGRESSION SET [daily]', :environment => 'DEV2SKA'},
+            {:suite => '[S] REGRESSION SET [roll out]', :environment => 'DEV2SKA'},
         ]
 }
 
@@ -130,7 +131,9 @@ TEST_SUITES = [
     {:name => '[H] REGRESSION TESTS 1', :type => 'Suite', :environments => ['DEVHF02'], :piazza => true, :default_number_of_tests => 4, :priority => 25, :project_file => 'WMS-AMS.xml'},
     {:name => '[H] REGRESSION TESTS 2', :type => 'Suite', :environments => ['DEVHF02'], :piazza => true, :default_number_of_tests => 10, :priority => 26, :project_file => 'WMS-AMS.xml'},
     {:name => '[H] BUFFER TESTS', :type => 'Suite', :environments => ['DEVHF02'], :piazza => false, :default_number_of_tests => 2, :priority => 99, :project_file => 'WMS-AMS.xml', :buffer => true},
-    {:name => '[S] REGRESSION SET [mocked]', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => true, :default_number_of_tests => 27, :priority => 27, :project_file => 'Skagerak-Daily-processes-soapui-project.xml'},
+    {:name => '[S] REGRESSION SET [daily]', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => true, :default_number_of_tests => 42, :priority => 27, :project_file => 'Skagerak-Daily-processes-soapui-project.xml'},
+    {:name => '[S] REGRESSION SET [roll out]', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => true, :default_number_of_tests => 15, :priority => 28, :project_file => 'Skagerak_roll_out.xml'},
+    
     
 
 ]
@@ -155,7 +158,8 @@ TEST_PACKAGES = [
          '[AM] REGRESSION TESTS 1',
          '[H] REGRESSION TESTS 1',
          '[H] REGRESSION TESTS 2',
-         '[S] REGRESSION SET [mocked]',
+         '[S] REGRESSION SET [daily]',
+         '[S] REGRESSION SET [roll out]',
      ]
     },
     {:name => '[F] SMOKE TESTS',
@@ -256,8 +260,12 @@ TEST_PACKAGES = [
      :suites => ['[P] REGRESSION TESTS 3'
      ]
     },
-     {:name => '[S] REGRESSION SET [mocked]',
-      :suites => ['[S] REGRESSION SET [mocked]'
+     {:name => '[S] REGRESSION SET [daily]',
+      :suites => ['[S] REGRESSION SET [daily]'
+      ]
+    },
+     {:name => '[S] REGRESSION SET [roll out]',
+      :suites => ['[S] REGRESSION SET [roll out]'
       ]
     },
     {:name => '[AM] SMOKE TESTS',
