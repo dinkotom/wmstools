@@ -96,6 +96,15 @@ FORTUM_PERFORMANCE_TESTS_JOB = {
         ]
 }
 
+FORTUM_LOAD_TESTS_JOB = {
+    :cron => '0 2 * * *',
+    :suites_environments =>
+        [
+            {:suite => '[F] LOAD TESTS', :environment => 'FAT'},
+            {:suite => '[F] LOAD TESTS', :environment => 'FAT'},
+        ]
+}
+
 
 # everything below this should be the same for both production and development
 
