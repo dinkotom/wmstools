@@ -37,7 +37,7 @@ class TestExecution
     begin
       # this does not allow to simultaneously run more than one performance test execution of the same suite on the same environment
       test_executions = TestExecution.all(:status => 'Pending', :order => [:enqueued_at.asc]).collect do |a|
-        a if TestExecution.all(:environment_name => a.environment_name, :test_suite_name => a.test_suite_name, :status => 'Running').count == 0 || !TestSuite.get(a.test_suite_name).performance
+        a if TestExecution.all(:environment_name => a.environment_name, :test_suite_name => a.test_suite_name, :status => 'Running').count == 0 || !TestSuite.get(a.test_suite_name).performance || !TestSuite.get(a.test_suite_name).single_thread
       end.compact
       # comment end
 
