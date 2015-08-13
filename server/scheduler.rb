@@ -50,20 +50,6 @@ thread = Thread.new do
     end
   end
 
-  if defined? PROMETERA_PERFORMANCE_TESTS_JOB
-    begin
-      scheduler.cron PROMETERA_PERFORMANCE_TESTS_JOB[:cron] do
-        PROMETERA_PERFORMANCE_TESTS_JOB[:suites_environments].each do |job|
-          test_execution = TestExecution.new
-          test_execution.test_suite_name = job[:suite]
-          test_execution.environment_name = job[:environment]
-          test_execution.for = 'SCHEDULER'
-          test_execution.enqueue
-        end
-      end
-    end
-  end
-
   if defined? FORTUM_SMOKE_TESTS_JOB
     begin
       scheduler.cron FORTUM_SMOKE_TESTS_JOB[:cron] do
@@ -96,34 +82,6 @@ thread = Thread.new do
     begin
       scheduler.cron SKAGERAK_TRUNK_REGRESSION_TESTS_JOB[:cron] do
         SKAGERAK_TRUNK_REGRESSION_TESTS_JOB[:suites_environments].each do |job|
-          test_execution = TestExecution.new
-          test_execution.test_suite_name = job[:suite]
-          test_execution.environment_name = job[:environment]
-          test_execution.for = 'SCHEDULER'
-          test_execution.enqueue
-        end
-      end
-    end
-  end
-
-      if defined? ASSET_MANAGEMENT_REGRESSION_TESTS_JOB
-    begin
-      scheduler.cron ASSET_MANAGEMENT_REGRESSION_TESTS_JOB[:cron] do
-        ASSET_MANAGEMENT_REGRESSION_TESTS_JOB[:suites_environments].each do |job|
-          test_execution = TestExecution.new
-          test_execution.test_suite_name = job[:suite]
-          test_execution.environment_name = job[:environment]
-          test_execution.for = 'SCHEDULER'
-          test_execution.enqueue
-        end
-      end
-    end
-  end
-
-      if defined? ASSET_MANAGEMENT_PERFORMANCE_TESTS_JOB
-    begin
-      scheduler.cron ASSET_MANAGEMENT_PERFORMANCE_TESTS_JOB[:cron] do
-        ASSET_MANAGEMENT_PERFORMANCE_TESTS_JOB[:suites_environments].each do |job|
           test_execution = TestExecution.new
           test_execution.test_suite_name = job[:suite]
           test_execution.environment_name = job[:environment]
