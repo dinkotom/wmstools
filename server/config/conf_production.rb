@@ -261,6 +261,7 @@ PERFORMANCE_TESTS = [
         {:id => 'PERF005', :name => 'Report WO175', :reference_value => 31500, :max_value => 45000},
         {:id => 'PERF006', :name => 'Report WO235', :reference_value => 16000, :max_value => 25000},
         {:id => 'PERF007', :name => 'Report WO203', :reference_value => 13000, :max_value => 20000},
+     ]
     },
     ]
 
