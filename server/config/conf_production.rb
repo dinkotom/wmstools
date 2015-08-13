@@ -130,9 +130,9 @@ TEST_SUITES = [
     {:name => '[H] REGRESSION TESTS 1', :type => 'Suite', :environments => ['DEVHF02'], :piazza => true, :default_number_of_tests => 4, :priority => 25, :project_file => 'Hafslund_regression_krenevla.xml'},
     {:name => '[H] REGRESSION TESTS 2', :type => 'Suite', :environments => ['DEVHF02'], :piazza => true, :default_number_of_tests => 10, :priority => 26, :project_file => 'Hafslund_regression_krenevla.xml'},
     {:name => '[H] BUFFER TESTS', :type => 'Suite', :environments => ['DEVHF02'], :piazza => false, :default_number_of_tests => 2, :priority => 99, :project_file => 'Hafslund_regression_krenevla.xml', :buffer => true},
-    {:name => '[S] REGRESSION SET [daily]', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => true, :default_number_of_tests => 42, :priority => 27, :project_file => 'Skagerak_daily_plohalen.xml', :single_thread => false},
-    {:name => '[S] REGRESSION SET 1 [roll out]', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => true, :default_number_of_tests => 15, :priority => 28, :project_file => 'Skagerak_rollOut_plohalen.xml', :single_thread => false},
-    {:name => '[S] REGRESSION SET 2 [roll out]', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => true, :default_number_of_tests => 15, :priority => 28, :project_file => 'Skagerak_rollOut_plohalen.xml', :single_thread => false},
+    {:name => '[S] REGRESSION SET [daily]', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => true, :default_number_of_tests => 42, :priority => 27, :project_file => 'Skagerak_daily_plohalen.xml'},
+    {:name => '[S] REGRESSION SET 1 [roll out]', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => true, :default_number_of_tests => 15, :priority => 28, :project_file => 'Skagerak_rollOut_plohalen.xml'},
+    {:name => '[S] REGRESSION SET 2 [roll out]', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => true, :default_number_of_tests => 15, :priority => 28, :project_file => 'Skagerak_rollOut_plohalen.xml'},
     
     
 
@@ -172,7 +172,6 @@ TEST_PACKAGES = [
     {:name => '[F] REGRESSION TESTS 2',
      :suites => ['[F] REGRESSION TESTS 2'
      ]
-
     },
     {:name => '[F] REGRESSION TESTS 3',
      :suites => ['[F] REGRESSION TESTS 3'
@@ -246,7 +245,7 @@ TEST_PACKAGES = [
      :suites => ['[H] REGRESSION TESTS 1'
      ]
     },
-	{:name => '[H] REGRESSION TESTS 2',
+    {:name => '[H] REGRESSION TESTS 2',
      :suites => ['[H] REGRESSION TESTS 2'
      ]
     },
