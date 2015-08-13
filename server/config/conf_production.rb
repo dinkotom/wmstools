@@ -133,9 +133,6 @@ TEST_SUITES = [
     {:name => '[S] REGRESSION SET [daily]', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => true, :default_number_of_tests => 42, :priority => 27, :project_file => 'Skagerak_daily_plohalen.xml'},
     {:name => '[S] REGRESSION SET 1 [roll out]', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => true, :default_number_of_tests => 15, :priority => 28, :project_file => 'Skagerak_rollOut_plohalen.xml'},
     {:name => '[S] REGRESSION SET 2 [roll out]', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => true, :default_number_of_tests => 15, :priority => 28, :project_file => 'Skagerak_rollOut_plohalen.xml'},
-    
-    
-
 ]
 
 TEST_PACKAGES = [
@@ -264,8 +261,9 @@ PERFORMANCE_TESTS = [
         {:id => 'PERF005', :name => 'Report WO175', :reference_value => 31500, :max_value => 45000},
         {:id => 'PERF006', :name => 'Report WO235', :reference_value => 16000, :max_value => 25000},
         {:id => 'PERF007', :name => 'Report WO203', :reference_value => 13000, :max_value => 20000},
-    ]
     },
+    ]
+
 
 PIAZZA_SCREENS = [
     {:screen_number => 1, :environments => ['FAT']},
@@ -276,7 +274,7 @@ PIAZZA_SCREENS = [
     {:screen_number => 6, :environments => ['DEV2SKA']},
     {:screen_number => 7, :environments => ['FAT12']},
 ]
-
+ 
 DELIVERY_SITE_TYPES = [
     {:id => '[F] M1 1C', :name => '[F] M1 1C', :environments => ['FAT', 'FAT4', 'FAT5', 'FAT12'], :test_suite_name => '[F] BUFFER TESTS', :quota => 100},
     {:id => '[F] M1 1C PTB RDR SelfRead Yes', :name => '[F] M1 1C PTB RDR SelfRead Yes', :environments => ['FAT', 'FAT4', 'FAT5', 'FAT12'], :test_suite_name => '[F] BUFFER TESTS', :quota => 100},
