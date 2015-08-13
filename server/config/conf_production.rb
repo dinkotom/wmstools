@@ -124,9 +124,9 @@ TEST_SUITES = [
     {:name => '[F] LOAD TESTS', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'DEV1', 'FAT12'], :piazza => false, :priority => 10, :project_file => 'Fortum_regression_krenevla.xml', :load => true},
     {:name => '[F] MAINTENANCE TESTS', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'DEV1', 'FAT12'], :piazza => false, :priority => 11, :project_file => 'Fortum_regression_krenevla.xml'},
     {:name => '[F] PERFORMANCE TESTS', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'DEV1', 'FAT12'], :piazza => false, :priority => 12, :project_file => 'Fortum_regression_krenevla.xml', :performance => true},
-    {:name => '[P] REGRESSION TESTS 1', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => true, :default_number_of_tests => 20, :priority => 15, :project_file => 'Prometera_regression_tomalmar.xml'},
-    {:name => '[P] REGRESSION TESTS 2', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => true, :default_number_of_tests => 15, :priority => 17, :project_file => 'Prometera_regression_tomalmar.xml'},
-    {:name => '[P] REGRESSION TESTS 3', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => true, :default_number_of_tests => 3, :priority => 18, :project_file => 'Prometera_regression_tomalmar.xml'},
+    {:name => '[P] REGRESSION TESTS El', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => true, :default_number_of_tests => 20, :priority => 15, :project_file => 'Prometera_regression_tomalmar.xml'},
+    {:name => '[P] REGRESSION TESTS DH/DC', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => true, :default_number_of_tests => 15, :priority => 17, :project_file => 'Prometera_regression_tomalmar.xml'},
+    {:name => '[P] REGRESSION TESTS Gas', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => true, :default_number_of_tests => 3, :priority => 18, :project_file => 'Prometera_regression_tomalmar.xml'},
     {:name => '[H] REGRESSION TESTS 1', :type => 'Suite', :environments => ['DEVHF02'], :piazza => true, :default_number_of_tests => 4, :priority => 25, :project_file => 'Hafslund_regression_krenevla.xml'},
     {:name => '[H] REGRESSION TESTS 2', :type => 'Suite', :environments => ['DEVHF02'], :piazza => true, :default_number_of_tests => 10, :priority => 26, :project_file => 'Hafslund_regression_krenevla.xml'},
     {:name => '[H] BUFFER TESTS', :type => 'Suite', :environments => ['DEVHF02'], :piazza => false, :default_number_of_tests => 2, :priority => 99, :project_file => 'Hafslund_regression_krenevla.xml', :buffer => true},
@@ -148,9 +148,9 @@ TEST_PACKAGES = [
          '[F] REGRESSION TESTS 6',
          '[F] REGRESSION TESTS 7',
          '[F] REGRESSION TESTS 8',
-         '[P] REGRESSION TESTS 1',
-         '[P] REGRESSION TESTS 2',
-	 '[P] REGRESSION TESTS 3',
+         '[P] REGRESSION TESTS El',
+         '[P] REGRESSION TESTS DH/DC',
+	 '[P] REGRESSION TESTS Gas',
          '[H] REGRESSION TESTS 1',
          '[H] REGRESSION TESTS 2',
          '[S] REGRESSION SET [daily]',
@@ -214,16 +214,16 @@ TEST_PACKAGES = [
      :suites => ['[F] BUFFER TESTS'
      ]
     },
-    {:name => '[P] REGRESSION TESTS 1',
-     :suites => ['[P] REGRESSION TESTS 1'
+    {:name => '[P] REGRESSION TESTS El',
+     :suites => ['[P] REGRESSION TESTS El'
      ]
     },
-    {:name => '[P] REGRESSION TESTS 2',
-     :suites => ['[P] REGRESSION TESTS 2'
+    {:name => '[P] REGRESSION TESTS DH/DC',
+     :suites => ['[P] REGRESSION TESTS DH/DC'
      ]
     },
-    {:name => '[P] REGRESSION TESTS 3',
-     :suites => ['[P] REGRESSION TESTS 3'
+    {:name => '[P] REGRESSION TESTS Gas',
+     :suites => ['[P] REGRESSION TESTS Gas'
      ]
     },
      {:name => '[S] REGRESSION SET [daily]',
