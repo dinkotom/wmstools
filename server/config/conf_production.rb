@@ -74,7 +74,8 @@ SKAGERAK_TRUNK_REGRESSION_TESTS_JOB = {
     :suites_environments =>
         [
             {:suite => '[S] REGRESSION SET [daily]', :environment => 'DEV2SKA'},
-            {:suite => '[S] REGRESSION SET [roll out]', :environment => 'DEV2SKA'},
+            {:suite => '[S] REGRESSION SET 1 [roll out]', :environment => 'DEV2SKA'},
+            {:suite => '[S] REGRESSION SET 2 [roll out]', :environment => 'DEV2SKA'},
         ]
 }
 
@@ -130,9 +131,9 @@ TEST_SUITES = [
     {:name => '[P] PERFORMANCE TESTS 01 [DEV8]', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => false, :default_number_of_tests => 1, :priority => 14, :project_file => 'PrometeraPerformanceGUITest-soapui-project.xml', :performance => true},
     {:name => '[P] PERFORMANCE TESTS 01 [PROM PERF]', :type => 'Suite', :environments => ['PROM_PERF'], :piazza => false, :default_number_of_tests => 1, :priority => 14, :project_file => 'PrometeraPerformanceGUITest-soapui-project.xml', :performance => true},
     {:name => '[F] BUFFER TESTS', :type => 'Suite', :environments => ['FAT', 'FAT4', 'DEV1', 'FAT12'], :piazza => false, :default_number_of_tests => 4, :priority => 99, :project_file => 'WMS.xml', :buffer => true},
-    {:name => '[P] REGRESSION TESTS 1', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => true, :default_number_of_tests => 20, :priority => 15, :project_file => 'Prometera-soapui-project.xml'},
-    {:name => '[P] REGRESSION TESTS 2', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => true, :default_number_of_tests => 15, :priority => 17, :project_file => 'Prometera-soapui-project.xml'},
-    {:name => '[P] REGRESSION TESTS 3', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => true, :default_number_of_tests => 3, :priority => 18, :project_file => 'Prometera-soapui-project.xml'},
+    {:name => '[P] REGRESSION TESTS 1', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => true, :default_number_of_tests => 20, :priority => 15, :project_file => 'Prometera_regression_tomalmar.xml'},
+    {:name => '[P] REGRESSION TESTS 2', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => true, :default_number_of_tests => 15, :priority => 17, :project_file => 'Prometera_regression_tomalmar.xml'},
+    {:name => '[P] REGRESSION TESTS 3', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => true, :default_number_of_tests => 3, :priority => 18, :project_file => 'Prometera_regression_tomalmar.xml'},
     {:name => '[AM] SMOKE TESTS', :type => 'Suite', :environments => ['DEV7'], :piazza => true, :default_number_of_tests => 1, :priority => 20, :project_file => 'ASSET_MANAGEMENT-GUI.xml'},
     {:name => '[AM] REGRESSION TESTS 1', :type => 'Suite', :environments => ['DEV7'], :piazza => true, :default_number_of_tests => 1, :priority => 21, :project_file => 'ASSET_MANAGEMENT-REST.xml'},
     {:name => '[AM] PERFORMANCE TESTS', :type => 'Suite', :environments => ['DEV7'], :piazza => false, :default_number_of_tests => 3, :priority => 22, :project_file => 'ASSET_MANAGEMENT-REST.xml', :performance => true},
@@ -140,8 +141,9 @@ TEST_SUITES = [
     {:name => '[H] REGRESSION TESTS 1', :type => 'Suite', :environments => ['DEVHF02'], :piazza => true, :default_number_of_tests => 4, :priority => 25, :project_file => 'WMS-AMS.xml'},
     {:name => '[H] REGRESSION TESTS 2', :type => 'Suite', :environments => ['DEVHF02'], :piazza => true, :default_number_of_tests => 10, :priority => 26, :project_file => 'WMS-AMS.xml'},
     {:name => '[H] BUFFER TESTS', :type => 'Suite', :environments => ['DEVHF02'], :piazza => false, :default_number_of_tests => 2, :priority => 99, :project_file => 'WMS-AMS.xml', :buffer => true},
-    {:name => '[S] REGRESSION SET [daily]', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => true, :default_number_of_tests => 42, :priority => 27, :project_file => 'Skagerak-Daily-processes-soapui-project.xml', :single_thread => true},
-    {:name => '[S] REGRESSION SET [roll out]', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => true, :default_number_of_tests => 15, :priority => 28, :project_file => 'Skagerak_roll_out.xml', :single_thread => true},
+    {:name => '[S] REGRESSION SET [daily]', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => true, :default_number_of_tests => 42, :priority => 27, :project_file => 'Skagerak_daily_plohalen.xml', :single_thread => false},
+    {:name => '[S] REGRESSION SET 1 [roll out]', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => true, :default_number_of_tests => 15, :priority => 28, :project_file => 'Skagerak_rollOut_plohalen.xml', :single_thread => false},
+    {:name => '[S] REGRESSION SET 2 [roll out]', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => true, :default_number_of_tests => 15, :priority => 28, :project_file => 'Skagerak_rollOut_plohalen.xml', :single_thread => false},
     
     
 
@@ -168,7 +170,8 @@ TEST_PACKAGES = [
          '[H] REGRESSION TESTS 1',
          '[H] REGRESSION TESTS 2',
          '[S] REGRESSION SET [daily]',
-         '[S] REGRESSION SET [roll out]',
+         '[S] REGRESSION SET 1 [roll out]',
+         '[S] REGRESSION SET 2 [roll out]',
      ]
     },
     {:name => '[F] SMOKE TESTS',
@@ -273,8 +276,12 @@ TEST_PACKAGES = [
       :suites => ['[S] REGRESSION SET [daily]'
       ]
     },
-     {:name => '[S] REGRESSION SET [roll out]',
-      :suites => ['[S] REGRESSION SET [roll out]'
+     {:name => '[S] REGRESSION SET 1 [roll out]',
+      :suites => ['[S] REGRESSION SET 1 [roll out]'
+      ]
+    },
+     {:name => '[S] REGRESSION SET 2 [roll out]',
+      :suites => ['[S] REGRESSION SET 2 [roll out]'
       ]
     },
     {:name => '[AM] SMOKE TESTS',
