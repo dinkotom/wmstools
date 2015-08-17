@@ -2,6 +2,7 @@
   <fieldset>
     <legend>Test Case Overview</legend>
     <table width="300">
+      <div class="tco">
       <tr>
         <td>Environment:
           <select id="tco_environment_selection" class="styled_select" onchange="redirect_to_environment();">
@@ -18,10 +19,8 @@
         <td>Passed: <%= @tc_passed %></td>
       </tr>
       <tr>
-        <td>
-          <div>PASSED:
+        <td>PASSED:
             <span class="<%= @tc_passed_percent_style %>"><%= @tc_passed_percent %>%</span>
-          </div>
         </td>
         <td>Failed: <%= @tc_failed %></td>
       </tr>
@@ -29,6 +28,7 @@
         <td></td>
         <td>No Result: <%= @tc_no_result %></td>
       </tr>
+      </div>
     </table>
   </fieldset>
 </form>
