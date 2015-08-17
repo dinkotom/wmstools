@@ -12,26 +12,22 @@
           </select>
         </td>
         <td>Test Cases: <%= @tc_count %></td>
-        <td rowspan="3">
-          <div class="tco">PASSED:
-            <span class="<%= @tc_passed_percent_style %>"><%= @tc_passed_percent %>%</span>
-          </div>
-        </td>
       </tr>
       <tr>
         <td>Revision: #<%= @revision %></td>
         <td>Passed: <%= @tc_passed %></td>
-        <td></td>
       </tr>
       <tr>
-        <td></td>
+        <td>
+          <div>PASSED:
+            <span class="<%= @tc_passed_percent_style %>"><%= @tc_passed_percent %>%</span>
+          </div>
+        </td>
         <td>Failed: <%= @tc_failed %></td>
-        <td></td>
       </tr>
       <tr>
         <td></td>
         <td>No Result: <%= @tc_no_result %></td>
-        <td></td>
       </tr>
     </table>
   </fieldset>
