@@ -79,16 +79,6 @@ SKAGERAK_TRUNK_REGRESSION_TESTS_JOB = {
         ]
 }
 
-
-PROMETERA_PERFORMANCE_TESTS_JOB = {
-    :cron => '*/20 21 * * * ',
-    :suites_environments =>
-        [
-		{:suite => '[P] PERFORMANCE TESTS 01 [DEV8]', :environment => 'DEV8PROM'},
-		{:suite => '[P] PERFORMANCE TESTS 01 [PROM PERF]', :environment => 'PROM_PERF'},
-        ]
-}
-
 FORTUM_PERFORMANCE_TESTS_JOB = {
     :cron => '*/20 22 * * *',
     :suites_environments =>
