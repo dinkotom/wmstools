@@ -1,7 +1,8 @@
 <form class="tiui-form" id="main_form">
   <fieldset>
     <legend>Test Case Overview</legend>
-    <table width="50">
+    <font size="5">
+    <table width="100">
       <tr>
         <td>Environment:
           <select id="tco_environment_selection" class="styled_select" onchange="redirect_to_environment();">
@@ -28,6 +29,7 @@
         <td>No Result: <%= @tc_no_result %></td>
       </tr>
     </table>
+    </font>
   </fieldset>
 </form>
 
