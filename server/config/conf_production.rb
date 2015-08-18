@@ -63,9 +63,9 @@ PROMETERA_REGRESSION_TESTS_JOB = {
     :cron => '30 1 * * *',
     :suites_environments =>
         [
-            {:suite => '[P] REGRESSION TESTS 1', :environment => 'DEV8PROM'},
-            {:suite => '[P] REGRESSION TESTS 2', :environment => 'DEV8PROM'},
-            {:suite => '[P] REGRESSION TESTS 3', :environment => 'DEV8PROM'},
+            {:suite => '[P] REGRESSION TESTS El', :environment => 'DEV8PROM'},
+            {:suite => '[P] REGRESSION TESTS DH/DC', :environment => 'DEV8PROM'},
+            {:suite => '[P] REGRESSION TESTS Gas', :environment => 'DEV8PROM'},
         ]
 }
 
