@@ -496,6 +496,16 @@ progress[value] {
     border-radius: 2px;
 }
 
+.styled_select2 {
+
+    background: transparent;
+    border: 1px solid #ccc;
+    /*height: 20px;*/
+    font-size: 26px;
+    margin: 0 0 0 0;
+    border-radius: 2px;
+}
+
 .black_wrapper {
     background: #000 position : absolute;
 }
