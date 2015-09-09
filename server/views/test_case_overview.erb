@@ -5,7 +5,7 @@
     <table width="100">
       <tr>
         <td>Environment:
-          <select id="tco_environment_selection" class="styled_select" onchange="redirect_to_environment();">
+          <select id="tco_environment_selection" class="styled_select2" onchange="redirect_to_environment();">
             <option value="default">-- choose environment --</option>
             <% @environments.each do |env|  %>
                 <option value="<%= env %>" <%= 'selected' if @environment && @environment == env %>><%= env %></option>
