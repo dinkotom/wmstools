@@ -68,6 +68,16 @@ PROMETERA_REGRESSION_TESTS_JOB = {
         ]
 }
 
+PROMETERA_BRANCH_TESTS_JOB = {
+    :cron => '30 2 * * *',
+    :suites_environments =>
+        [
+            {:suite => '[P] REGRESSION TESTS El', :environment => 'DEV9'},
+            {:suite => '[P] REGRESSION TESTS DH/DC', :environment => 'DEV9'},
+            {:suite => '[P] REGRESSION TESTS Gas', :environment => 'DEV9'},
+        ]
+}
+
 SKAGERAK_TRUNK_REGRESSION_TESTS_JOB = {
     :cron => '30 4 * * *',
     :suites_environments =>
@@ -112,9 +122,9 @@ TEST_SUITES = [
     {:name => '[F] LOAD TESTS', :type => 'Suite', :environments => ['FAT'], :piazza => false, :priority => 10, :project_file => 'Fortum_regression_krenevla.xml', :load => true},
     {:name => '[F] MAINTENANCE TESTS', :type => 'Suite', :environments => ['FAT'], :piazza => false, :priority => 11, :project_file => 'Fortum_regression_krenevla.xml'},
     {:name => '[F] PERFORMANCE TESTS', :type => 'Suite', :environments => ['FAT'], :piazza => false, :priority => 12, :project_file => 'Fortum_regression_krenevla.xml', :performance => true},
-    {:name => '[P] REGRESSION TESTS El', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => true, :default_number_of_tests => 20, :priority => 15, :project_file => 'Prometera_regression_tomalmar.xml'},
-    {:name => '[P] REGRESSION TESTS DH/DC', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => true, :default_number_of_tests => 15, :priority => 17, :project_file => 'Prometera_regression_tomalmar.xml'},
-    {:name => '[P] REGRESSION TESTS Gas', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => true, :default_number_of_tests => 3, :priority => 18, :project_file => 'Prometera_regression_tomalmar.xml'},
+    {:name => '[P] REGRESSION TESTS El', :type => 'Suite', :environments => ['DEV8PROM', 'DEV9'], :piazza => true, :default_number_of_tests => 20, :priority => 15, :project_file => 'Prometera_regression_tomalmar.xml'},
+    {:name => '[P] REGRESSION TESTS DH/DC', :type => 'Suite', :environments => ['DEV8PROM', 'DEV9'], :piazza => true, :default_number_of_tests => 15, :priority => 17, :project_file => 'Prometera_regression_tomalmar.xml'},
+    {:name => '[P] REGRESSION TESTS Gas', :type => 'Suite', :environments => ['DEV8PROM', 'DEV9'], :piazza => true, :default_number_of_tests => 3, :priority => 18, :project_file => 'Prometera_regression_tomalmar.xml'},
     {:name => '[H] REGRESSION TESTS 1', :type => 'Suite', :environments => ['DEVHF02'], :piazza => true, :default_number_of_tests => 4, :priority => 25, :project_file => 'Hafslund_regression_krenevla.xml'},
     {:name => '[H] REGRESSION TESTS 2', :type => 'Suite', :environments => ['DEVHF02'], :piazza => true, :default_number_of_tests => 10, :priority => 26, :project_file => 'Hafslund_regression_krenevla.xml'},
     {:name => '[H] BUFFER TESTS', :type => 'Suite', :environments => ['DEVHF02'], :piazza => false, :default_number_of_tests => 2, :priority => 99, :project_file => 'Hafslund_regression_krenevla.xml', :buffer => true},
@@ -261,7 +271,7 @@ PIAZZA_SCREENS = [
     {:screen_number => 4, :environments => ['DEV8PROM']},
     {:screen_number => 5, :environments => ['DEVHF02']},
     {:screen_number => 6, :environments => ['DEV2SKA']},
-    {:screen_number => 7, :environments => ['FAT12']},
+    {:screen_number => 7, :environments => ['DEV9']},
 ]
  
 DELIVERY_SITE_TYPES = [
@@ -283,6 +293,7 @@ DELIVERY_SITE_TYPES = [
 ENVIRONMENTS = [
     {:name => 'FAT5', :wms_version => '4.9.1'},
     {:name => 'FAT4', :wms_version => '5.0.0'},
+    {:name => 'DEV9', :wms_version => '5.0.0'},
     {:name => 'FAT', :wms_version => 'trunk'},
     {:name => 'DEV8PROM', :wms_version => 'trunk'},
     {:name => 'PROM_PERF', :wms_version => 'trunk'},
