@@ -37,6 +37,7 @@ TEST_PACKAGES = [
          '[F] SMOKE TESTS'
      ]
     },
+]
 
 PIAZZA_SCREENS = [
     {:screen_number => 1, :environments => ['FAT']},
