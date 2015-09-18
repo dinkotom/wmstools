@@ -47,6 +47,6 @@ DELIVERY_SITE_TYPES = [
 ]
 
 ENVIRONMENTS = [
-    {:name => 'FAT', :wms_version => '5.0.x'},
+    {:name => 'FAT', :wms_version => 'trunk'},
 
 ]
