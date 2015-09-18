@@ -218,11 +218,11 @@ DELIVERY_SITE_TYPES = [
 ]
 
 ENVIRONMENTS = [
-    {:name => 'FAT4', :wms_version => '4.9.0'},
-    {:name => 'FAT', :wms_version => '4.9.0'},
-    {:name => 'TINA1', :wms_version => '4.9.0'},
-    {:name => 'PROMETERA', :wms_version => '4.9.0'},
-    {:name => 'DEVHF01', :wms_version => '4.9.0'},
-    {:name => 'DEV8', :wms_version => '4.9.0'},
+    {:name => 'FAT4', :wms_version => 'trunk'},
+    {:name => 'FAT', :wms_version => 'trunk'},
+    {:name => 'TINA1', :wms_version => 'trunk'},
+    {:name => 'PROMETERA', :wms_version => 'trunk'},
+    {:name => 'DEVHF01', :wms_version => 'trunk'},
+    {:name => 'DEV8', :wms_version => 'trunk'},
 ]
 
