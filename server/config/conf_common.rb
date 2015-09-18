@@ -36,7 +36,7 @@ VERSIONS = {:wms_trunk =>
                  :max_age => 48
                 },
             :wms_500 =>
-                {:name => '5.0.0', # FAT4
+                {:name => '5.0.0', # FAT4, DEV9
                  :protection_level => 'High',
                  :svn_branch => 'branch/5.0.0',
                  :responsible => 'vladan.krenek@tieto.com',
