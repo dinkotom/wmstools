@@ -88,6 +88,16 @@ SKAGERAK_TRUNK_REGRESSION_TESTS_JOB = {
         ]
 }
 
+SKAGERAK_BRANCH_REGRESSION_TESTS_JOB = {
+    :cron => '30 5 * * *',
+    :suites_environments =>
+        [
+            {:suite => '[S] REGRESSION SET [daily]', :environment => 'DEV3SKA'},
+            {:suite => '[S] REGRESSION SET 1 [roll out]', :environment => 'DEV3SKA'},
+            {:suite => '[S] REGRESSION SET 2 [roll out]', :environment => 'DEV3SKA'},
+        ]
+}
+
 FORTUM_PERFORMANCE_TESTS_JOB = {
     :cron => '*/10 22 * * *',
     :suites_environments =>
@@ -128,9 +138,9 @@ TEST_SUITES = [
     {:name => '[H] REGRESSION TESTS 1', :type => 'Suite', :environments => ['DEVHF02'], :piazza => true, :default_number_of_tests => 4, :priority => 25, :project_file => 'Hafslund_regression_krenevla.xml'},
     {:name => '[H] REGRESSION TESTS 2', :type => 'Suite', :environments => ['DEVHF02'], :piazza => true, :default_number_of_tests => 10, :priority => 26, :project_file => 'Hafslund_regression_krenevla.xml'},
     {:name => '[H] BUFFER TESTS', :type => 'Suite', :environments => ['DEVHF02'], :piazza => false, :default_number_of_tests => 2, :priority => 99, :project_file => 'Hafslund_regression_krenevla.xml', :buffer => true},
-    {:name => '[S] REGRESSION SET [daily]', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => true, :default_number_of_tests => 42, :priority => 27, :project_file => 'Skagerak_daily_plohalen.xml'},
-    {:name => '[S] REGRESSION SET 1 [roll out]', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => true, :default_number_of_tests => 15, :priority => 28, :project_file => 'Skagerak_rollOut_plohalen.xml'},
-    {:name => '[S] REGRESSION SET 2 [roll out]', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => true, :default_number_of_tests => 15, :priority => 28, :project_file => 'Skagerak_rollOut_plohalen.xml'},
+    {:name => '[S] REGRESSION SET [daily]', :type => 'Suite', :environments => ['DEV2SKA','DEV3SKA'], :piazza => true, :default_number_of_tests => 42, :priority => 27, :project_file => 'Skagerak_daily_plohalen.xml'},
+    {:name => '[S] REGRESSION SET 1 [roll out]', :type => 'Suite', :environments => ['DEV2SKA','DEV3SKA'], :piazza => true, :default_number_of_tests => 15, :priority => 28, :project_file => 'Skagerak_rollOut_plohalen.xml'},
+    {:name => '[S] REGRESSION SET 2 [roll out]', :type => 'Suite', :environments => ['DEV2SKA','DEV3SKA'], :piazza => true, :default_number_of_tests => 15, :priority => 28, :project_file => 'Skagerak_rollOut_plohalen.xml'},
 ]
 
 TEST_PACKAGES = [
@@ -272,6 +282,7 @@ PIAZZA_SCREENS = [
     {:screen_number => 5, :environments => ['DEVHF02']},
     {:screen_number => 6, :environments => ['DEV2SKA']},
     {:screen_number => 7, :environments => ['DEV9']},
+    {:screen_number => 8, :environments => ['DEV3SKA']},
 ]
  
 DELIVERY_SITE_TYPES = [
@@ -294,6 +305,7 @@ ENVIRONMENTS = [
     {:name => 'FAT5', :wms_version => '4.9.1'},
     {:name => 'FAT4', :wms_version => '5.0.0'},
     {:name => 'DEV9', :wms_version => '5.0.0'},
+    {:name => 'DEV3SKA', :wms_version => '5.0.0'},
     {:name => 'FAT', :wms_version => 'trunk'},
     {:name => 'DEV8PROM', :wms_version => 'trunk'},
     {:name => 'PROM_PERF', :wms_version => 'trunk'},
