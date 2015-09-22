@@ -115,6 +115,13 @@ FORTUM_LOAD_TESTS_JOB = {
         ]
 }
 
+AM_TRUNK_REGRESSION_TESTS_JOB = {
+    :cron => '0 2 * * *',
+    :suites_environments =>
+        [
+            {:suite => '[AM] REGRESSION TESTS 1', :environment => 'DEV7'},
+        ]
+}
 
 # everything below this should be the same for both production and development
 
@@ -141,7 +148,7 @@ TEST_SUITES = [
     {:name => '[H] BUFFER TESTS', :type => 'Suite', :environments => ['DEVHF02'], :piazza => false, :default_number_of_tests => 2, :priority => 99, :project_file => 'Hafslund_regression_krenevla.xml', :buffer => true},
     {:name => '[S] REGRESSION SET [daily]', :type => 'Suite', :environments => ['DEV2SKA','DEV3SKA'], :piazza => true, :default_number_of_tests => 42, :priority => 27, :project_file => 'Skagerak_daily_plohalen.xml'},
     {:name => '[S] REGRESSION SET 1 [roll out]', :type => 'Suite', :environments => ['DEV2SKA','DEV3SKA'], :piazza => true, :default_number_of_tests => 15, :priority => 28, :project_file => 'Skagerak_rollOut_plohalen.xml'},
-    {:name => '[S] REGRESSION SET 2 [roll out]', :type => 'Suite', :environments => ['DEV2SKA','DEV3SKA'], :piazza => true, :default_number_of_tests => 15, :priority => 28, :project_file => 'Skagerak_rollOut_plohalen.xml'},
+    {:name => '[AM] REGRESSION TESTS 1', :type => 'Suite', :environments => ['DEV7'], :piazza => true, :default_number_of_tests => 5, :priority => 28, :project_file => 'AM_regression_chandkan.xml'},
 ]
 
 TEST_PACKAGES = [
@@ -165,6 +172,7 @@ TEST_PACKAGES = [
          '[S] REGRESSION SET [daily]',
          '[S] REGRESSION SET 1 [roll out]',
          '[S] REGRESSION SET 2 [roll out]',
+         '[AM] REGRESSION TESTS 1',
      ]
     },
     {:name => '[F] SMOKE TESTS',
@@ -259,6 +267,10 @@ TEST_PACKAGES = [
      :suites => ['[H] BUFFER TESTS'
      ]
     },
+    {:name => '[AM] REGRESSION TESTS 1',
+     :suites => ['[AM] REGRESSION TESTS 1'
+     ]
+    },
 ]
 
 PERFORMANCE_TESTS = [
@@ -284,6 +296,7 @@ PIAZZA_SCREENS = [
     {:screen_number => 6, :environments => ['DEV2SKA']},
     {:screen_number => 7, :environments => ['DEV9']},
     {:screen_number => 8, :environments => ['DEV3SKA']},
+    {:screen_number => 9, :environments => ['DEV7']},
 ]
  
 DELIVERY_SITE_TYPES = [
