@@ -54,6 +54,7 @@ FORTUM_BRANCH_REGRESSION_TESTS_JOB = {
             {:suite => '[F] REGRESSION TESTS 5', :environment => 'FAT4'},
             {:suite => '[F] REGRESSION TESTS 6', :environment => 'FAT4'},
 	    {:suite => '[F] REGRESSION TESTS 7', :environment => 'FAT4'},
+	    {:suite => '[F] REGRESSION TESTS 8', :environment => 'FAT4'},
             {:suite => '[F] WEB SERVICE TESTS', :environment => 'FAT4'},
         ]
 }
