@@ -38,6 +38,7 @@ FORTUM_TRUNK_REGRESSION_TESTS_JOB = {
             {:suite => '[F] REGRESSION TESTS 6', :environment => 'FAT'},
             {:suite => '[F] REGRESSION TESTS 7', :environment => 'FAT'},
             {:suite => '[F] REGRESSION TESTS 8', :environment => 'FAT'},
+            {:suite => '[F] REGRESSION TESTS 9', :environment => 'FAT'},
             {:suite => '[F] WEB SERVICE TESTS', :environment => 'FAT'},
         ]
 }
@@ -136,6 +137,7 @@ TEST_SUITES = [
     {:name => '[F] REGRESSION TESTS 6', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'FAT12'], :piazza => true, :default_number_of_tests => 24, :priority => 8, :project_file => 'Fortum_regression_krenevla.xml'},
     {:name => '[F] REGRESSION TESTS 7', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'FAT12'], :piazza => true, :default_number_of_tests => 15, :priority => 9, :project_file => 'Fortum_regression_krenevla.xml'},
     {:name => '[F] REGRESSION TESTS 8', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT12'], :piazza => true, :default_number_of_tests => 30, :priority => 9, :project_file => 'Fortum_regression_krenevla.xml'},
+    {:name => '[F] REGRESSION TESTS 9', :type => 'Suite', :environments => ['FAT'], :piazza => true, :default_number_of_tests => 5, :priority => 9, :project_file => 'Fortum_regression_benkepet.xml'},
     {:name => '[F] BUFFER TESTS', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT12'], :piazza => false, :default_number_of_tests => 4, :priority => 99, :project_file => 'Fortum_regression_krenevla.xml', :buffer => true},
     {:name => '[F] LOAD TESTS', :type => 'Suite', :environments => ['FAT'], :piazza => false, :priority => 10, :project_file => 'Fortum_regression_krenevla.xml', :load => true},
     {:name => '[F] MAINTENANCE TESTS', :type => 'Suite', :environments => ['FAT'], :piazza => false, :priority => 11, :project_file => 'Fortum_regression_krenevla.xml'},
@@ -210,6 +212,10 @@ TEST_PACKAGES = [
     },
     {:name => '[F] REGRESSION TESTS 8',
      :suites => ['[F] REGRESSION TESTS 8'
+     ]
+    },
+    {:name => '[F] REGRESSION TESTS 9',
+     :suites => ['[F] REGRESSION TESTS 9'
      ]
     },
     {:name => '[F] LOAD TESTS',
