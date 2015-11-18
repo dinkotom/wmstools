@@ -43,22 +43,22 @@ FORTUM_TRUNK_REGRESSION_TESTS_JOB = {
         ]
 }
 
-FORTUM_BRANCH_REGRESSION_TESTS_JOB = {
-    :cron => '0 6 * * *',
-    :suites_environments =>
-        [
-            {:suite => '[F] SMOKE TESTS', :environment => 'FAT4'},
-            {:suite => '[F] REGRESSION TESTS 1', :environment => 'FAT4'},
-            {:suite => '[F] REGRESSION TESTS 2', :environment => 'FAT4'},
-            {:suite => '[F] REGRESSION TESTS 3', :environment => 'FAT4'},
-            {:suite => '[F] REGRESSION TESTS 4', :environment => 'FAT4'},
-            {:suite => '[F] REGRESSION TESTS 5', :environment => 'FAT4'},
-            {:suite => '[F] REGRESSION TESTS 6', :environment => 'FAT4'},
-	    {:suite => '[F] REGRESSION TESTS 7', :environment => 'FAT4'},
-	    {:suite => '[F] REGRESSION TESTS 8', :environment => 'FAT4'},
-            {:suite => '[F] WEB SERVICE TESTS', :environment => 'FAT4'},
-        ]
-}
+#FORTUM_BRANCH_REGRESSION_TESTS_JOB = {
+#    :cron => '0 6 * * *',
+#    :suites_environments =>
+#        [
+#            {:suite => '[F] SMOKE TESTS', :environment => 'FAT4'},
+#            {:suite => '[F] REGRESSION TESTS 1', :environment => 'FAT4'},
+#            {:suite => '[F] REGRESSION TESTS 2', :environment => 'FAT4'},
+#            {:suite => '[F] REGRESSION TESTS 3', :environment => 'FAT4'},
+#            {:suite => '[F] REGRESSION TESTS 4', :environment => 'FAT4'},
+#            {:suite => '[F] REGRESSION TESTS 5', :environment => 'FAT4'},
+#            {:suite => '[F] REGRESSION TESTS 6', :environment => 'FAT4'},
+#            {:suite => '[F] REGRESSION TESTS 7', :environment => 'FAT4'},
+#	     {:suite => '[F] REGRESSION TESTS 8', :environment => 'FAT4'},
+#            {:suite => '[F] WEB SERVICE TESTS', :environment => 'FAT4'},
+#        ]
+#}
 
 PROMETERA_REGRESSION_TESTS_JOB = {
     :cron => '30 1 * * *',
