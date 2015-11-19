@@ -87,6 +87,7 @@ SKAGERAK_TRUNK_REGRESSION_TESTS_JOB = {
             {:suite => '[S] REGRESSION SET [daily]', :environment => 'DEV2SKA'},
             {:suite => '[S] REGRESSION SET 1 [roll out]', :environment => 'DEV2SKA'},
             {:suite => '[S] REGRESSION SET 2 [roll out]', :environment => 'DEV2SKA'},
+            {:suite => '[S] REGRESSION SET [daily_duringRollOut]', :environment => 'DEV2SKA'},
         ]
 }
 
@@ -97,6 +98,7 @@ SKAGERAK_BRANCH_REGRESSION_TESTS_JOB = {
             {:suite => '[S] REGRESSION SET [daily]', :environment => 'DEV3SKA'},
             {:suite => '[S] REGRESSION SET 1 [roll out]', :environment => 'DEV3SKA'},
             {:suite => '[S] REGRESSION SET 2 [roll out]', :environment => 'DEV3SKA'},
+            {:suite => '[S] REGRESSION SET [daily_duringRollOut]', :environment => 'DEV3SKA'},
         ]
 }
 
@@ -160,6 +162,7 @@ TEST_SUITES = [
     {:name => '[S] REGRESSION SET 1 [roll out]', :type => 'Suite', :environments => ['DEV2SKA','DEV3SKA'], :piazza => true, :default_number_of_tests => 15, :priority => 28, :project_file => 'Skagerak_rollOut_plohalen.xml'},
     {:name => '[S] REGRESSION SET 2 [roll out]', :type => 'Suite', :environments => ['DEV2SKA','DEV3SKA'], :piazza => true, :default_number_of_tests => 35, :priority => 28, :project_file => 'Skagerak_rollOut_plohalen.xml'},
     {:name => '[AM] REGRESSION TESTS 1', :type => 'Suite', :environments => ['DEV8PROM', 'DEV9'], :piazza => true, :default_number_of_tests => 5, :priority => 28, :project_file => 'AM_regression_chandkan.xml'},
+    {:name => '[S] REGRESSION SET [daily_duringRollOut]', :type => 'Suite', :environments => ['DEV2SKA','DEV3SKA'], :piazza => true, :default_number_of_tests => 20, :priority => 29, :project_file => 'Skagerak_daily_duringRollOut_plohalen.xml'},
 ]
 
 TEST_PACKAGES = [
@@ -183,6 +186,7 @@ TEST_PACKAGES = [
          '[S] REGRESSION SET [daily]',
          '[S] REGRESSION SET 1 [roll out]',
          '[S] REGRESSION SET 2 [roll out]',
+         '[S] REGRESSION SET [daily_duringRollOut]',
          '[AM] REGRESSION TESTS 1',
      ]
     },
@@ -268,6 +272,10 @@ TEST_PACKAGES = [
     },
      {:name => '[S] REGRESSION SET 2 [roll out]',
       :suites => ['[S] REGRESSION SET 2 [roll out]'
+      ]
+    },
+     {:name => '[S] REGRESSION SET [daily_duringRollOut]',
+      :suites => ['[S] REGRESSION SET [daily_duringRollOut]'
       ]
     },
     {:name => '[H] REGRESSION TESTS 1',
