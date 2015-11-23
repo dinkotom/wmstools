@@ -18,8 +18,10 @@ FORTUM_SMOKE_TESTS_JOB = {
     :suites_environments =>
         [
             {:suite => '[F] SMOKE TESTS', :environment => 'FAT'},
+            {:suite => '[F] MAINTENANCE TESTS', :environment => 'FAT'},
             {:suite => '[F] SMOKE TESTS', :environment => 'FAT4'},
-            {:suite => '[F] SMOKE TESTS', :environment => 'FAT5'},
+            {:suite => '[F] MAINTENANCE TESTS', :environment => 'FAT4'},
+            #{:suite => '[F] SMOKE TESTS', :environment => 'FAT5'},
             {:suite => '[F] SMOKE TESTS', :environment => 'FAT12'},
         ]
 }
@@ -178,6 +180,7 @@ TEST_PACKAGES = [
          '[F] REGRESSION TESTS 6',
          '[F] REGRESSION TESTS 7',
          '[F] REGRESSION TESTS 8',
+         '[F] REGRESSION TESTS 9',
          '[P] REGRESSION TESTS El',
          '[P] REGRESSION TESTS DH/DC',
 	 '[P] REGRESSION TESTS Gas',
