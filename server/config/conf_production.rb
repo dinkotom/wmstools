@@ -168,6 +168,7 @@ TEST_SUITES = [
     {:name => '[AM] REGRESSION TESTS 1', :type => 'Suite', :environments => ['DEV8PROM', 'DEV9'], :piazza => true, :default_number_of_tests => 5, :priority => 28, :project_file => 'AM_regression_chandkan.xml'},
     {:name => '[S] REGRESSION SET [daily_duringRollOut]', :type => 'Suite', :environments => ['DEV2SKA','DEV3SKA'], :piazza => true, :default_number_of_tests => 20, :priority => 29, :project_file => 'Skagerak_daily_duringRollOut_plohalen.xml'},
     {:name => '[RM] WMS INTEGRATION', :type => 'Suite', :environments => ['DEV2SKA','DEV3SKA'], :piazza => true, :default_number_of_tests => 10, :priority => 30, :project_file => 'RM_regression_gawarshr.xml'},
+    {:name => '[MOB] REGRESSION TESTS MOBILE', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => true, :default_number_of_tests => 10, :priority => 31, :project_file => 'Skagerak_gui_plohalen.xml'},
 ]
 
 TEST_PACKAGES = [
@@ -305,6 +306,10 @@ TEST_PACKAGES = [
      :suites => ['[RM] WMS INTEGRATION'
      ]
     }, 
+       {:name => '[MOB] REGRESSION TESTS MOBILE',
+     :suites => ['[MOB] REGRESSION TESTS MOBILE'
+     ]
+    },
 ]
 
 PERFORMANCE_TESTS = [
