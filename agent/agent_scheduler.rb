@@ -1,7 +1,7 @@
 Thread.new do
   $scheduler = Rufus::Scheduler.new
 
-  $scheduler.every '1m', :first_at => Time.now + 1 do
+  $scheduler.every '30s', :first_at => Time.now + 1 do
     TestExecution.dequeue
   end
 
