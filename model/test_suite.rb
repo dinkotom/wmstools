@@ -6,7 +6,6 @@ class TestSuite
   property :default_number_of_tests, Integer
   property :priority, Integer
   property :performance, Boolean
-  property :single_thread, Boolean #krenevla, add possibility to run regression tests in single thread
   property :load, Boolean
   property :buffer, Boolean
   property :project_file, String

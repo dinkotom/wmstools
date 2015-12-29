@@ -30,7 +30,6 @@ class Utils
             :default_number_of_tests => test_suite[:default_number_of_tests],
             :priority => test_suite[:priority],
             :performance => test_suite[:performance],
-            :single_thread => test_suite[:single_thread], #krenevla, support for single thread execution
             :load => test_suite[:load],
             :buffer => test_suite[:buffer],
             :project_file => test_suite[:project_file]
