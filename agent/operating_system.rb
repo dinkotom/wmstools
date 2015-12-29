@@ -27,7 +27,7 @@ class OperatingSystem
       command << " -Dsoapui.home=#{SOAPUI_HOME}/bin"
       command << " -Dsoapui.ext.libraries=#{SVN_HOME}/#{branch}/requiredJARs"
       command << " -Dsoapui.ext.listeners=#{SOAPUI_HOME}/bin/listeners -Dsoapui.ext.actions=#{SOAPUI_HOME}/bin/actions"
-      command << " -cp #{SOAPUI_HOME}/bin/soapui-5.0.0.jar:#{SOAPUI_HOME}/lib/*"
+      command << " -cp #{SOAPUI_HOME}/bin/soapui-5.2.0.jar:#{SOAPUI_HOME}/lib/*"
       command << " com.eviware.soapui.tools.SoapUITestCaseRunner -t #{SOAPUI_HOME}/soapui-settings.xml"
       command << " -s '#{@suite}'"
       command << " -c '#{@test_case}'" if test_case
