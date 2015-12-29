@@ -121,13 +121,13 @@ class TestOs < Test::Unit::TestCase
   end
 
   def test_composing_command
-    command = "/usr/bin/java -Xms1024m -Xmx1024m -XX:MaxPermSize=128m -Dsoapui.properties=soapui.properties -Dgroovy.source.encoding=iso-8859-1 -Dsoapui.home=/home/nodeTest/work/soapui/bin -Dsoapui.ext.libraries=/home/nodeTest/work/svn/trunk/requiredJARs -Dsoapui.ext.listeners=/home/nodeTest/work/soapui/bin/listeners -Dsoapui.ext.actions=/home/nodeTest/work/soapui/bin/actions -cp /home/nodeTest/work/soapui/bin/soapui-5.0.0.jar:/home/nodeTest/work/soapui/lib/* com.eviware.soapui.tools.SoapUITestCaseRunner -t /home/nodeTest/work/soapui/soapui-settings.xml -s '[F] LOAD TEST' -r /home/nodeTest/work/svn/trunk/WMS.xml -f 'output' 2> ./output/stderr.txt|tee ./output/stdout.txt"
+    command = "/usr/bin/java -Xms1024m -Xmx1024m -XX:MaxPermSize=128m -Dsoapui.properties=soapui.properties -Dgroovy.source.encoding=iso-8859-1 -Dsoapui.home=/home/nodeTest/work/soapui/bin -Dsoapui.ext.libraries=/home/nodeTest/work/svn/trunk/requiredJARs -Dsoapui.ext.listeners=/home/nodeTest/work/soapui/bin/listeners -Dsoapui.ext.actions=/home/nodeTest/work/soapui/bin/actions -cp /home/nodeTest/work/soapui/bin/soapui-5.2.0.jar:/home/nodeTest/work/soapui/lib/* com.eviware.soapui.tools.SoapUITestCaseRunner -t /home/nodeTest/work/soapui/soapui-settings.xml -s '[F] LOAD TEST' -r /home/nodeTest/work/svn/trunk/WMS.xml -f 'output' 2> ./output/stderr.txt|tee ./output/stdout.txt"
     assert_equal(command, @os.send(:compose_command))
   end
 
   def test_composing_load_test_command
     @os.test_case = 'M1 1C'
-    command = "/usr/bin/java -Xms1024m -Xmx1024m -XX:MaxPermSize=128m -Dsoapui.properties=soapui.properties -Dgroovy.source.encoding=iso-8859-1 -Dsoapui.home=/home/nodeTest/work/soapui/bin -Dsoapui.ext.libraries=/home/nodeTest/work/svn/trunk/requiredJARs -Dsoapui.ext.listeners=/home/nodeTest/work/soapui/bin/listeners -Dsoapui.ext.actions=/home/nodeTest/work/soapui/bin/actions -cp /home/nodeTest/work/soapui/bin/soapui-5.0.0.jar:/home/nodeTest/work/soapui/lib/* com.eviware.soapui.tools.SoapUITestCaseRunner -t /home/nodeTest/work/soapui/soapui-settings.xml -s '[F] LOAD TEST' -c 'M1 1C' -r /home/nodeTest/work/svn/trunk/WMS.xml -f 'output' 2> ./output/stderr.txt|tee ./output/stdout.txt"
+    command = "/usr/bin/java -Xms1024m -Xmx1024m -XX:MaxPermSize=128m -Dsoapui.properties=soapui.properties -Dgroovy.source.encoding=iso-8859-1 -Dsoapui.home=/home/nodeTest/work/soapui/bin -Dsoapui.ext.libraries=/home/nodeTest/work/svn/trunk/requiredJARs -Dsoapui.ext.listeners=/home/nodeTest/work/soapui/bin/listeners -Dsoapui.ext.actions=/home/nodeTest/work/soapui/bin/actions -cp /home/nodeTest/work/soapui/bin/soapui-5.2.0.jar:/home/nodeTest/work/soapui/lib/* com.eviware.soapui.tools.SoapUITestCaseRunner -t /home/nodeTest/work/soapui/soapui-settings.xml -s '[F] LOAD TEST' -c 'M1 1C' -r /home/nodeTest/work/svn/trunk/WMS.xml -f 'output' 2> ./output/stderr.txt|tee ./output/stdout.txt"
     assert_equal(command, @os.send(:compose_command))
   end
 
