@@ -33,6 +33,7 @@ class OperatingSystem
       command << " -c '#{@test_case}'" if test_case
       command << " -r #{SVN_HOME}/#{branch}/#{@project_file}"
       command << " -f '#{@folder}'"
+      command << " -D screenshotPath='#{@folder}'"
     elsif @project_file_extension == 'jar'
       command << " -cp #{JAR_HOME}/#{branch}/target/#{@project_file}:#{JAR_HOME}/#{branch}/target/lib/*"
       command << ' com.tieto.test.ui.demo.Run'
