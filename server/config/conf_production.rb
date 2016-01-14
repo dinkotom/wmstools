@@ -70,6 +70,8 @@ PROMETERA_REGRESSION_TESTS_JOB = {
             {:suite => '[P] REGRESSION TESTS DH/DC', :environment => 'DEV8PROM'},
             {:suite => '[P] REGRESSION TESTS Gas', :environment => 'DEV8PROM'},
             {:suite => '[P] REGRESSION TESTS GUI 1', :environment => 'DEV8PROM'},
+            {:suite => '[AM] REGRESSION TESTS 1', :environment => 'DEV8PROM'},
+            {:suite => '[AM] REGRESSION TESTS GUI 1', :environment => 'DEV8PROM'},
         ]
 }
 
@@ -80,6 +82,7 @@ PROMETERA_BRANCH_TESTS_JOB = {
             {:suite => '[P] REGRESSION TESTS El', :environment => 'DEV9'},
             {:suite => '[P] REGRESSION TESTS DH/DC', :environment => 'DEV9'},
             {:suite => '[P] REGRESSION TESTS Gas', :environment => 'DEV9'},
+            {:suite => '[AM] REGRESSION TESTS 1', :environment => 'DEV9'},
         ]
 }
 
@@ -93,6 +96,7 @@ SKAGERAK_TRUNK_REGRESSION_TESTS_JOB = {
             {:suite => '[S] REGRESSION SET [daily_duringRollOut]', :environment => 'DEV2SKA'},
             {:suite => '[S] REGRESSION TESTS GUI 1', :environment => 'DEV2SKA'},
             {:suite => '[RM] WMS INTEGRATION', :environment => 'DEV2SKA'},
+            {:suite => '[RM] REGRESSION TESTS GUI 1', :environment => 'DEV2SKA'},
         ]
 }
 
@@ -121,23 +125,6 @@ FORTUM_LOAD_TESTS_JOB = {
     :suites_environments =>
         [
             {:suite => '[F] LOAD TESTS', :environment => 'FAT'},
-        ]
-}
-
-AM_TRUNK_REGRESSION_TESTS_JOB = {
-    :cron => '0 2 * * *',
-    :suites_environments =>
-        [
-            {:suite => '[AM] REGRESSION TESTS 1', :environment => 'DEV8PROM'},
-            {:suite => '[AM] REGRESSION TESTS GUI 1', :environment => 'DEV8PROM'},
-        ]
-}
-
-AM_BRANCH_REGRESSION_TESTS_JOB = {
-    :cron => '0 2 * * *',
-    :suites_environments =>
-        [
-            {:suite => '[AM] REGRESSION TESTS 1', :environment => 'DEV9'},
         ]
 }
 
@@ -173,6 +160,7 @@ TEST_SUITES = [
     {:name => '[S] REGRESSION SET [daily_duringRollOut]', :type => 'Suite', :environments => ['DEV2SKA','DEV3SKA'], :piazza => true, :default_number_of_tests => 20, :priority => 29, :project_file => 'Skagerak_daily_duringRollOut_plohalen.xml'},
     {:name => '[S] REGRESSION TESTS GUI 1', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => true, :default_number_of_tests => 3, :priority => 18, :project_file => 'Skagerak_gui_plohalen.xml'},
     {:name => '[RM] WMS INTEGRATION', :type => 'Suite', :environments => ['DEV2SKA','DEV3SKA'], :piazza => true, :default_number_of_tests => 10, :priority => 30, :project_file => 'RM_regression_gawarshr.xml'},
+    {:name => '[RM] REGRESSION TESTS GUI 1', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => true, :default_number_of_tests => 10, :priority => 31, :project_file => 'RM_gui_gawarshr.xml'},
     {:name => '[AM] REGRESSION TESTS 1', :type => 'Suite', :environments => ['DEV8PROM', 'DEV9'], :piazza => true, :default_number_of_tests => 5, :priority => 28, :project_file => 'AM_regression_chandkan.xml'},
     {:name => '[AM] REGRESSION TESTS GUI 1', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => true, :default_number_of_tests => 10, :priority => 31, :project_file => 'AM_gui_chandkan.xml'},
 ]
@@ -205,6 +193,7 @@ TEST_PACKAGES = [
          '[AM] REGRESSION TESTS 1',
          '[AM] REGRESSION TESTS GUI 1',
          '[RM] WMS INTEGRATION',
+         '[RM] REGRESSION TESTS GUI 1',
      ]
     },
     {:name => '[F] SMOKE TESTS',
@@ -320,14 +309,19 @@ TEST_PACKAGES = [
      :suites => ['[AM] REGRESSION TESTS 1'
      ]
     },
-       {:name => '[RM] WMS INTEGRATION',
-     :suites => ['[RM] WMS INTEGRATION'
-     ]
-    }, 
-       {:name => '[AM] REGRESSION TESTS GUI 1',
+    {:name => '[AM] REGRESSION TESTS GUI 1',
      :suites => ['[AM] REGRESSION TESTS GUI 1'
      ]
     },
+       {:name => '[RM] WMS INTEGRATION',
+     :suites => ['[RM] WMS INTEGRATION'
+     ]
+    },                   
+   {:name => '[RM] REGRESSION TESTS GUI 1',
+     :suites => ['[RM] REGRESSION TESTS GUI 1'
+     ]
+    },
+
 ]
 
 PERFORMANCE_TESTS = [
