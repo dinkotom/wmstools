@@ -91,6 +91,7 @@ SKAGERAK_TRUNK_REGRESSION_TESTS_JOB = {
             {:suite => '[S] REGRESSION SET 1 [roll out]', :environment => 'DEV2SKA'},
             {:suite => '[S] REGRESSION SET 2 [roll out]', :environment => 'DEV2SKA'},
             {:suite => '[S] REGRESSION SET [daily_duringRollOut]', :environment => 'DEV2SKA'},
+            {:suite => '[S] REGRESSION TESTS GUI 1', :environment => 'DEV2SKA'},
             {:suite => '[RM] WMS INTEGRATION', :environment => 'DEV2SKA'},
         ]
 }
@@ -170,6 +171,7 @@ TEST_SUITES = [
     {:name => '[S] REGRESSION SET 1 [roll out]', :type => 'Suite', :environments => ['DEV2SKA','DEV3SKA'], :piazza => true, :default_number_of_tests => 15, :priority => 28, :project_file => 'Skagerak_rollOut_plohalen.xml'},
     {:name => '[S] REGRESSION SET 2 [roll out]', :type => 'Suite', :environments => ['DEV2SKA','DEV3SKA'], :piazza => true, :default_number_of_tests => 35, :priority => 28, :project_file => 'Skagerak_rollOut_plohalen.xml'},
     {:name => '[S] REGRESSION SET [daily_duringRollOut]', :type => 'Suite', :environments => ['DEV2SKA','DEV3SKA'], :piazza => true, :default_number_of_tests => 20, :priority => 29, :project_file => 'Skagerak_daily_duringRollOut_plohalen.xml'},
+    {:name => '[S] REGRESSION TESTS GUI 1', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => true, :default_number_of_tests => 3, :priority => 18, :project_file => 'Skagerak_gui_plohalen.xml'},
     {:name => '[RM] WMS INTEGRATION', :type => 'Suite', :environments => ['DEV2SKA','DEV3SKA'], :piazza => true, :default_number_of_tests => 10, :priority => 30, :project_file => 'RM_regression_gawarshr.xml'},
     {:name => '[AM] REGRESSION TESTS 1', :type => 'Suite', :environments => ['DEV8PROM', 'DEV9'], :piazza => true, :default_number_of_tests => 5, :priority => 28, :project_file => 'AM_regression_chandkan.xml'},
     {:name => '[AM] REGRESSION TESTS GUI 1', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => true, :default_number_of_tests => 10, :priority => 31, :project_file => 'AM_gui_chandkan.xml'},
@@ -199,6 +201,7 @@ TEST_PACKAGES = [
          '[S] REGRESSION SET 1 [roll out]',
          '[S] REGRESSION SET 2 [roll out]',
          '[S] REGRESSION SET [daily_duringRollOut]',
+         '[S] REGRESSION TESTS GUI 1',
          '[AM] REGRESSION TESTS 1',
          '[AM] REGRESSION TESTS GUI 1',
          '[RM] WMS INTEGRATION',
@@ -295,7 +298,12 @@ TEST_PACKAGES = [
      {:name => '[S] REGRESSION SET [daily_duringRollOut]',
       :suites => ['[S] REGRESSION SET [daily_duringRollOut]'
       ]
+    },  
     },
+     {:name => '[S] REGRESSION TESTS GUI 1',
+      :suites => ['[S] REGRESSION TESTS GUI 1'
+      ]
+    }, 
     {:name => '[H] REGRESSION TESTS 1',
      :suites => ['[H] REGRESSION TESTS 1'
      ]
