@@ -69,6 +69,7 @@ PROMETERA_REGRESSION_TESTS_JOB = {
             {:suite => '[P] REGRESSION TESTS El', :environment => 'DEV8PROM'},
             {:suite => '[P] REGRESSION TESTS DH/DC', :environment => 'DEV8PROM'},
             {:suite => '[P] REGRESSION TESTS Gas', :environment => 'DEV8PROM'},
+            {:suite => '[P] REGRESSION TESTS GUI 1', :environment => 'DEV8PROM'},
         ]
 }
 
@@ -160,15 +161,17 @@ TEST_SUITES = [
     {:name => '[P] REGRESSION TESTS El', :type => 'Suite', :environments => ['DEV8PROM', 'DEV9'], :piazza => true, :default_number_of_tests => 20, :priority => 15, :project_file => 'Prometera_regression_tomalmar.xml'},
     {:name => '[P] REGRESSION TESTS DH/DC', :type => 'Suite', :environments => ['DEV8PROM', 'DEV9'], :piazza => true, :default_number_of_tests => 15, :priority => 17, :project_file => 'Prometera_regression_tomalmar.xml'},
     {:name => '[P] REGRESSION TESTS Gas', :type => 'Suite', :environments => ['DEV8PROM', 'DEV9'], :piazza => true, :default_number_of_tests => 3, :priority => 18, :project_file => 'Prometera_regression_tomalmar.xml'},
+    {:name => '[P] BUFFER TESTS', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => false, :default_number_of_tests => 3, :priority => 18, :project_file => 'Prometera_regression_tomalmar.xml'},
+    {:name => '[P] REGRESSION TESTS GUI 1', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => true, :default_number_of_tests => 3, :priority => 18, :project_file => 'Prometera_gui_tomalmar.xml'},
     {:name => '[H] REGRESSION TESTS 1', :type => 'Suite', :environments => ['DEVHF02'], :piazza => true, :default_number_of_tests => 4, :priority => 25, :project_file => 'Hafslund_regression_krenevla.xml'},
     {:name => '[H] REGRESSION TESTS 2', :type => 'Suite', :environments => ['DEVHF02'], :piazza => true, :default_number_of_tests => 10, :priority => 26, :project_file => 'Hafslund_regression_krenevla.xml'},
     {:name => '[H] BUFFER TESTS', :type => 'Suite', :environments => ['DEVHF02'], :piazza => false, :default_number_of_tests => 2, :priority => 99, :project_file => 'Hafslund_regression_krenevla.xml', :buffer => true},
     {:name => '[S] REGRESSION SET [daily]', :type => 'Suite', :environments => ['DEV2SKA','DEV3SKA'], :piazza => true, :default_number_of_tests => 42, :priority => 27, :project_file => 'Skagerak_daily_plohalen.xml'},
     {:name => '[S] REGRESSION SET 1 [roll out]', :type => 'Suite', :environments => ['DEV2SKA','DEV3SKA'], :piazza => true, :default_number_of_tests => 15, :priority => 28, :project_file => 'Skagerak_rollOut_plohalen.xml'},
     {:name => '[S] REGRESSION SET 2 [roll out]', :type => 'Suite', :environments => ['DEV2SKA','DEV3SKA'], :piazza => true, :default_number_of_tests => 35, :priority => 28, :project_file => 'Skagerak_rollOut_plohalen.xml'},
-    {:name => '[AM] REGRESSION TESTS 1', :type => 'Suite', :environments => ['DEV8PROM', 'DEV9'], :piazza => true, :default_number_of_tests => 5, :priority => 28, :project_file => 'AM_regression_chandkan.xml'},
     {:name => '[S] REGRESSION SET [daily_duringRollOut]', :type => 'Suite', :environments => ['DEV2SKA','DEV3SKA'], :piazza => true, :default_number_of_tests => 20, :priority => 29, :project_file => 'Skagerak_daily_duringRollOut_plohalen.xml'},
     {:name => '[RM] WMS INTEGRATION', :type => 'Suite', :environments => ['DEV2SKA','DEV3SKA'], :piazza => true, :default_number_of_tests => 10, :priority => 30, :project_file => 'RM_regression_gawarshr.xml'},
+    {:name => '[AM] REGRESSION TESTS 1', :type => 'Suite', :environments => ['DEV8PROM', 'DEV9'], :piazza => true, :default_number_of_tests => 5, :priority => 28, :project_file => 'AM_regression_chandkan.xml'},
     {:name => '[AM] REGRESSION TESTS GUI 1', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => true, :default_number_of_tests => 10, :priority => 31, :project_file => 'AM_gui_chandkan.xml'},
 ]
 
@@ -189,6 +192,7 @@ TEST_PACKAGES = [
          '[P] REGRESSION TESTS El',
          '[P] REGRESSION TESTS DH/DC',
 	 '[P] REGRESSION TESTS Gas',
+	 '[P] REGRESSION TESTS GUI 1',
          '[H] REGRESSION TESTS 1',
          '[H] REGRESSION TESTS 2',
          '[S] REGRESSION SET [daily]',
@@ -272,6 +276,10 @@ TEST_PACKAGES = [
      :suites => ['[P] REGRESSION TESTS Gas'
      ]
     },
+    {:name => '[P] REGRESSION TESTS GUI 1',
+    :suites => ['[P] REGRESSION TESTS GUI 1'
+     ]
+    },
      {:name => '[S] REGRESSION SET [daily]',
       :suites => ['[S] REGRESSION SET [daily]'
       ]
@@ -341,19 +349,27 @@ PIAZZA_SCREENS = [
 ]
  
 DELIVERY_SITE_TYPES = [
-    {:id => '[F] M1 1C', :name => '[F] M1 1C', :environments => ['FAT', 'FAT4', 'FAT5', 'FAT12'], :test_suite_name => '[F] BUFFER TESTS', :quota => 100},
-    {:id => '[F] M1 1C PTB RDR SelfRead Yes', :name => '[F] M1 1C PTB RDR SelfRead Yes', :environments => ['FAT', 'FAT4', 'FAT5', 'FAT12'], :test_suite_name => '[F] BUFFER TESTS', :quota => 100},
-    {:id => '[F] M1 1C PTB RDR SelfRead No', :name => '[F] M1 1C PTB RDR SelfRead No', :environments => ['FAT', 'FAT4', 'FAT12'], :test_suite_name => '[F] BUFFER TESTS', :quota => 100},
-    {:id => '[F] M1 1C FULL RDR', :name => '[F] M1 1C FULL RDR', :environments => ['FAT', 'FAT4', 'FAT12'], :test_suite_name => '[F] BUFFER TESTS', :quota => 100},
-    {:id => '[F] M1 2C', :name => '[F] M1 2C', :environments => ['FAT', 'FAT4', 'FAT5', 'FAT12'], :test_suite_name => '[F] BUFFER TESTS', :quota => 50},
-    {:id => '[F] T7 1C', :name => '[F] T7 1C', :environments => ['FAT', 'FAT4', 'FAT5', 'FAT12'], :test_suite_name => '[F] BUFFER TESTS', :quota => 50},
-    {:id => '[F] T1 1C MicroProduction', :name => '[F] T1 1C MicroProduction', :environments => ['FAT', 'FAT4', 'FAT5', 'FAT12'], :test_suite_name => '[F] BUFFER TESTS', :quota => 50},
-    {:id => '[F] T1 1C', :name => '[F] T1 1C', :environments => ['FAT', 'FAT4', 'FAT5', 'FAT12'], :test_suite_name => '[F] BUFFER TESTS', :quota => 50},
-    {:id => '[F] T1 2C', :name => '[F] T1 2C', :environments => ['FAT', 'FAT4', 'FAT5', 'FAT12'], :test_suite_name => '[F] BUFFER TESTS', :quota => 50},
-    {:id => '[F] T1 4C', :name => '[F] T1 4C', :environments => ['FAT', 'FAT4', 'FAT5', 'FAT12'], :test_suite_name => '[F] BUFFER TESTS', :quota => 50},
+    {:id => '[F] M1 1C', :name => '[F] M1 1C', :environments => ['FAT', 'FAT4', 'FAT5'], :test_suite_name => '[F] BUFFER TESTS', :quota => 100},
+    {:id => '[F] M1 1C PTB RDR SelfRead Yes', :name => '[F] M1 1C PTB RDR SelfRead Yes', :environments => ['FAT', 'FAT4', 'FAT5'], :test_suite_name => '[F] BUFFER TESTS', :quota => 100},
+    {:id => '[F] M1 1C PTB RDR SelfRead No', :name => '[F] M1 1C PTB RDR SelfRead No', :environments => ['FAT', 'FAT4'], :test_suite_name => '[F] BUFFER TESTS', :quota => 100},
+    {:id => '[F] M1 1C FULL RDR', :name => '[F] M1 1C FULL RDR', :environments => ['FAT', 'FAT4'], :test_suite_name => '[F] BUFFER TESTS', :quota => 100},
+    {:id => '[F] M1 2C', :name => '[F] M1 2C', :environments => ['FAT', 'FAT4', 'FAT5'], :test_suite_name => '[F] BUFFER TESTS', :quota => 50},
+    {:id => '[F] T7 1C', :name => '[F] T7 1C', :environments => ['FAT', 'FAT4', 'FAT5'], :test_suite_name => '[F] BUFFER TESTS', :quota => 50},
+    {:id => '[F] T1 1C MicroProduction', :name => '[F] T1 1C MicroProduction', :environments => ['FAT', 'FAT4', 'FAT5'], :test_suite_name => '[F] BUFFER TESTS', :quota => 50},
+    {:id => '[F] T1 1C', :name => '[F] T1 1C', :environments => ['FAT', 'FAT4', 'FAT5'], :test_suite_name => '[F] BUFFER TESTS', :quota => 50},
+    {:id => '[F] T1 2C', :name => '[F] T1 2C', :environments => ['FAT', 'FAT4', 'FAT5'], :test_suite_name => '[F] BUFFER TESTS', :quota => 50},
+    {:id => '[F] T1 4C', :name => '[F] T1 4C', :environments => ['FAT', 'FAT4', 'FAT5'], :test_suite_name => '[F] BUFFER TESTS', :quota => 50},
     {:id => '[H] AMS Z31 1c', :name => '[H] AMS Z31 1c', :environments => ['DEVHF02'], :test_suite_name => '[H] BUFFER TESTS', :quota => 1000},
     {:id => '[H] AMS Z31 2c', :name => '[H] AMS Z31 2c', :environments => ['DEVHF02'], :test_suite_name => '[H] BUFFER TESTS', :quota => 500},
     {:id => '[H] AMS Z32 1c', :name => '[H] AMS Z32 1c', :environments => ['DEVHF02'], :test_suite_name => '[H] BUFFER TESTS', :quota => 500},
+    {:id => '[P] EL P M', :name => '[P] EL P M', :environments => ['DEV8PROM'], :test_suite_name => '[P] BUFFER TESTS', :quota => 100},
+    {:id => '[P] EL P MN', :name => '[P] EL P MN', :environments => ['DEV8PROM'], :test_suite_name => '[P] BUFFER TESTS', :quota => 100},
+    {:id => '[P] EL H M', :name => '[P] EL H M', :environments => ['DEV8PROM'], :test_suite_name => '[P] BUFFER TESTS', :quota => 100},
+    {:id => '[P] EL H M trafo', :name => '[P] EL H M trafo', :environments => ['DEV8PROM'], :test_suite_name => '[P] BUFFER TESTS', :quota => 100},
+    {:id => '[P] DHDC P M manual flow', :name => '[P] DHDC P M manual flow', :environments => ['DEV8PROM'], :test_suite_name => '[P] BUFFER TESTS', :quota => 100},
+    {:id => '[P] DHDC H M remote', :name => '[P] DHDC H M remote', :environments => ['DEV8PROM'], :test_suite_name => '[P] BUFFER TESTS', :quota => 100},
+    {:id => '[P] DHDC P M', :name => '[P] DHDC P M', :environments => ['DEV8PROM'], :test_suite_name => '[P] BUFFER TESTS', :quota => 100},
+    {:id => '[P] GAS P M', :name => '[P] GAS P M', :environments => ['DEV8PROM'], :test_suite_name => '[P] BUFFER TESTS', :quota => 100},
 ]
 
 ENVIRONMENTS = [
