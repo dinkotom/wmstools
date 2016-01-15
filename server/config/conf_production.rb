@@ -287,7 +287,6 @@ TEST_PACKAGES = [
      {:name => '[S] REGRESSION SET [daily_duringRollOut]',
       :suites => ['[S] REGRESSION SET [daily_duringRollOut]'
       ]
-    },  
     },
      {:name => '[S] REGRESSION TESTS GUI 1',
       :suites => ['[S] REGRESSION TESTS GUI 1'
