@@ -149,7 +149,7 @@ TEST_SUITES = [
     {:name => '[P] REGRESSION TESTS El', :type => 'Suite', :environments => ['DEV8PROM', 'DEV9'], :piazza => true, :default_number_of_tests => 20, :priority => 160, :project_file => 'Prometera_regression_tomalmar.xml'},
     {:name => '[P] REGRESSION TESTS DH/DC', :type => 'Suite', :environments => ['DEV8PROM', 'DEV9'], :piazza => true, :default_number_of_tests => 15, :priority => 170, :project_file => 'Prometera_regression_tomalmar.xml'},
     {:name => '[P] REGRESSION TESTS Gas', :type => 'Suite', :environments => ['DEV8PROM', 'DEV9'], :piazza => true, :default_number_of_tests => 3, :priority => 180, :project_file => 'Prometera_regression_tomalmar.xml'},
-    {:name => '[P] BUFFER TESTS', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => false, :default_number_of_tests => 3, :priority => 190, :project_file => 'Prometera_regression_tomalmar.xml'},
+    {:name => '[P] BUFFER TESTS', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => false, :default_number_of_tests => 3, :priority => 190, :project_file => 'Prometera_regression_tomalmar.xml', :buffer => true},
     {:name => '[P] REGRESSION TESTS GUI 1', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => true, :default_number_of_tests => 3, :priority => 200, :project_file => 'Prometera_gui_tomalmar.xml'},
     {:name => '[H] REGRESSION TESTS 1', :type => 'Suite', :environments => ['DEVHF02'], :piazza => true, :default_number_of_tests => 4, :priority => 210, :project_file => 'Hafslund_regression_krenevla.xml'},
     {:name => '[H] REGRESSION TESTS 2', :type => 'Suite', :environments => ['DEVHF02'], :piazza => true, :default_number_of_tests => 10, :priority => 220, :project_file => 'Hafslund_regression_krenevla.xml'},
