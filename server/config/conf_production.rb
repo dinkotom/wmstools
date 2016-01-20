@@ -363,14 +363,14 @@ DELIVERY_SITE_TYPES = [
     {:id => '[H] AMS Z31 1c', :name => '[H] AMS Z31 1c', :environments => ['DEVHF02'], :test_suite_name => '[H] BUFFER TESTS', :quota => 1000},
     {:id => '[H] AMS Z31 2c', :name => '[H] AMS Z31 2c', :environments => ['DEVHF02'], :test_suite_name => '[H] BUFFER TESTS', :quota => 500},
     {:id => '[H] AMS Z32 1c', :name => '[H] AMS Z32 1c', :environments => ['DEVHF02'], :test_suite_name => '[H] BUFFER TESTS', :quota => 500},
-    {:id => '[P] EL P M', :name => '[P] EL P M', :environments => ['DEV8PROM'], :test_suite_name => '[P] BUFFER TESTS', :quota => 100},
-    {:id => '[P] EL P MN', :name => '[P] EL P MN', :environments => ['DEV8PROM'], :test_suite_name => '[P] BUFFER TESTS', :quota => 100},
-    {:id => '[P] EL H M', :name => '[P] EL H M', :environments => ['DEV8PROM'], :test_suite_name => '[P] BUFFER TESTS', :quota => 100},
-    {:id => '[P] EL H M trafo', :name => '[P] EL H M trafo', :environments => ['DEV8PROM'], :test_suite_name => '[P] BUFFER TESTS', :quota => 100},
-    {:id => '[P] DHDC P M manual flow', :name => '[P] DHDC P M manual flow', :environments => ['DEV8PROM'], :test_suite_name => '[P] BUFFER TESTS', :quota => 100},
-    {:id => '[P] DHDC H M remote', :name => '[P] DHDC H M remote', :environments => ['DEV8PROM'], :test_suite_name => '[P] BUFFER TESTS', :quota => 100},
-    {:id => '[P] DHDC P M', :name => '[P] DHDC P M', :environments => ['DEV8PROM'], :test_suite_name => '[P] BUFFER TESTS', :quota => 100},
-    {:id => '[P] GAS P M', :name => '[P] GAS P M', :environments => ['DEV8PROM'], :test_suite_name => '[P] BUFFER TESTS', :quota => 100},
+    {:id => '[P] EL P M', :name => '[P] EL P M', :environments => ['DEV8PROM','DEV9'], :test_suite_name => '[P] BUFFER TESTS', :quota => 100},
+    {:id => '[P] EL P MN', :name => '[P] EL P MN', :environments => ['DEV8PROM','DEV9'], :test_suite_name => '[P] BUFFER TESTS', :quota => 100},
+    {:id => '[P] EL H M', :name => '[P] EL H M', :environments => ['DEV8PROM','DEV9'], :test_suite_name => '[P] BUFFER TESTS', :quota => 100},
+    {:id => '[P] EL H M trafo', :name => '[P] EL H M trafo', :environments => ['DEV8PROM','DEV9'], :test_suite_name => '[P] BUFFER TESTS', :quota => 100},
+    {:id => '[P] DHDC P M manual flow', :name => '[P] DHDC P M manual flow', :environments => ['DEV8PROM','DEV9'], :test_suite_name => '[P] BUFFER TESTS', :quota => 100},
+    {:id => '[P] DHDC H M remote', :name => '[P] DHDC H M remote', :environments => ['DEV8PROM','DEV9'], :test_suite_name => '[P] BUFFER TESTS', :quota => 100},
+    {:id => '[P] DHDC P M', :name => '[P] DHDC P M', :environments => ['DEV8PROM','DEV9'], :test_suite_name => '[P] BUFFER TESTS', :quota => 100},
+    {:id => '[P] GAS P M', :name => '[P] GAS P M', :environments => ['DEV8PROM','DEV9'], :test_suite_name => '[P] BUFFER TESTS', :quota => 100},
 ]
 
 ENVIRONMENTS = [
