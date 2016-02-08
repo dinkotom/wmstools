@@ -73,6 +73,7 @@ PROMETERA_REGRESSION_TESTS_JOB = {
             {:suite => '[P] REGRESSION TESTS GUI 1', :environment => 'DEV8PROM'},
             {:suite => '[AM] REGRESSION TESTS 1', :environment => 'DEV8PROM'},
             {:suite => '[AM] REGRESSION TESTS GUI 1', :environment => 'DEV8PROM'},
+            {:suite => '[MOB] REGRESSION TESTS GUI 1', :environment => 'DEV8PROM'},
         ]
 }
 
@@ -165,6 +166,7 @@ TEST_SUITES = [
     {:name => '[RM] REGRESSION TESTS GUI 1', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => true, :default_number_of_tests => 10, :priority => 300, :project_file => 'RM_gui_gawarshr.xml'},
     {:name => '[AM] REGRESSION TESTS 1', :type => 'Suite', :environments => ['DEV8PROM', 'DEV9'], :piazza => true, :default_number_of_tests => 5, :priority => 310, :project_file => 'AM_regression_chandkan.xml'},
     {:name => '[AM] REGRESSION TESTS GUI 1', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => true, :default_number_of_tests => 10, :priority => 320, :project_file => 'AM_gui_chandkan.xml'},
+    {:name => '[MOB] REGRESSION TESTS GUI 1', :type => 'Suite', :environments => ['DEV8PROM'], :piazza => true, :default_number_of_tests => 10, :priority => 330, :project_file => 'MOB_gui_gajdokat.xml'},
 ]
 
 TEST_PACKAGES = [
@@ -197,6 +199,7 @@ TEST_PACKAGES = [
          '[AM] REGRESSION TESTS GUI 1',
          '[RM] WMS INTEGRATION',
          '[RM] REGRESSION TESTS GUI 1',
+         '[MOB] REGRESSION TESTS GUI 1',
      ]
     },
     {:name => '[F] SMOKE TESTS',
@@ -327,7 +330,10 @@ TEST_PACKAGES = [
      :suites => ['[RM] REGRESSION TESTS GUI 1'
      ]
     },
-
+   {:name => '[MOB] REGRESSION TESTS GUI 1',
+     :suites => ['[MOB] REGRESSION TESTS GUI 1'
+     ]
+    },
 ]
 
 PERFORMANCE_TESTS = [
