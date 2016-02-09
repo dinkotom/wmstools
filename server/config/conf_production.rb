@@ -382,7 +382,7 @@ DELIVERY_SITE_TYPES = [
     {:id => '[P] EL H M trafo', :name => '[P] EL H M trafo', :environments => ['DEV8PROM','DEV9'], :test_suite_name => '[P] BUFFER TESTS', :quota => 100},
     {:id => '[P] DHDC P M manual flow', :name => '[P] DHDC P M manual flow', :environments => ['DEV8PROM','DEV9'], :test_suite_name => '[P] BUFFER TESTS', :quota => 100},
     {:id => '[P] DHDC H M remote', :name => '[P] DHDC H M remote', :environments => ['DEV8PROM','DEV9'], :test_suite_name => '[P] BUFFER TESTS', :quota => 100},
-    {:id => '[P] DHDC P M', :name => '[P] DHDC P M', :environments => ['DEV8PROM','DEV9'], :test_suite_name => '[P] BUFFER TESTS', :quota => 100},
+    {:id => '[P] DHDC P M', :name => '[P] DHDC P M', :environments => ['DEV8PROM','DEV9'], :test_suite_name => '[P] BUFFER TESTS', :quota => 999},
     {:id => '[P] GAS P M', :name => '[P] GAS P M', :environments => ['DEV8PROM','DEV9'], :test_suite_name => '[P] BUFFER TESTS', :quota => 100},
 ]
 
