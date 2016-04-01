@@ -177,6 +177,7 @@ TEST_SUITES = [
   {:name => '[S] REGRESSION SET 2 [roll out]', :type => 'Suite', :environments => ['DEV2SKA','DEV3SKA'], :piazza => true, :default_number_of_tests => 35, :priority => 260, :project_file => 'Skagerak_rollOut_plohalen.xml'},
   {:name => '[S] REGRESSION SET [daily_duringRollOut]', :type => 'Suite', :environments => ['DEV2SKA','DEV3SKA'], :piazza => true, :default_number_of_tests => 20, :priority => 270, :project_file => 'Skagerak_daily_duringRollOut_plohalen.xml'},
   {:name => '[S] REGRESSION TESTS GUI 1', :type => 'Suite', :environments => ['DEV2SKA','DEV3SKA'], :piazza => true, :default_number_of_tests => 3, :priority => 280, :project_file => 'Skagerak_gui_plohalen.xml'},
+  {:name => '[S] LOAD BALANCER', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => false, :default_number_of_tests => 3, :priority => 281, :project_file => 'Skagerak_gui_plohalen.xml'},
   {:name => '[RM] WMS INTEGRATION', :type => 'Suite', :environments => ['DEV2SKA','DEV3SKA'], :piazza => true, :default_number_of_tests => 10, :priority => 290, :project_file => 'RM_regression_gawarshr.xml'},
   {:name => '[RM] REGRESSION TESTS GUI 1', :type => 'Suite', :environments => ['DEV2SKA','DEV3SKA'], :piazza => true, :default_number_of_tests => 10, :priority => 300, :project_file => 'RM_gui_gawarshr.xml'},
   {:name => '[AM] REGRESSION TESTS 1', :type => 'Suite', :environments => ['DEV8PROM', 'DEV9'], :piazza => true, :default_number_of_tests => 5, :priority => 310, :project_file => 'AM_regression_chandkan.xml'},
