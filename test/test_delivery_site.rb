@@ -12,7 +12,7 @@ class DeliverySiteTest < Test::Unit::TestCase
           :id => 4 - count,
           :expired => false,
           :delivery_site_type => DeliverySiteType.get('type1'),
-          :environment => Environment.get('FAT'),
+          :environment => Environment.get('FAT')
       )
     end
 
@@ -96,7 +96,7 @@ class DeliverySiteTest < Test::Unit::TestCase
     assert_equal(5, TestExecution.all(
                       :test_suite_name => '[F] BUFFER TESTS',
                       :environment_name => 'FAT',
-                      :delivery_site_type_id => 'type1',
+                      :delivery_site_type_id => 'type1'
                   ).count
     )
   end
@@ -116,7 +116,7 @@ class DeliverySiteTest < Test::Unit::TestCase
     assert_equal(5, TestExecution.all(
                       :test_suite_name => '[F] BUFFER TESTS',
                       :environment_name => 'FAT',
-                      :delivery_site_type_id => 'type1',
+                      :delivery_site_type_id => 'type1'
                   ).count
     )
   end

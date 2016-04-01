@@ -70,7 +70,7 @@ class DeliverySite
               :environment => environment,
               :order => [:id.desc],
               :status => 'Finished',
-              :limit => BUFFER_TEST_MAX_FAILED,
+              :limit => BUFFER_TEST_MAX_FAILED
           ).select { |te| te.result != 'PASSED' }.count == BUFFER_TEST_MAX_FAILED
 
           unless already_running || already_pending || recently_failing

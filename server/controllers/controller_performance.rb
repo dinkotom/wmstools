@@ -30,7 +30,7 @@ get '/performance/xls/:test_suite_name' do
       TestExecution.all(:test_suite_name => test_suite_name,
                         :result => 'PASSED',
                         :hidden => false,
-                        :order => [:enqueued_at.desc],
+                        :order => [:enqueued_at.desc]
       ).each do |execution|
         sheet.add_row [execution.enqueued_at.strftime('%Y-%m-%d - %H:%M')] + point_ids.collect {|point_id| PerformanceMeasurement.get(execution.id, point_id, test_suite_name).value if PerformanceMeasurement.get(execution.id, point_id, test_suite_name)}
       end

@@ -82,7 +82,7 @@ class PiazzaTest < Test::Unit::TestCase
         :status => 'Finished',
         :result => 'FAILED',
         :started_at => DateTime.now - 2,
-        :revision => '42157',
+        :revision => '42157'
 
 
     )
@@ -92,7 +92,7 @@ class PiazzaTest < Test::Unit::TestCase
         :status => 'Running',
         :result => 'FAILED',
         :started_at => DateTime.now - 1,
-        :revision => '42157',
+        :revision => '42157'
     )
 
     tc = TestCase.create(:id => '[TC001]')

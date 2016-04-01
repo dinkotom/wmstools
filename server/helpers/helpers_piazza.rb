@@ -116,7 +116,7 @@ module HelpersPiazza
         :environment => environment,
         :test_suite => suite,
         :order => [:started_at.asc],
-        :status => 'Finished',
+        :status => 'Finished'
     ).last
     last_finished ? last_finished_result = last_finished.result : last_finished_result = nil
     if last_finished_result
