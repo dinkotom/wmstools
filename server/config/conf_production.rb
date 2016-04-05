@@ -138,7 +138,7 @@ FORTUM_LOAD_TESTS_JOB = {
 }
 
 SKAGERAK_LOAD_TESTS_JOB = {
-  :cron => '*/4 8-16 * * *',
+  :cron => '*/30 8-16 * * *',
   :suites_environments =>
   [
   {:suite => '[S] LOAD BALANCER', :environment => 'DEV2SKA'},
