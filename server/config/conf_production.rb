@@ -145,6 +145,14 @@ SKAGERAK_LOAD_TESTS_JOB = {
   ]
 }
 
+SSN_TRUNK_REGRESSION_TESTS_JOB = {
+  :cron => '30 5 * * *',
+  :suites_environments =>
+  [
+  {:suite => '[SSN] REGRESSION TESTS', :environment => 'DEV7'},
+  ]
+}
+
 # everything below this should be the same for both production and development
 
 TEST_SUITES = [
@@ -183,7 +191,8 @@ TEST_SUITES = [
   {:name => '[AM] REGRESSION TESTS 1', :type => 'Suite', :environments => ['DEV8PROM', 'DEV9'], :piazza => true, :default_number_of_tests => 5, :priority => 310, :project_file => 'AM_regression_chandkan.xml'},
   {:name => '[AM] REGRESSION TESTS GUI 1', :type => 'Suite', :environments => ['DEV8PROM', 'DEV9'], :piazza => true, :default_number_of_tests => 10, :priority => 320, :project_file => 'AM_gui_chandkan.xml'},
   {:name => '[P][MOB] REGRESSION TESTS GUI 1', :type => 'Suite', :environments => ['DEV8PROM', 'DEV9'], :piazza => true, :default_number_of_tests => 10, :priority => 330, :project_file => 'MOB_gui_gajdokat.xml'},
-  {:name => '[S][MOB] REGRESSION TESTS GUI 1', :type => 'Suite', :environments => ['DEV2SKA', 'DEV3SKA'], :piazza => true, :default_number_of_tests => 10, :priority => 330, :project_file => 'MOB_gui_gajdokat.xml'},
+  {:name => '[S][MOB] REGRESSION TESTS GUI 1', :type => 'Suite', :environments => ['DEV2SKA', 'DEV3SKA'], :piazza => true, :default_number_of_tests => 10, :priority => 340, :project_file => 'MOB_gui_gajdokat.xml'},
+  {:name => '[SSN] REGRESSION TESTS', :type => 'Suite', :environments => ['DEV7'], :piazza => true, :default_number_of_tests => 10, :priority => 350, :project_file => 'SSN_regresion_tomalmar.xml'},
 ]
 
 TEST_PACKAGES = [
@@ -219,6 +228,7 @@ TEST_PACKAGES = [
   '[RM] REGRESSION TESTS GUI 1',
   '[P][MOB] REGRESSION TESTS GUI 1',
   '[S][MOB] REGRESSION TESTS GUI 1',
+  '[SSN] REGRESSION TESTS',
   ]
   },
   {:name => '[F] SMOKE TESTS',
@@ -361,6 +371,10 @@ TEST_PACKAGES = [
   :suites => ['[S][MOB] REGRESSION TESTS GUI 1'
   ]
   },
+  {:name => '[SSN] REGRESSION TESTS',
+  :suites => ['[SSN] REGRESSION TESTS'
+  ]
+  },
 ]
 
 PERFORMANCE_TESTS = [
@@ -417,7 +431,7 @@ ENVIRONMENTS = [
   {:name => 'FAT4', :wms_version => '5.1.0'},
   {:name => 'FAT8', :wms_version => '5.0.0'},
   {:name => 'DEV9', :wms_version => '5.1.0'},
-  {:name => 'DEV3SKA', :wms_version => '5.0.0'},
+  {:name => 'DEV3SKA', :wms_version => '5.1.0'},
   {:name => 'FAT', :wms_version => 'trunk'},
   {:name => 'DEV8PROM', :wms_version => 'trunk'},
   {:name => 'PROM_PERF', :wms_version => 'trunk'},

@@ -145,6 +145,21 @@ thread = Thread.new do
       end
     end
   end
+  
+  if defined? SSN_TRUNK_REGRESSION_TESTS_JOB
+    begin
+      scheduler.cron SSN_TRUNK_REGRESSION_TESTS_JOB[:cron] do
+        SSN_TRUNK_REGRESSION_TESTS_JOB[:suites_environments].each do |job|
+          test_execution = TestExecution.new
+          test_execution.test_suite_name = job[:suite]
+          test_execution.environment_name = job[:environment]
+          test_execution.for = 'SCHEDULER'
+          test_execution.enqueue
+        end
+      end
+    end
+  end
+  
 
   scheduler.every CHECK_DELIVERY_SITES_COUNT_EVERY, :first_at => Time.now + 2 do
     DeliverySite.check_storage
