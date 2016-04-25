@@ -150,6 +150,7 @@ SSN_TRUNK_REGRESSION_TESTS_JOB = {
   :suites_environments =>
   [
   {:suite => '[SSN] REGRESSION TESTS', :environment => 'DEV7'},
+  {:suite => '[SSN] REGRESSION TESTS GUI 1', :environment => 'DEV7'},
   ]
 }
 
@@ -193,6 +194,7 @@ TEST_SUITES = [
   {:name => '[P][MOB] REGRESSION TESTS GUI 1', :type => 'Suite', :environments => ['DEV8PROM', 'DEV9'], :piazza => true, :default_number_of_tests => 10, :priority => 330, :project_file => 'MOB_gui_gajdokat.xml'},
   {:name => '[S][MOB] REGRESSION TESTS GUI 1', :type => 'Suite', :environments => ['DEV2SKA', 'DEV3SKA'], :piazza => true, :default_number_of_tests => 10, :priority => 340, :project_file => 'MOB_gui_gajdokat.xml'},
   {:name => '[SSN] REGRESSION TESTS', :type => 'Suite', :environments => ['DEV7'], :piazza => true, :default_number_of_tests => 10, :priority => 350, :project_file => 'SSN_regresion_tomalmar.xml'},
+  {:name => '[SSN] REGRESSION TESTS GUI 1', :type => 'Suite', :environments => ['DEV7'], :piazza => true, :default_number_of_tests => 10, :priority => 360, :project_file => 'SSN_gui_plohalen.xml'},
 ]
 
 TEST_PACKAGES = [
@@ -229,6 +231,7 @@ TEST_PACKAGES = [
   '[P][MOB] REGRESSION TESTS GUI 1',
   '[S][MOB] REGRESSION TESTS GUI 1',
   '[SSN] REGRESSION TESTS',
+  '[SSN] REGRESSION TESTS GUI 1',
   ]
   },
   {:name => '[F] SMOKE TESTS',
@@ -373,6 +376,10 @@ TEST_PACKAGES = [
   },
   {:name => '[SSN] REGRESSION TESTS',
   :suites => ['[SSN] REGRESSION TESTS'
+  ]
+  },
+  {:name => '[SSN] REGRESSION TESTS GUI 1',
+  :suites => ['[SSN] REGRESSION TESTS GUI 1'
   ]
   },
 ]
