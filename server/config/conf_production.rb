@@ -139,6 +139,15 @@ FORTUM_LOAD_TESTS_JOB = {
   ]
 }
 
+FORTUM_INTEGRATION_TESTS_JOB = {
+  :cron => '0 3 * * *',
+  :suites_environments =>
+  [
+  {:suite => '[F] INTEGRATION TESTS', :environment => 'FAT'},
+  {:suite => '[F] INTEGRATION TESTS', :environment => 'FAT4'},
+  ]
+}
+
 SKAGERAK_LOAD_TESTS_JOB = {
   :cron => '*/30 8-16 * * *',
   :suites_environments =>
@@ -216,6 +225,7 @@ TEST_PACKAGES = [
   '[F] REGRESSION TESTS 9',
   '[F] REGRESSION TESTS 10',
   '[F] REGRESSION TESTS GUI 1',
+  '[F] INTEGRATION TESTS',
   '[P] REGRESSION TESTS El',
   '[P] REGRESSION TESTS DH/DC',
   '[P] REGRESSION TESTS Gas',
@@ -304,6 +314,10 @@ TEST_PACKAGES = [
   },
   {:name => '[F] REGRESSION TESTS GUI 1',
   :suites => ['[F] REGRESSION TESTS GUI 1'
+  ]
+  },
+  {:name => '[F] INTEGRATION TESTS',
+  :suites => ['[F] INTEGRATION TESTS'
   ]
   },
   {:name => '[P] REGRESSION TESTS El',
@@ -415,6 +429,8 @@ PIAZZA_SCREENS = [
   {:screen_number => 7, :environments => ['DEV9']},
   {:screen_number => 8, :environments => ['DEV3SKA']},
   {:screen_number => 9, :environments => ['DEV7']},
+  {:screen_number => 10, :environments => ['INT_BRANCH']},
+  {:screen_number => 11, :environments => ['INT_TRUNK']},
 ]
 
 DELIVERY_SITE_TYPES = [
@@ -454,4 +470,7 @@ ENVIRONMENTS = [
   {:name => 'DEV7', :wms_version => 'trunk'},
   {:name => 'DEVHF02', :wms_version => 'trunk'},
   {:name => 'FAT12', :wms_version => '5.0.xFAT12'},
+  {:name => 'INT_BRANCH', :wms_version => '5.1.0'},
+  {:name => 'INT_TRUNK', :wms_version => 'trunk'},
+
 ]
