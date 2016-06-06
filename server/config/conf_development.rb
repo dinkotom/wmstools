@@ -23,7 +23,7 @@ FORTUM_SMOKE_TESTS_JOB = {
 # everything below this should be the same for both production and development
 
 TEST_SUITES = [
-    {:name => '[F] SMOKE TESTS', :type => 'Suite', :environments => ['FAT'], :piazza => true, :default_number_of_tests => 2, :priority => 1, :project_file => 'WMS.xml'},
+    {:name => '[F] SMOKE TESTS', :type => 'Suite', :environments => ['FAT'], :piazza => true, :default_number_of_tests => 2, :priority => 1, :project_file => 'Fortum_regression_krenevla.xml'},
 ]
 
 TEST_PACKAGES = [
