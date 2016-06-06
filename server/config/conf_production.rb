@@ -26,7 +26,7 @@ FORTUM_SMOKE_TESTS_JOB = {
 }
 
 FORTUM_TRUNK_REGRESSION_TESTS_JOB = {
-  :cron => '0 5 * * *',
+  :cron => '0 4 * * *',
   :suites_environments =>
   [
   {:suite => '[F] SMOKE TESTS', :environment => 'FAT'},
@@ -45,25 +45,25 @@ FORTUM_TRUNK_REGRESSION_TESTS_JOB = {
   ]
 }
 
-FORTUM_BRANCH_REGRESSION_TESTS_JOB = {
-  :cron => '0 3 * * *',
-  :suites_environments =>
-  [
-  {:suite => '[F] SMOKE TESTS', :environment => 'FAT4'},
-  {:suite => '[F] REGRESSION TESTS 1', :environment => 'FAT4'},
-  {:suite => '[F] REGRESSION TESTS 2', :environment => 'FAT4'},
-  {:suite => '[F] REGRESSION TESTS 3', :environment => 'FAT4'},
-  {:suite => '[F] REGRESSION TESTS 4', :environment => 'FAT4'},
-  {:suite => '[F] REGRESSION TESTS 5', :environment => 'FAT4'},
-  {:suite => '[F] REGRESSION TESTS 6', :environment => 'FAT4'},
-  {:suite => '[F] REGRESSION TESTS 7', :environment => 'FAT4'},
-  {:suite => '[F] REGRESSION TESTS 8', :environment => 'FAT4'},
-  {:suite => '[F] REGRESSION TESTS 9', :environment => 'FAT4'},
-  {:suite => '[F] REGRESSION TESTS 10', :environment => 'FAT4'},
-  {:suite => '[F] WEB SERVICE TESTS', :environment => 'FAT4'},
-  {:suite => '[F] REGRESSION TESTS GUI 1', :environment => 'FAT4'},
-  ]
-}
+#FORTUM_BRANCH_REGRESSION_TESTS_JOB = {
+#  :cron => '0 3 * * *',
+#  :suites_environments =>
+#  [
+#  {:suite => '[F] SMOKE TESTS', :environment => 'FAT4'},
+#  {:suite => '[F] REGRESSION TESTS 1', :environment => 'FAT4'},
+#  {:suite => '[F] REGRESSION TESTS 2', :environment => 'FAT4'},
+#  {:suite => '[F] REGRESSION TESTS 3', :environment => 'FAT4'},
+#  {:suite => '[F] REGRESSION TESTS 4', :environment => 'FAT4'},
+#  {:suite => '[F] REGRESSION TESTS 5', :environment => 'FAT4'},
+#  {:suite => '[F] REGRESSION TESTS 6', :environment => 'FAT4'},
+#  {:suite => '[F] REGRESSION TESTS 7', :environment => 'FAT4'},
+#  {:suite => '[F] REGRESSION TESTS 8', :environment => 'FAT4'},
+#  {:suite => '[F] REGRESSION TESTS 9', :environment => 'FAT4'},
+#  {:suite => '[F] REGRESSION TESTS 10', :environment => 'FAT4'},
+#  {:suite => '[F] WEB SERVICE TESTS', :environment => 'FAT4'},
+#  {:suite => '[F] REGRESSION TESTS GUI 1', :environment => 'FAT4'},
+#  ]
+#}
 
 PROMETERA_REGRESSION_TESTS_JOB = {
   :cron => '30 1 * * *',
@@ -162,6 +162,17 @@ SSN_TRUNK_REGRESSION_TESTS_JOB = {
   [
   {:suite => '[SSN] REGRESSION TESTS', :environment => 'DEV7'},
   {:suite => '[SSN] REGRESSION TESTS GUI 1', :environment => 'DEV7'},
+  {:suite => '[SSN][AM] REGRESSION TESTS', :environment => 'DEV7'},
+  ]
+}
+
+SSN_BRANCH_REGRESSION_TESTS_JOB = {
+  :cron => '30 4 * * *',
+  :suites_environments =>
+  [
+  {:suite => '[SSN] REGRESSION TESTS', :environment => 'DEV6'},
+  {:suite => '[SSN] REGRESSION TESTS GUI 1', :environment => 'DEV6'},
+  {:suite => '[SSN][AM] REGRESSION TESTS', :environment => 'DEV6'},
   ]
 }
 
@@ -170,22 +181,22 @@ SSN_TRUNK_REGRESSION_TESTS_JOB = {
 TEST_SUITES = [
   {:name => '[F] SMOKE TESTS', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'FAT12'], :piazza => true, :default_number_of_tests => 2, :priority => 10, :project_file => 'Fortum_regression_krenevla.xml'},
   {:name => '[F] WEB SERVICE TESTS', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'FAT12'], :piazza => true, :default_number_of_tests => 5, :priority => 20, :project_file => 'Fortum_regression_krenevla.xml'},
-  {:name => '[F] REGRESSION TESTS 1', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'FAT12'], :piazza => true, :default_number_of_tests => 30, :priority => 30, :project_file => 'Fortum_regression_krenevla.xml'},
-  {:name => '[F] REGRESSION TESTS 2', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'FAT12'], :piazza => true, :default_number_of_tests => 32, :priority => 40, :project_file => 'Fortum_regression_krenevla.xml'},
-  {:name => '[F] REGRESSION TESTS 3', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'FAT12'], :piazza => true, :default_number_of_tests => 22, :priority => 50, :project_file => 'Fortum_regression_krenevla.xml'},
-  {:name => '[F] REGRESSION TESTS 4', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'FAT12'], :piazza => true, :default_number_of_tests => 18, :priority => 60, :project_file => 'Fortum_regression_krenevla.xml'},
-  {:name => '[F] REGRESSION TESTS 5', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'FAT12'], :piazza => true, :default_number_of_tests => 17, :priority => 70, :project_file => 'Fortum_regression_krenevla.xml'},
-  {:name => '[F] REGRESSION TESTS 6', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'FAT12'], :piazza => true, :default_number_of_tests => 24, :priority => 80, :project_file => 'Fortum_regression_krenevla.xml'},
-  {:name => '[F] REGRESSION TESTS 7', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'FAT12'], :piazza => true, :default_number_of_tests => 15, :priority => 90, :project_file => 'Fortum_regression_krenevla.xml'},
-  {:name => '[F] REGRESSION TESTS 8', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'FAT12'], :piazza => true, :default_number_of_tests => 30, :priority => 100, :project_file => 'Fortum_regression_krenevla.xml'},
-  {:name => '[F] REGRESSION TESTS 9', :type => 'Suite', :environments => ['FAT', 'FAT4'], :piazza => true, :default_number_of_tests => 5, :priority => 110, :project_file => 'Fortum_regression_benkepet.xml'},
+  {:name => '[F] REGRESSION TESTS 1', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'FAT12'], :piazza => true, :default_number_of_tests => 32, :priority => 30, :project_file => 'Fortum_regression_krenevla.xml'},
+  {:name => '[F] REGRESSION TESTS 2', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'FAT12'], :piazza => true, :default_number_of_tests => 33, :priority => 40, :project_file => 'Fortum_regression_krenevla.xml'},
+  {:name => '[F] REGRESSION TESTS 3', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'FAT12'], :piazza => true, :default_number_of_tests => 24, :priority => 50, :project_file => 'Fortum_regression_krenevla.xml'},
+  {:name => '[F] REGRESSION TESTS 4', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'FAT12'], :piazza => true, :default_number_of_tests => 23, :priority => 60, :project_file => 'Fortum_regression_krenevla.xml'},
+  {:name => '[F] REGRESSION TESTS 5', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'FAT12'], :piazza => true, :default_number_of_tests => 18, :priority => 70, :project_file => 'Fortum_regression_krenevla.xml'},
+  {:name => '[F] REGRESSION TESTS 6', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'FAT12'], :piazza => true, :default_number_of_tests => 25, :priority => 80, :project_file => 'Fortum_regression_krenevla.xml'},
+  {:name => '[F] REGRESSION TESTS 7', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'FAT12'], :piazza => true, :default_number_of_tests => 24, :priority => 90, :project_file => 'Fortum_regression_krenevla.xml'},
+  {:name => '[F] REGRESSION TESTS 8', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'FAT12'], :piazza => true, :default_number_of_tests => 49, :priority => 100, :project_file => 'Fortum_regression_krenevla.xml'},
+  {:name => '[F] REGRESSION TESTS 9', :type => 'Suite', :environments => ['FAT', 'FAT4'], :piazza => true, :default_number_of_tests => 18, :priority => 110, :project_file => 'Fortum_regression_benkepet.xml'},
   {:name => '[F] REGRESSION TESTS 10', :type => 'Suite', :environments => ['FAT', 'FAT4'], :piazza => true, :default_number_of_tests => 5, :priority => 110, :project_file => 'Fortum_regression_benkepet.xml'},
   {:name => '[F] REGRESSION TESTS GUI 1', :type => 'Suite', :environments => ['FAT', 'FAT4'], :piazza => true, :default_number_of_tests => 10, :priority => 111, :project_file => 'Fortum_gui_benkepet.xml'},
   {:name => '[F] BUFFER TESTS', :type => 'Suite', :environments => ['FAT', 'FAT4', 'FAT5', 'FAT12'], :piazza => false, :default_number_of_tests => 4, :priority => 120, :project_file => 'Fortum_regression_krenevla.xml', :buffer => true},
   {:name => '[F] LOAD TESTS', :type => 'Suite', :environments => ['FAT'], :piazza => false, :priority => 130, :project_file => 'Fortum_regression_krenevla.xml', :load => true},
   {:name => '[F] MAINTENANCE TESTS', :type => 'Suite', :environments => ['FAT', 'FAT4'], :piazza => false, :priority => 140, :project_file => 'Fortum_regression_krenevla.xml'},
   {:name => '[F] PERFORMANCE TESTS', :type => 'Suite', :environments => ['FAT'], :piazza => false, :priority => 150, :project_file => 'Fortum_regression_krenevla.xml', :performance => true},
-  {:name => '[F] INTEGRATION TESTS', :type => 'Suite', :environments => ['INT_BRANCH', 'INT_TRUNK'], :piazza => true, :default_number_of_tests => 5, :priority => 151, :project_file => 'Fortum_regression_benkepet.xml'},
+  {:name => '[F] INTEGRATION TESTS', :type => 'Suite', :environments => ['FAT', 'FAT4', 'INT_BRANCH', 'INT_TRUNK'], :piazza => true, :default_number_of_tests => 5, :priority => 151, :project_file => 'Fortum_regression_benkepet.xml'},
   {:name => '[P] REGRESSION TESTS El', :type => 'Suite', :environments => ['DEV8PROM', 'DEV9'], :piazza => true, :default_number_of_tests => 20, :priority => 160, :project_file => 'Prometera_regression_tomalmar.xml'},
   {:name => '[P] REGRESSION TESTS DH/DC', :type => 'Suite', :environments => ['DEV8PROM', 'DEV9'], :piazza => true, :default_number_of_tests => 15, :priority => 170, :project_file => 'Prometera_regression_tomalmar.xml'},
   {:name => '[P] REGRESSION TESTS Gas', :type => 'Suite', :environments => ['DEV8PROM', 'DEV9'], :piazza => true, :default_number_of_tests => 3, :priority => 180, :project_file => 'Prometera_regression_tomalmar.xml'},
@@ -206,8 +217,9 @@ TEST_SUITES = [
   {:name => '[AM] REGRESSION TESTS GUI 1', :type => 'Suite', :environments => ['DEV8PROM', 'DEV9'], :piazza => true, :default_number_of_tests => 10, :priority => 320, :project_file => 'AM_gui_chandkan.xml'},
   {:name => '[P][MOB] REGRESSION TESTS GUI 1', :type => 'Suite', :environments => ['DEV8PROM', 'DEV9'], :piazza => true, :default_number_of_tests => 10, :priority => 330, :project_file => 'MOB_gui_gajdokat.xml'},
   {:name => '[S][MOB] REGRESSION TESTS GUI 1', :type => 'Suite', :environments => ['DEV2SKA', 'DEV3SKA'], :piazza => true, :default_number_of_tests => 10, :priority => 340, :project_file => 'MOB_gui_gajdokat.xml'},
-  {:name => '[SSN] REGRESSION TESTS', :type => 'Suite', :environments => ['DEV7'], :piazza => true, :default_number_of_tests => 10, :priority => 350, :project_file => 'SSN_regresion_tomalmar.xml'},
-  {:name => '[SSN] REGRESSION TESTS GUI 1', :type => 'Suite', :environments => ['DEV7'], :piazza => true, :default_number_of_tests => 10, :priority => 360, :project_file => 'SSN_gui_plohalen.xml'},
+  {:name => '[SSN] REGRESSION TESTS', :type => 'Suite', :environments => ['DEV7', 'DEV6'], :piazza => true, :default_number_of_tests => 10, :priority => 350, :project_file => 'SSN_regresion_tomalmar.xml'},
+  {:name => '[SSN] REGRESSION TESTS GUI 1', :type => 'Suite', :environments => ['DEV7', 'DEV6'], :piazza => true, :default_number_of_tests => 10, :priority => 360, :project_file => 'SSN_gui_plohalen.xml'},
+  {:name => '[SSN][AM] REGRESSION TESTS', :type => 'Suite', :environments => ['DEV7', 'DEV6'], :piazza => true, :default_number_of_tests => 10, :priority => 360, :project_file => 'SSN_AM_regression_chandkan.xml'},
 ]
 
 TEST_PACKAGES = [
@@ -247,6 +259,7 @@ TEST_PACKAGES = [
   '[S][MOB] REGRESSION TESTS GUI 1',
   '[SSN] REGRESSION TESTS',
   '[SSN] REGRESSION TESTS GUI 1',
+  '[SSN][AM] REGRESSION TESTS',
   ]
   },
   {:name => '[F] SMOKE TESTS',
@@ -405,6 +418,10 @@ TEST_PACKAGES = [
   :suites => ['[SSN] REGRESSION TESTS GUI 1'
   ]
   },
+  {:name => '[SSN][AM] REGRESSION TESTS',
+  :suites => ['[SSN][AM] REGRESSION TESTS'
+  ]
+  },
 ]
 
 PERFORMANCE_TESTS = [
@@ -432,6 +449,7 @@ PIAZZA_SCREENS = [
   {:screen_number => 9, :environments => ['DEV7']},
   {:screen_number => 10, :environments => ['INT_BRANCH']},
   {:screen_number => 11, :environments => ['INT_TRUNK']},
+  {:screen_number => 12, :environments => ['DEV6']},
 ]
 
 DELIVERY_SITE_TYPES = [
@@ -468,6 +486,7 @@ ENVIRONMENTS = [
   {:name => 'DEV8PROM', :wms_version => 'trunk'},
   {:name => 'PROM_PERF', :wms_version => 'trunk'},
   {:name => 'DEV2SKA', :wms_version => 'trunk'},
+  {:name => 'DEV6', :wms_version => '5.1.1'},
   {:name => 'DEV7', :wms_version => 'trunk'},
   {:name => 'DEVHF02', :wms_version => 'trunk'},
   {:name => 'FAT12', :wms_version => '5.0.xFAT12'},
