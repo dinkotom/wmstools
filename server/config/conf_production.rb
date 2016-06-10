@@ -149,7 +149,7 @@ FORTUM_INTEGRATION_TESTS_JOB = {
 }
 
 SKAGERAK_LOAD_TESTS_JOB = {
-  :cron => '*/30 8-16 * * *',
+  :cron => '0 7 * * *',
   :suites_environments =>
   [
   {:suite => '[S] LOAD BALANCER', :environment => 'DEV2SKA'},
@@ -163,6 +163,8 @@ SSN_TRUNK_REGRESSION_TESTS_JOB = {
   {:suite => '[SSN] REGRESSION TESTS', :environment => 'DEV7'},
   {:suite => '[SSN] REGRESSION TESTS GUI 1', :environment => 'DEV7'},
   {:suite => '[SSN][AM] REGRESSION TESTS', :environment => 'DEV7'},
+  {:suite => '[SSN][MOB] REGRESSION TESTS GUI 1', :environment => 'DEV7'},
+
   ]
 }
 
@@ -173,6 +175,7 @@ SSN_BRANCH_REGRESSION_TESTS_JOB = {
   {:suite => '[SSN] REGRESSION TESTS', :environment => 'DEV6'},
   {:suite => '[SSN] REGRESSION TESTS GUI 1', :environment => 'DEV6'},
   {:suite => '[SSN][AM] REGRESSION TESTS', :environment => 'DEV6'},
+  {:suite => '[SSN][MOB] REGRESSION TESTS GUI 1', :environment => 'DEV6'},
   ]
 }
 
@@ -217,6 +220,7 @@ TEST_SUITES = [
   {:name => '[AM] REGRESSION TESTS GUI 1', :type => 'Suite', :environments => ['DEV8PROM', 'DEV9'], :piazza => true, :default_number_of_tests => 10, :priority => 320, :project_file => 'AM_gui_chandkan.xml'},
   {:name => '[P][MOB] REGRESSION TESTS GUI 1', :type => 'Suite', :environments => ['DEV8PROM', 'DEV9'], :piazza => true, :default_number_of_tests => 10, :priority => 330, :project_file => 'MOB_gui_gajdokat.xml'},
   {:name => '[S][MOB] REGRESSION TESTS GUI 1', :type => 'Suite', :environments => ['DEV2SKA', 'DEV3SKA'], :piazza => true, :default_number_of_tests => 10, :priority => 340, :project_file => 'MOB_gui_gajdokat.xml'},
+  {:name => '[SSN][MOB] REGRESSION TESTS GUI 1', :type => 'Suite', :environments => ['DEV7', 'DEV6'], :piazza => true, :default_number_of_tests => 10, :priority => 341, :project_file => 'MOB_gui_gajdokat.xml'},
   {:name => '[SSN] REGRESSION TESTS', :type => 'Suite', :environments => ['DEV7', 'DEV6'], :piazza => true, :default_number_of_tests => 10, :priority => 350, :project_file => 'SSN_regresion_tomalmar.xml'},
   {:name => '[SSN] REGRESSION TESTS GUI 1', :type => 'Suite', :environments => ['DEV7', 'DEV6'], :piazza => true, :default_number_of_tests => 10, :priority => 360, :project_file => 'SSN_gui_plohalen.xml'},
   {:name => '[SSN][AM] REGRESSION TESTS', :type => 'Suite', :environments => ['DEV7', 'DEV6'], :piazza => true, :default_number_of_tests => 10, :priority => 360, :project_file => 'SSN_AM_regression_chandkan.xml'},
@@ -257,6 +261,7 @@ TEST_PACKAGES = [
   '[RM] REGRESSION TESTS GUI 1',
   '[P][MOB] REGRESSION TESTS GUI 1',
   '[S][MOB] REGRESSION TESTS GUI 1',
+  '[SSN][MOB] REGRESSION TESTS GUI 1',
   '[SSN] REGRESSION TESTS',
   '[SSN] REGRESSION TESTS GUI 1',
   '[SSN][AM] REGRESSION TESTS',
@@ -408,6 +413,10 @@ TEST_PACKAGES = [
   },
   {:name => '[S][MOB] REGRESSION TESTS GUI 1',
   :suites => ['[S][MOB] REGRESSION TESTS GUI 1'
+  ]
+  },
+  {:name => '[SSN][MOB] REGRESSION TESTS GUI 1',
+  :suites => ['[SSN][MOB] REGRESSION TESTS GUI 1'
   ]
   },
   {:name => '[SSN] REGRESSION TESTS',
