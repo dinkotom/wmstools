@@ -183,8 +183,6 @@ TEST_SUITES = [
   {:name => '[S] LOAD BALANCER', :type => 'Suite', :environments => ['DEV2SKA'], :piazza => false, :default_number_of_tests => 3, :priority => 281, :project_file => 'Skagerak_gui_plohalen.xml'},
   {:name => '[RM] WMS INTEGRATION', :type => 'Suite', :environments => ['DEV2SKA','DEV3SKA'], :piazza => true, :default_number_of_tests => 10, :priority => 290, :project_file => 'RM_regression_gawarshr.xml'},
   {:name => '[RM] REGRESSION TESTS GUI 1', :type => 'Suite', :environments => ['DEV2SKA','DEV3SKA'], :piazza => true, :default_number_of_tests => 10, :priority => 300, :project_file => 'RM_gui_gawarshr.xml'},
-  {:name => '[AM] REGRESSION TESTS 1', :type => 'Suite', :environments => ['DEV8PROM', 'DEV9'], :piazza => true, :default_number_of_tests => 5, :priority => 310, :project_file => 'AM_regression_chandkan.xml'},
-  {:name => '[AM] REGRESSION TESTS GUI 1', :type => 'Suite', :environments => ['DEV8PROM', 'DEV9'], :piazza => true, :default_number_of_tests => 10, :priority => 320, :project_file => 'AM_gui_chandkan.xml'},
   {:name => '[S][MOB] REGRESSION TESTS GUI 1', :type => 'Suite', :environments => ['DEV2SKA', 'DEV3SKA'], :piazza => true, :default_number_of_tests => 10, :priority => 340, :project_file => 'MOB_gui_gajdokat.xml'},
   {:name => '[SSN][MOB] REGRESSION TESTS GUI 1', :type => 'Suite', :environments => ['DEV7', 'DEV6'], :piazza => true, :default_number_of_tests => 10, :priority => 341, :project_file => 'MOB_gui_gajdokat.xml'},
   {:name => '[SSN] REGRESSION TESTS', :type => 'Suite', :environments => ['DEV7', 'DEV6'], :piazza => true, :default_number_of_tests => 10, :priority => 350, :project_file => 'SSN_regresion_tomalmar.xml'},
@@ -217,8 +215,6 @@ TEST_PACKAGES = [
   '[S] REGRESSION SET [daily_duringRollOut]',
   '[S] REGRESSION TESTS GUI 1',
   '[S] LOAD BALANCER',
-  '[AM] REGRESSION TESTS 1',
-  '[AM] REGRESSION TESTS GUI 1',
   '[RM] WMS INTEGRATION',
   '[RM] REGRESSION TESTS GUI 1',
   '[S][MOB] REGRESSION TESTS GUI 1',
@@ -334,14 +330,6 @@ TEST_PACKAGES = [
   },
   {:name => '[H] BUFFER TESTS',
   :suites => ['[H] BUFFER TESTS'
-  ]
-  },
-  {:name => '[AM] REGRESSION TESTS 1',
-  :suites => ['[AM] REGRESSION TESTS 1'
-  ]
-  },
-  {:name => '[AM] REGRESSION TESTS GUI 1',
-  :suites => ['[AM] REGRESSION TESTS GUI 1'
   ]
   },
   {:name => '[RM] WMS INTEGRATION',
