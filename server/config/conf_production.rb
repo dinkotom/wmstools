@@ -96,7 +96,7 @@ SKAGERAK_BRANCH_REGRESSION_TESTS_JOB = {
 }
 
 FORTUM_PERFORMANCE_TESTS_JOB = {
-  :cron => '*/10 22 * * *',
+  :cron => '*/10 5,22 * * *',
   :suites_environments =>
   [
   {:suite => '[F] PERFORMANCE TESTS', :environment => 'FAT'},
@@ -371,6 +371,7 @@ PERFORMANCE_TESTS = [
   {:id => 'PERF005', :name => 'Report WO175', :reference_value => 31500, :max_value => 45000},
   {:id => 'PERF006', :name => 'Report WO235', :reference_value => 16000, :max_value => 25000},
   {:id => 'PERF007', :name => 'Report WO203', :reference_value => 13000, :max_value => 20000},
+  {:id => 'PERF008', :name => 'Get errand', :reference_value => 2000, :max_value => 4000},    
   ]
   },
 ]
