@@ -34,7 +34,7 @@ TEST_PACKAGES = [
     },
     {:name => '[TIT] REGRESSION TESTS 1',
      :suites => [
-         '[TIT] REGRESSION TESTS 1',
+         '[TIT] REGRESSION TESTS 1'
      ]
     },
 ]
