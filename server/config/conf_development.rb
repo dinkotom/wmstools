@@ -12,7 +12,7 @@ PORT = 8088
 PERFORMANCE_TEST_RESULTS_PER_PAGE = 30
 
 FORTUM_SMOKE_TESTS_JOB = {
-  :cron => '*/10 6-18 * * *',
+  :cron => '30 5 * * *',
   :suites_environments =>
   [
   {:suite => '[TIT] REGRESSION TESTS 1', :environment => 'FAT'},
