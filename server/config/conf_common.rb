@@ -12,52 +12,11 @@ SVN_TIME_OUT = 10 #seconds
 BUFFER_TEST_MAX_FAILED = 5
 
 VERSIONS = {:wms_trunk =>
-  {:name => 'trunk', # FAT,PROMETERA,DEV9PROM,DEV3SKA,DEV7
+  {:name => 'trunk', # TI_AUTO
   :protection_level => 'Low',
   :svn_branch => 'trunk',
   :responsible => 'vladan.krenek@tieto.com',
   :watchers => [],
   :max_age => 48
   },
-  :wms_500fat12 =>
-  {:name => '5.0.xFAT12', # FAT12
-  :protection_level => 'Low',
-  :svn_branch => 'branch/5.0.xFAT12',
-  :responsible => 'vladan.krenek@tieto.com',
-  :watchers => [],
-  :max_age => 48
-  },
-  :wms_491 =>
-  {:name => '4.9.1', # FAT5
-  :protection_level => 'Medium',
-  :svn_branch => 'branch/4.9.1',
-  :responsible => 'vladan.krenek@tieto.com',
-  :watchers => [],
-  :max_age => 48
-  },
-  :wms_500 =>
-  {:name => '5.0.0', # FAT4, DEV9
-  :protection_level => 'High',
-  :svn_branch => 'branch/5.0.0',
-  :responsible => 'vladan.krenek@tieto.com',
-  :watchers => [],
-  :max_age => 48
-  },
-  :wms_510 =>
-  {:name => '5.1.0', # FAT4, DEV9
-  :protection_level => 'High',
-  :svn_branch => 'branch/5.1.0',
-  :responsible => 'vladan.krenek@tieto.com',
-  :watchers => [],
-  :max_age => 48
-  },
-  :wms_511 =>
-  {:name => '5.1.1', # DEV6
-  :protection_level => 'High',
-  :svn_branch => 'branch/5.1.1',
-  :responsible => 'vladan.krenek@tieto.com',
-  :watchers => [],
-  :max_age => 48
-  },
-
 }
