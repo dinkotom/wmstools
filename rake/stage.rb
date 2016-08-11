@@ -3,7 +3,7 @@ require 'net/http'
 require 'timeout'
 
 class Stage
-  SVN_BASE_PATH = 'https://github.com/dinkotom/wmstools/trunk'
+  SVN_BASE_PATH = 'https://github.com/dinkotom/wmstools/tree/NAM'
 
   attr_writer :name,
               :username,

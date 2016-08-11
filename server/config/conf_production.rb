@@ -1,11 +1,6 @@
 Mail.defaults do
-  delivery_method :smtp, :address => 'inbound.tieto.com',
-  :port => 587,
-  :domain => 'www.tieto.com',
-  :user_name => 'svc_wmsapp',
-  :password => 'Ostrava123456',
-  :authentication => 'login',
-  :enable_starttls_auto => false
+  delivery_method :smtp, :address => 'localhost',
+  :port => 1025
 end
 
 DATA_SOURCE = 'mysql://wmsuser:SalvatorDali01@localhost/wmstools'
