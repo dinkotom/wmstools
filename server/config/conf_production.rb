@@ -406,8 +406,8 @@ DELIVERY_SITE_TYPES = [
 ]
 
 ENVIRONMENTS = [
-  {:name => 'FAT5', :wms_version => '5.0.0'},
-  {:name => 'FAT4', :wms_version => '5.1.0'},
+  {:name => 'FAT5', :wms_version => '5.1.0'},
+  {:name => 'FAT4', :wms_version => '5.1.2'},
   {:name => 'DEV3SKA', :wms_version => '5.1.0'},
   {:name => 'FAT', :wms_version => 'trunk'},
   {:name => 'DEV2SKA', :wms_version => 'trunk'},
@@ -415,7 +415,7 @@ ENVIRONMENTS = [
   {:name => 'DEV7', :wms_version => 'trunk'},
   {:name => 'DEVHF02', :wms_version => 'trunk'},
   {:name => 'FAT12', :wms_version => '5.0.xFAT12'},
-  {:name => 'INT_BRANCH', :wms_version => '5.1.0'},
+  {:name => 'INT_BRANCH', :wms_version => '5.1.2'},
   {:name => 'INT_TRUNK', :wms_version => 'trunk'},
 
 ]
