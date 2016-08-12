@@ -23,7 +23,9 @@ TEST_SUITES = [
 
 TEST_PACKAGES = [
   {:name => 'FULL REGRESSION TEST',
-  :suites => ['[TIT] REGRESSION TESTS 1']
+  :suites => [
+  '[TIT] REGRESSION TESTS 1',
+  ]
   },
   {:name => '[TIT] REGRESSION TESTS 1',
   :suites => ['[TIT] REGRESSION TESTS 1'
