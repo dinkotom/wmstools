@@ -98,7 +98,7 @@ class Stage
   end
 
   def ssh_exec(command)
-    p "VK: ssh command #{command}"
+    p "ssh command: #{command}"
     output = String.new
     Net::SSH.start(@hostname, @username, :password => @password) do |ssh|
       ssh.open_channel do |channel|
