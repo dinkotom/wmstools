@@ -34,6 +34,7 @@ mysql> grant usage on *.* to wmsuser@localhost identified by 'SalvatorDali01';
 mysql> grant all privileges on wmstools.* to wmsuser@localhost;
 mysql> grant all privileges on wmstools_staging.* to wmsuser@localhost;
 ```
+make sure that <b>/etc/mysql/my.cnf</b> has line <b>bind-address = 127.0.0.1</b> commented otherwise MySQL will listen only on localhost!
 
 ### For Development
 `sudo apt-get install sqlite3 libsqlite3-dev ruby ruby-dev g++ subversion curl make mysql-server mysql-client libmysqlclient-dev libmysqlclient-dev libssl-dev`
